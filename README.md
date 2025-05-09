@@ -315,6 +315,9 @@ Spark изучайте только **после** **того**, как науч
 
  ➜ [Видео по Kafka](https://www.youtube.com/watch?v=hbseyn-CfXY)
 
+ Для мидлов знания по ней частенько спрашивают
+ ➜ [Теория по КАФКЕ](KAFKA/README.md)
+
 ***
 ## 16. Pet Project
 
