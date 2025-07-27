@@ -1,0 +1,208 @@
+body {
+  background: #1a1a1f;
+  color: #eaeaea;
+}
+
+.md-header {
+  background: linear-gradient(90deg, rgb(255, 0, 106) 0%, rgb(0, 63, 164) 100%) !important; /* полупрозрачный */
+  border-bottom: 1px solid #31343c;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.3s, box-shadow 0.3s, min-height 0.3s, padding 0.3s;
+  backdrop-filter: saturate(300%) blur(2px); /* эффект стекла */
+}
+
+.md-header__inner {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  transition: min-height 0.3s, padding 0.3s;
+  padding: 0 24px;
+}
+
+.md-header.shrink {
+  background: linear-gradient(90deg, #1d2225ee 0%, #1d3050ee 100%) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.md-header.shrink .md-header__inner {
+  min-height: 40px;
+  padding: 0 16px;
+}
+
+.md-header__title, .md-header__topic {
+  color: #f5f6fa !important;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  font-size: 1.5em;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  transition: font-size 0.3s;
+}
+
+.md-header.shrink .md-header__title,
+.md-header.shrink .md-header__topic {
+  font-size: 5em;
+}
+
+@media (max-width: 600px) {
+  .md-header__inner {
+    min-height: 40px;
+    padding: 0 8px;
+  }
+  .md-header__title, .md-header__topic {
+    font-size: 5em;
+  }
+}
+
+.md-typeset {
+  max-width: 100%;
+  font-size: 1.6em;
+  line-height: 1.7;
+}
+
+.md-typeset h1 {
+  color: #ffffff !important;
+}
+
+.tg-btn {
+  display: inline-block;
+  padding: 0.4em 1.2em;
+  margin: 0.1em 0.2em;
+  background: #00cfff;
+  color: #000000 !important;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.tg-btn:hover {
+  background: #154057;
+}
+
+.salary-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 24px 0;
+  justify-content: flex-start;
+}
+.salary-card {
+  background: rgba(30, 34, 40, 0.65);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px 0 rgba(31, 38, 135, 0.10);
+  border: 1px solid rgba(255,255,255,0.10);
+  padding: 18px 28px;
+  min-width: 160px;
+  text-align: center;
+  margin: 0;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.salary-card:hover {
+  box-shadow: 0 6px 24px 0 rgba(31, 38, 135, 0.18);
+  transform: translateY(-4px) scale(1.03);
+}
+.salary-title {
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+  letter-spacing: 0.01em;
+}
+.salary-value {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #7ed957;
+}
+
+/* Кнопка назад */
+#toc-home-btn {
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 0.7em 0;
+  background: linear-gradient(90deg, #229ed9 0%, #176b99 100%);
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(34,158,217,0.10);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+}
+
+
+#toc-home-btn:hover {
+  background: linear-gradient(90deg, #5a9917 0%, #50d922 100%);
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(34,158,217,0.18);
+  transform: translateY(-1px) scale(1);
+}
+
+
+
+
+
+
+
+.md-typeset table,
+.md-typeset table th,
+.md-typeset table td {
+  font-size: 0.99em !important;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-weight: 700 !important; /* 700 — это bold */
+}
+
+.md-sidebar--secondary .md-nav__link {
+  font-size: 1.3em;
+  font-weight: 400;
+}
+
+.md-sidebar--secondary .md-nav__title {
+  font-size: 1.5em;
+  font-weight: 100;
+}
+
+.md-content {
+  background: rgba(30, 34, 40, 0.65);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 32px;
+  margin: 32px auto;
+  max-width: 3000vw;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.md-sidebar--primary {
+  display: none !important;
+}
+
+.md-footer-meta {
+  display: none !important;
+}
+
+.md-sidebar--secondary .md-nav__title {
+  color: transparent !important;
+  position: relative;
+}
+
+.md-sidebar--secondary .md-nav__title::before {
+  content: "Выбери тему";
+  color: #00d1ff;
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}
+

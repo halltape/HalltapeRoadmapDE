@@ -1,0 +1,34 @@
+site_name: "Roadmappers"
+repo_name: Roadmappers.ru
+repo_url: https://github.com/halltape/HalltapeRoadmapDE
+site_url: https://roadmappers.ru
+copyright: MIT
+
+# Явное, лаконичное меню
+nav:
+  - Главная: index.md
+  - Обо мне: about.md
+  - Контакты: contact.md
+
+theme:
+  name: material
+  palette:
+    scheme: slate  # тёмная тема (можно убрать для светлой)
+  font:
+    text: Roboto
+    code: Fira Mono
+  code:
+    highlight_theme: dracula
+
+# Только свой CSS
+extra_css:
+  - _frontend/css/custom.css
+
+extra_javascript:
+  - _frontend/js/toc-home.js
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - tables
+  - footnotes
