@@ -1,4 +1,4 @@
-site_name: "Roadmappers"
+site_name: "ROADMAPPERS"
 repo_name: Roadmappers.ru
 repo_url: https://github.com/halltape/HalltapeRoadmapDE
 site_url: https://roadmappers.ru
@@ -6,9 +6,7 @@ copyright: MIT
 
 # Явное, лаконичное меню
 nav:
-  - Главная: index.md
-  - Обо мне: about.md
-  - Контакты: contact.md
+  - В начало: README.md
 
 theme:
   name: material
@@ -19,6 +17,7 @@ theme:
     code: Fira Mono
   code:
     highlight_theme: dracula
+  logo: _frontend/images/logo.svg
 
 # Только свой CSS
 extra_css:
@@ -26,6 +25,8 @@ extra_css:
 
 extra_javascript:
   - _frontend/js/toc-home.js
+  - _frontend/js/scroll-to-top.js
+
 
 markdown_extensions:
   - admonition

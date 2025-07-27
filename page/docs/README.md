@@ -1,7 +1,6 @@
 # Roadmap | Как стать Дата Инженером
 <i>Курс, Roadmap, агрегатор информации для Data Engineer | Актуально на 2025г. | Версия 2.1</i>
 
-
 ***
 ## Каналы авторов Roadmap | Подпишись!
 
@@ -23,7 +22,7 @@
 <a class="tg-btn" href="https://t.me/data_penguin" target="_blank">it пингвин - data engineer</a>
 <a class="tg-btn" href="https://t.me/it_pengwin" target="_blank">@it_pengwin</a>
 
-**Хочешь стать автором?** [Кликай сюда!](test/CONTRIBUTING.md)
+**Хочешь стать автором?** [Кликай сюда!](CONTRIBUTING.md)
 
 ***
 
@@ -452,3 +451,10 @@ Spark изучайте только **после** **того**, как науч
 - [Data Engineer тренирует System Design секцию](https://www.youtube.com/watch?v=6n92YA6UXlQ)
 - [РАЗДАЮ БАЗУ И МОТИВАЦИЮ ПО DATA ENGINEER!](https://www.youtube.com/watch?v=piZP5KCECGI&t=5273s)
 - [Крутить ОПЫТ или НЕТ | СТРИМ на Twitch](https://www.youtube.com/watch?v=Vfeb1LNCjPw)
+
+<a id="scrollToTopBtn" title="Наверх"
+   style="right:32px;bottom:32px;z-index:1000;
+   background:rgba(30,34,40,0.7);color:#fff;padding:12px 18px;border-radius:50px;
+   box-shadow:0 2px 8px rgba(0,0,0,0.15);font-size:1.5em;cursor:pointer;transition:background 0.2s;">
+   ↑
+</a>

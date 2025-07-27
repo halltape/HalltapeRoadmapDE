@@ -1,0 +1,23 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Градиент в стиле Mountain Dew -->
+    <linearGradient id="dew-bg" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#D0FF14"/>   <!-- Лаймовый -->
+      <stop offset="40%" stop-color="#39FF14"/>  <!-- Ярко-зелёный -->
+      <stop offset="75%" stop-color="#009245"/>  <!-- Тёмно-зелёный -->
+      <stop offset="100%" stop-color="#FFD600"/> <!-- Жёлтый -->
+    </linearGradient>
+    <!-- Мягкая тень -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <!-- Скруглённый квадрат с градиентом и тенью -->
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#dew-bg)" filter="url(#shadow)"/>
+  <!-- Буква R по центру -->
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central"
+        font-family="SF Pro Display, Arial, Helvetica, sans-serif"
+        font-size="72" font-weight="bold" fill="#222" style="letter-spacing:0.02em;">
+    R
+  </text>
+</svg>

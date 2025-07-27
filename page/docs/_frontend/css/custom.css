@@ -1,68 +1,78 @@
+/* Основной фон и цвет текста для всего сайта */
 body {
   background: #1a1a1f;
   color: #eaeaea;
 }
 
+/* Шапка сайта: градиентный фон, тень, эффект стекла */
 .md-header {
-  background: linear-gradient(90deg, rgb(255, 0, 106) 0%, rgb(0, 63, 164) 100%) !important; /* полупрозрачный */
-  border-bottom: 1px solid #31343c;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: background 0.3s, box-shadow 0.3s, min-height 0.3s, padding 0.3s;
-  backdrop-filter: saturate(300%) blur(2px); /* эффект стекла */
+  background: transparent !important; /* Прозрачная шапка */
+  /*background: linear-gradient(90deg, #801bd2 0%, #5b1494 100%) !important; !* Градиентный фон *!*/
+  border-bottom: 1px solid #31343c; /* Нижняя граница */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Тень */
+  transition: background 0.3s, box-shadow 0.3s, min-height 0.3s, padding 0.3s; /* Плавные переходы */
+  backdrop-filter: saturate(80%) blur(2px); /* Эффект стекла */
+  position: static !important;
 }
 
+/* Внутренний контейнер шапки: выравнивание и отступы */
 .md-header__inner {
-  min-height: 56px;
-  display: flex;
-  align-items: center;
-  transition: min-height 0.3s, padding 0.3s;
-  padding: 0 24px;
+  min-height: 10px; /* Минимальная высота */
+  display: flex; /* Flex-контейнер */
+  align-items: center; /* Вертикальное выравнивание */
+  transition: min-height 0.3s, padding 0.3s; /* Плавные переходы */
+  padding: 0 5px; /* Горизонтальные отступы */
 }
 
-.md-header.shrink {
-  background: linear-gradient(90deg, #1d2225ee 0%, #1d3050ee 100%) !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-}
-
-.md-header.shrink .md-header__inner {
-  min-height: 40px;
-  padding: 0 16px;
-}
-
+/* Заголовок и тема в шапке: цвет, размер, тень */
 .md-header__title, .md-header__topic {
-  color: #f5f6fa !important;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  font-size: 1.5em;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.08);
-  transition: font-size 0.3s;
+  color: #e5e5e5 !important; /* Цвет текста */
+  font-weight: 600; /* Полужирный */
+  letter-spacing: 0.03em; /* Межбуквенный интервал */
+  font-size: 1.5em; /* Размер шрифта */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.08); /* Тень */
+  transition: font-size 0.3s; /* Плавное изменение размера */
+  margin-left: 0 !important;
+  padding-left: 0 !important;
 }
 
-.md-header.shrink .md-header__title,
-.md-header.shrink .md-header__topic {
-  font-size: 5em;
-}
 
+/* Адаптация шапки и заголовка для мобильных устройств */
 @media (max-width: 600px) {
   .md-header__inner {
     min-height: 40px;
-    padding: 0 8px;
+    /*padding: 0 8px;*/
+    padding: 0;
   }
   .md-header__title, .md-header__topic {
-    font-size: 5em;
+    font-size: 1.2em;
   }
 }
 
+/* Логотип */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  max-height: 100px;
+  width: auto;
+  border-radius: 0px;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.10));
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Основной текст: ширина, размер, межстрочный интервал */
 .md-typeset {
   max-width: 100%;
   font-size: 1.6em;
   line-height: 1.7;
 }
 
+/* Цвет заголовков первого уровня */
 .md-typeset h1 {
   color: #ffffff !important;
 }
 
+/* Кастомная кнопка (например, для Telegram) */
 .tg-btn {
   display: inline-block;
   padding: 0.4em 1.2em;
@@ -75,9 +85,10 @@ body {
   transition: background 0.2s;
 }
 .tg-btn:hover {
-  background: #154057;
+  background: #32da58;
 }
 
+/* Карточки зарплат: контейнер и отдельные карточки */
 .salary-cards {
   display: flex;
   flex-wrap: wrap;
@@ -86,10 +97,10 @@ body {
   justify-content: flex-start;
 }
 .salary-card {
-  background: rgba(30, 34, 40, 0.65);
-  border-radius: 14px;
-  box-shadow: 0 2px 12px 0 rgba(31, 38, 135, 0.10);
-  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(30, 34, 40, 0.65); /* Полупрозрачный фон */
+  border-radius: 14px; /* Скругление углов */
+  box-shadow: 0 2px 12px 0 rgba(31, 38, 135, 0.10); /* Тень */
+  border: 1px solid rgba(255,255,255,0.10); /* Светлая граница */
   padding: 18px 28px;
   min-width: 160px;
   text-align: center;
@@ -97,8 +108,8 @@ body {
   transition: box-shadow 0.2s, transform 0.2s;
 }
 .salary-card:hover {
-  box-shadow: 0 6px 24px 0 rgba(31, 38, 135, 0.18);
-  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 6px 24px 0 rgba(31, 38, 135, 0.18); /* Усиленная тень при наведении */
+  transform: translateY(-4px) scale(1.03); /* Лёгкое поднятие и увеличение */
 }
 .salary-title {
   font-size: 1.1em;
@@ -113,7 +124,7 @@ body {
   color: #7ed957;
 }
 
-/* Кнопка назад */
+/* Кнопка "назад" (например, на главную) */
 #toc-home-btn {
   display: block;
   width: 100%;
@@ -132,8 +143,6 @@ body {
   letter-spacing: 0.01em;
   cursor: pointer;
 }
-
-
 #toc-home-btn:hover {
   background: linear-gradient(90deg, #5a9917 0%, #50d922 100%);
   color: #fff !important;
@@ -141,18 +150,14 @@ body {
   transform: translateY(-1px) scale(1);
 }
 
-
-
-
-
-
-
+/* Размер шрифта в таблицах */
 .md-typeset table,
 .md-typeset table th,
 .md-typeset table td {
   font-size: 0.99em !important;
 }
 
+/* Жирные заголовки всех уровней */
 .md-typeset h1,
 .md-typeset h2,
 .md-typeset h3,
@@ -162,16 +167,18 @@ body {
   font-weight: 700 !important; /* 700 — это bold */
 }
 
+/* Размер и вес ссылок и заголовков в боковом меню (secondary sidebar) */
 .md-sidebar--secondary .md-nav__link {
-  font-size: 1.3em;
+  font-size: 1.1em;
   font-weight: 400;
 }
-
 .md-sidebar--secondary .md-nav__title {
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: 100;
+  position: relative;
 }
 
+/* Основной контент: фон, скругление, тень, эффект стекла, отступы */
 .md-content {
   background: rgba(30, 34, 40, 0.65);
   border-radius: 18px;
@@ -179,30 +186,73 @@ body {
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 32px;
-  margin: 32px auto;
-  max-width: 3000vw;
+  padding: 10px;
+  margin: 0px auto;
+  max-width: 100vw; /* Очень большой max-width (можно уменьшить) */
   transition: background 0.3s, box-shadow 0.3s;
 }
 
-.md-sidebar--primary {
+/* Скрыть основное боковое меню */
+
+.md-sidebar--primary .md-nav__title {
   display: none !important;
 }
 
+.md-sidebar--primary {
+  min-width: 80px;
+  max-width: 120px;
+}
+
+/* Скрыть нижний футер */
 .md-footer-meta {
   display: none !important;
 }
 
+/* Скрыть стандартный заголовок в secondary sidebar */
 .md-sidebar--secondary .md-nav__title {
-  color: transparent !important;
+  color: transparent !important; /* Скрываем стандартный текст */
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
   position: relative;
 }
 
+/* Добавить кастомный текст "Выбери тему" в secondary sidebar */
 .md-sidebar--secondary .md-nav__title::before {
-  content: "Выбери тему";
+  content: "Оглавление";
   color: #00d1ff;
   position: absolute;
-  left: 10px;
-  top: 5px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Центрирует по горизонтали и вертикали */
+  padding: 1px 10px;
+  border-radius: 10px;
+  background: rgb(26, 26, 31);
+  backdrop-filter: blur(8px) saturate(180%);
+  -webkit-backdrop-filter: blur(8px) saturate(180%);
+  font-weight: 900;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  font-size: 1em; /* Можно подогнать размер */
+  line-height: 1.2;
 }
 
+/* Кнопка Наверх */
+#scrollToTopBtn {
+  position: fixed;
+  display: block;
+  right: 32px;
+  bottom: 32px;
+  z-index: 1000;
+  background: rgba(30,34,40,0.7);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#scrollToTopBtn:hover {
+  background: rgba(0, 209, 255, 0.9);
+}
