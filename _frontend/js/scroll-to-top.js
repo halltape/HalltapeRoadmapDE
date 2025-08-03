@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (title) {
     title.style.cursor = "pointer";
     title.addEventListener("click", function () {
-      window.location.href = "https://halltape.github.io/RoadmapPage/";
+      window.location.href = "/";
     });
   }
 });
