@@ -1,0 +1,1251 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://roadmappers.ru/CLICKHOUSE/ENGINE/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Index - ROADMAPPERS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../_frontend/css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ROADMAPPERS" class="md-header__button md-logo" aria-label="ROADMAPPERS" data-md-component="logo">
+      
+  <img src="../../_frontend/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ROADMAPPERS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Index
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/halltape/HalltapeRoadmapDE" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Roadmappers.ru
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ROADMAPPERS" class="md-nav__button md-logo" aria-label="ROADMAPPERS" data-md-component="logo">
+      
+  <img src="../../_frontend/images/logo.svg" alt="logo">
+
+    </a>
+    ROADMAPPERS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/halltape/HalltapeRoadmapDE" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Roadmappers.ru
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../page/docs/README.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    В начало
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Куратор раздела
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clickhouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Движки ClickHouse
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Движки ClickHouse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summingmergetree" class="md-nav__link">
+    <span class="md-ellipsis">
+      SummingMergeTree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregatingmergetree" class="md-nav__link">
+    <span class="md-ellipsis">
+      AggregatingMergeTree
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AggregatingMergeTree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Комбинаторы агрегатных функций
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Агрегаторные типы данных
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Агрегаторные типы данных">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simpleaggregatefunction" class="md-nav__link">
+    <span class="md-ellipsis">
+      SimpleAggregateFunction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregatefunction" class="md-nav__link">
+    <span class="md-ellipsis">
+      AggregateFunction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replacingmergetree" class="md-nav__link">
+    <span class="md-ellipsis">
+      ReplacingMergeTree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collapsingmergetree" class="md-nav__link">
+    <span class="md-ellipsis">
+      CollapsingMergeTree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    <span class="md-ellipsis">
+      File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buffer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generaterandom" class="md-nav__link">
+    <span class="md-ellipsis">
+      GenerateRandom
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      PostgreSQL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kafka" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kafka
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kafka">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Отправка данных
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение данных
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replicatedmergetree" class="md-nav__link">
+    <span class="md-ellipsis">
+      ReplicatedMergeTree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distributed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Index</h1>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=103580753', 'ym');
+
+    ym(103580753, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/103580753" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<h2 id="_1">Куратор раздела</h2>
+<p><img align="left" width="200" src="./../../png/shust.jpg" /></p>
+<p><strong>Шустиков Владимир</strong>, оставивший военную жизнь позади и ушедший в данные с головой. Работаю с данными более 3х лет и останавливаться не собираюсь! Веду:</p>
+<p><a href="https://t.me/Shust_DE">Telegram канал</a></p>
+<p><a href="https://www.youtube.com/@shust_de">Youtube канал</a></p>
+<p>Если хочешь сменить текущую профессию на Дата Инженера — пиши не стесняйся, я сам проходил этот не легкий путь и тебе помогу https://t.me/ShustDE.</p>
+<p>Хочешь улучшить текущий раздел, внести недостающее или поправить формулировку? Предлагай PR и тегай <a href="https://github.com/ShustGF">@ShustGF</a>.</p>
+<h2 id="clickhouse">Движки ClickHouse</h2>
+<p>Ну что пришло время разбираться в движках ClickHouse и конечно же в их особенностях.
+s
+Все движки я разбираю на примерах, этому, чтобы понять как они работают, тебе будет нужно развернуть docker-compose распределённого Clickhouse и просто последовательно повротять все команды.</p>
+<p>Приступим.</p>
+<h3 id="summingmergetree">SummingMergeTree</h3>
+<p><strong>SummingMergeTree</strong> - таблица с группировкой одинаковых записей по ключу сортировки и применением суммы к перечисленным полям </p>
+<details>
+    <summary>Пример который ты можешь потыкать сам</summary>
+    <pre>
+        <code class="sql">
+DROP TABLE IF EXISTS summing_mt;
+
+CREATE TABLE summing_mt
+(
+    id UInt32,
+    val UInt32,
+    dt datetime,
+    example UInt32  -- столбец, не входящий в ключ сортировки и параметры движка
+)
+ENGINE = SummingMergeTree(val) -- сумма будет считаться по полю val, так как оно указано в качестве параметра движка 
+ORDER BY (id)
+PARTITION BY toYYYYMM(dt); -- записи по этому ключу будут группироваться
+
+INSERT INTO summing_mt
+SELECT 
+    number % 2, 
+    (number + 1) * 10, 
+    now() + number * 60 * 60 * 24,
+    (number + 1) * 100 
+from numbers(30);
+        </code>
+    </pre>
+</details>
+
+<p>Запомни что данные сливаются только в рамках <strong>партиции</strong>. Посмотри на данные</p>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">summing_mt</span>
+</code></pre></div>
+
+<p>Теперь снова добавь данных и выведи данные предыдущим запросом. Обрати внимание на разницу с предыдущем шагом до добавления данных.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">summing_mt</span>
+<span class="k">SELECT</span><span class="w"> </span>
+<span class="w">    </span><span class="nb">number</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="p">(</span><span class="nb">number</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">now</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span>
+<span class="w">    </span><span class="p">(</span><span class="nb">number</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span>
+<span class="k">from</span><span class="w"> </span><span class="n">numbers</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+</code></pre></div>
+
+<p>Как мы видим создался новый блок данных, теперь эти блоки необходими слить друг с другом. В движке происходит автомотическое суммирование данных, при "ленивом слиянии", но мы это сделаем вручную, следующей командой:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">OPTIMIZE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">summing_mt</span><span class="w"> </span><span class="k">FINAL</span><span class="p">;</span><span class="w"> </span><span class="c1">-- ручное слияние</span>
+</code></pre></div>
+
+<p>А теперь еще раз иди и посмотри что у тебя с данными. Да они слились в единое и соотвественно посчиталась общая сумма. Но ты же не будешь так жедать каждый раз, запуская ручное слияние данных, темболее у тебя не будет на это прав в реальном проекте, для этого есть ключевое слово <strong>FINAL</strong>.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">summing_mt</span><span class="w"> </span><span class="k">FINAL</span>
+</code></pre></div>
+
+<h3 id="aggregatingmergetree">AggregatingMergeTree</h3>
+<p><strong>AggregatingMergeTree</strong> - это таблица, которая группирует одинаковые записи по ключу сортировки и применяет агрегатные функции к полям</p>
+<h4 id="_2">Комбинаторы агрегатных функций</h4>
+<p>Перед тем как мы перейдём к рассмотрению данного движка, я хочу с того, что у агрегаторов есть так называемые <a href="https://clickhouse.com/docs/ru/sql-reference/aggregate-functions/combinators"><strong>Комбинаторы агрегатных функций</strong></a>.</p>
+<p>Если быть в кратце то данные комбинаторы дают достаточно большой спектр творчества при работе с аргигационными функциями, помните в PostgreSQL можно делать так </p>
+<div class="codehilite"><pre><span></span><code><span class="p">...</span>
+<span class="k">count</span><span class="p">(</span><span class="k">Distinct</span><span class="w"> </span><span class="n">col1</span><span class="p">)</span><span class="w"> </span><span class="n">filter</span><span class="p">(</span><span class="k">where</span><span class="w"> </span><span class="n">col1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="p">...</span>
+</code></pre></div>
+
+<p>так вот в ClickHouse это можно сделать вот так:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">...</span>
+<span class="n">countDistinctIf</span><span class="p">(</span><span class="n">col1</span><span class="p">,</span><span class="w"> </span><span class="n">col1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span>
+<span class="p">...</span>
+</code></pre></div>
+
+<p>Как ты понимаешь <strong>-Distinct</strong> и <strong>-If</strong> являются комбинаторами, их в целом очень много, так что обязательно перейди по ссылочке и посмотри что там есть.</p>
+<p>Вообще комбинаторов очень много, а в связке с движком <strong>AggregatingMergeTree</strong> - это превращется в лютейшую пушку бомбу.</p>
+<h4 id="_3">Агрегаторные типы данных</h4>
+<p>Как мы говорили в основной стать по CH, существуют 2 дополнительных типа данных <strong>SimpleAggregateFunction</strong> и <strong>AggregateFunction</strong> их предназночение очень просто.</p>
+<ul>
+<li><strong>SimpleAggregateFunction</strong> - предназначет для хранения простых агрегатов, которое хранит конечно состояние</li>
+<li><strong>AggregateFunction</strong> - сложные агрегаты, которая хранит состояние всех добавленных значений</li>
+</ul>
+<p>Теперь рассмотрим сам движок и как он работает с данными типами данных.</p>
+<h5 id="simpleaggregatefunction">SimpleAggregateFunction</h5>
+<p>Создаем таблицу с 2мя простыми агригационными функциями <strong>MAX</strong> и <strong>SUM</strong>. (в общем и целом простыми можно назвать все агрегаты которые могут в себе хранить конечное значение блока и без коализий агригироваться с конечными значениями других блоков)</p>
+<details>
+    <summary>Выполни данный скрипт</summary>
+    <pre>
+        <code class="sql">
+DROP TABLE IF EXISTS simple;
+
+CREATE TABLE simple (
+    id UInt64, 
+    val_sum SimpleAggregateFunction(sum, UInt64), -- предусмотрен для хранения простых агрегатов(хранит конечное состояние)
+    val_max SimpleAggregateFunction(max, UInt32)
+) 
+ENGINE=AggregatingMergeTree 
+ORDER BY id;
+
+INSERT INTO simple SELECT  1, number, number from numbers(10);
+INSERT INTO simple SELECT  2, sum(number), max(number) from numbers(5);
+INSERT INTO simple SELECT  1, number, number from numbers(8);
+
+        </code>
+    </pre>
+</details>
+
+<p>Выведим результат запроса и увидем, что движок агрегирует данные в блоке данных при вставке. В итоге мы увидем 3 строки</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">simple</span>
+</code></pre></div>
+
+<p>Но нам же нужно для ID=1 получить 1 строку. Можно дождаться следующего слияния, а можно выполнитьследующий запрос, которое сделает <strong>логическое</strong> слияние и выдаст конечный результат:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">simple</span><span class="w"> </span><span class="k">FINAL</span>
+</code></pre></div>
+
+<p>На больших таблицах? где данные поступаю большими блоками и достаточно часто, намного эффективнее получить тот же результат следущим запросом:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span>
+<span class="w">        </span><span class="n">id</span><span class="p">,</span><span class="w"> </span>
+<span class="w">        </span><span class="k">sum</span><span class="p">(</span><span class="n">val_sum</span><span class="p">),</span>
+<span class="w">        </span><span class="k">max</span><span class="p">(</span><span class="n">val_max</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="k">simple</span>
+<span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id</span>
+</code></pre></div>
+
+<h5 id="aggregatefunction">AggregateFunction</h5>
+<p>Здесь немного все посложнее так как нужно использовать специальные комбинаторы.</p>
+<p>Комбинаторы агрегаторных типов данных:
+* SimpleState — возвращает результат агрегирующей функции типа SimpleAggregateFunction.
+* State — возвращает промежуточное состояние типа AggregateFunction, используется при вставке.
+* Merge — берёт множество состояний, объединяет их и возвращает результат полной агрегации данных.
+* MergeState — выполняет слияние промежуточных состояний агрегации, возвращает промежуточное состояние агрегации.</p>
+<p>По сути данные комбинаторы хранят состояния данных и выполнить просто команду <code>SELECT *</code> к данным таблицам не получится, давайте создадим таккую таблицу и попробуем достать выборку.</p>
+<details>
+    <summary>Выполни данный скрипт</summary>
+    <pre>
+        <code class="sql">
+DROP TABLE IF EXISTS aggr_func_tbl;
+
+CREATE TABLE aggr_func_tbl
+(
+    id UInt64,
+    val_uniq AggregateFunction(uniq, UInt64),         -- Хранит в себе промежуточное состояние данных
+    val_any AggregateFunction(anyIf, String, UInt8),
+    val_quant AggregateFunction(quantiles(0.5, 0.9), UInt64)
+) ENGINE=AggregatingMergeTree 
+ORDER BY id;
+
+INSERT INTO aggr_func_tbl
+SELECT 
+    1, 
+    uniqState(toUInt64(rnd)),                 -- кол-во уникальных значений
+    anyIfState(toString(rnd),rnd%2=0),
+    quantilesState(0.5, 0.9)(toUInt64(rnd)) 
+FROM
+    (SELECT arrayJoin(arrayMap(i -> i * 10, range(10))) as rnd);
+
+        </code>
+    </pre>
+</details>
+
+<p>Вот мы создали все что нам нужно, теперь достаём выборку:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">aggr_func_tbl</span>
+</code></pre></div>
+
+<p>Ой ошибка, ай-ай-ай, а я же говорил. Не парься, чтобы получить какой-то результат, можно выполнить следующую команду:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">aggr_func_tbl</span><span class="w">  </span><span class="n">FORMAT</span><span class="w"> </span><span class="n">Vertical</span>
+</code></pre></div>
+
+<p>А теперь посмотри на данные, их же прочитать не возможно, поэтому смысла от того что мы сейчас делали нет. Чтобы достать необходимые для нас данные необходимо воспользоваться коомбинатом <strong>-Merge</strong>, вот так:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">       </span><span class="k">SELECT</span><span class="w"> </span><span class="n">uniqMerge</span><span class="p">(</span><span class="n">val_uniq</span><span class="p">),</span><span class="w"> </span>
+<span class="w">              </span><span class="n">quantilesMerge</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">9</span><span class="p">)(</span><span class="n">val_quant</span><span class="p">),</span><span class="w"> </span>
+<span class="w">              </span><span class="n">anyIfMerge</span><span class="p">(</span><span class="n">val_any</span><span class="p">)</span><span class="w"> </span>
+<span class="w">       </span><span class="k">FROM</span><span class="w"> </span><span class="n">aggr_func_tbl</span>
+</code></pre></div>
+
+<h3 id="replacingmergetree">ReplacingMergeTree</h3>
+<p>Данный движок убирает дубликаты строк с одинаковым ключом сотрировки в блоке и во время слияния блоков.</p>
+<p>Опять создаем таблицу и наполняем ее данными.</p>
+<details>
+    <summary>Выполни данный скрипт</summary>
+    <pre>
+        <code class="sql">
+DROP TABLE IF EXISTS replacing_merge_tree;
+
+
+CREATE TABLE replacing_merge_tree
+(
+    id UInt32,
+    dt date,
+    val String
+)
+ENGINE = ReplacingMergeTree
+ORDER BY (id); -- ключ по которому удаляются дубликаты
+
+INSERT INTO replacing_merge_tree
+VALUES (1, '2025-01-01', 'Djo'), (2, '2025-01-01', 'JB'),(3, '2025-01-01', 'JD');
+        </code>
+    </pre>
+</details>
+
+<p>Теперь посмотри, что у тебя в данных:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">replacing_merge_tree</span>
+</code></pre></div>
+
+<p>Не удивительно у тебя там 3 строки. Давайте теперь еще добавим пару строк, а потом посмотрим на результат.</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">replacing_merge_tree</span>
+<span class="w">    </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2025-01-02&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Djo&#39;</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2025-01-03&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Djo&#39;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">replacing_merge_tree</span><span class="p">;</span>
+</code></pre></div>
+
+<p>И что мы видим добавилась 1 из данных записей, потому что дубликаты по ключу удаляются в одном блоке и при слиянии. Давайте запустим ручное слияние и у нас останется только 3 строки.</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">OPTIMIZE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">replacing_merge_tree</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Ну вот и все. Но что если нам нужно всегда оставлять только полследнее знание, для этого в движок можно передать колоку, относительно которой Clickhouse будет оставлять последнюю версию строки. Ну что еще раз создадим новую таблицу:</p>
+<details>
+    <summary>Выполни данный скрипт</summary>
+    <pre>
+        <code class="sql">
+DROP TABLE IF EXISTS replacing_merge_tree_with_version;
+
+
+CREATE TABLE replacing_merge_tree_with_version
+(
+    id UInt32,
+    dt date,
+    val String
+)
+ENGINE = ReplacingMergeTree(dt) -- колонка по которой необходимо оставить последнее
+                                -- значение. Может быть либо числовой, либо датой.
+ORDER BY (id); -- ключ по которому удаляются дубликаты
+
+INSERT INTO replacing_merge_tree_with_version -- Добавляем первый блок данных
+VALUES (1, '2025-01-01', 'Djo'), (2, '2025-01-01', 'JB'),(3, '2025-01-01', 'JD');
+
+INSERT INTO replacing_merge_tree_with_version -- Добавлем 2й блок данных
+VALUES (1, '2025-01-02', 'Djo'), (1, '2025-01-03', 'Djo');
+
+OPTIMIZE TABLE replacing_merge_tree_with_version FINAL; -- Выполняем ручное слияние
+
+SELECT * FROM replacing_merge_tree_with_version; -- смотрим и видим, что у ID=1, дата стоит 3 января 2025
+        </code>
+    </pre>
+</details>
+
+<p>Именно таким образом можно поддерживать акутальное состояние данных.</p>
+<h3 id="collapsingmergetree">CollapsingMergeTree</h3>
+<p><strong>CollapsingMergeTree</strong> -- Удаляет дубликабы строк по ключу сортировки в зависимости от флага. </p>
+<p>Наглядным примером будет приложение с книгами, где необходимо запоминать на какой странице остановился пользователь. Давай как раз и создадим такую таблицу.</p>
+<details>
+    <summary>Выполни данный скрипт</summary>
+    <pre>
+        <code class="sql">
+DROP TABLE IF EXISTS Books;
+
+CREATE TABLE Books
+(
+    ID UInt64,
+    Page UInt8,
+    Sign Int8 -- имеет только 2 значения
+)
+ENGINE = CollapsingMergeTree(Sign) -- задаем флаг
+ORDER BY ID
+        </code>
+    </pre>
+</details>
+
+<p>Пользователь открывает книгу 1 на странице 1:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Books</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div>
+
+<p>Далее перелистывает на страницу 2:</p>
+<div class="codehilite"><pre><span></span><code>    INSERT INTO Books values (1, 1, -1),(1, 2, 1);
+</code></pre></div>
+
+<p>Выполним логическое слияние блоков и сразу выведем результат на экран:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Books</span><span class="w"> </span><span class="k">FINAL</span>
+</code></pre></div>
+
+<p>Остаётся актуальная страница книги</p>
+<h3 id="log">Log</h3>
+<p>Ни чем не примичательный движок, предназначен для тестов и хранения небольших данных. Каждая котолонка такого движка хранится в отдельном файле.</p>
+<details>
+    <summary>Выполни данный скрипт</summary>
+    <pre>
+        <code class="sql">
+DROP TABLE IF EXISTS el;
+
+CREATE TABLE el
+(
+    id UInt32,
+    dt date
+)
+ENGINE = Log;
+
+INSERT INTO el
+select 
+number,
+now()::date + number,
+from numbers(10);
+
+SELECT * FROM el;
+        </code>
+    </pre>
+</details>
+
+<h3 id="file">File</h3>
+<p>File -- Позволяет данные записывать в формате файла</p>
+<details>
+    <summary>Выполни данный скрипт</summary>
+    <pre>
+        <code class="sql">
+DROP TABLE IF EXISTS ef;
+
+CREATE TABLE ef
+(
+    id UInt32,
+    dt date
+)
+ENGINE = File(CSV);
+
+INSERT INTO ef
+SELECT 
+    number,
+    now()::date + number
+FROM numbers(10);
+
+SELECT * FROM ef;
+        </code>
+    </pre>
+</details>
+
+<p>Данная таблица сохранится как CSV файл, где лежали все таблицы внутри самого Clickhouse (путь к каталогу <strong>/var/lib/clickhouse/data/ef/</strong>).</p>
+<h3 id="buffer">Buffer</h3>
+<p>Если у вас большое кол-во небольших вставок данных, то для ускорения процеса, чтобы не вызывалось часто слияние, необходимо использовать движок <strong>Buffer</strong>. Он сохраняет вставки в оперативную память после чего данные, сливаются на диск в другую таблицу.</p>
+<details>
+    <summary>Выполни данный скрипт</summary>
+    <pre>
+        <code class="sql">
+DROP TABLE IF EXISTS eb;
+
+DROP TABLE IF EXISTS ebt;
+
+CREATE TABLE ebt
+    (
+    id UInt32,
+    dt date
+)
+ENGINE = Log;
+
+CREATE TABLE eb
+(
+    id UInt32,
+    dt date
+)
+ENGINE = Buffer(db,      -- имя БД
+                ebt,     -- имя таблицы для слива данных
+                16,      -- параллелизм (рекомендация 16)
+                30,      -- минимальное время слияния
+                60,      -- минимальное время слияния
+                5,       -- минимальное кол-во строк для слияния
+                10,      -- максимальное кол-во строк для слияния
+                10000,   -- минимальное кол-во байт для слияния
+                10000    -- максимальное кол-во байт для слияния
+                );
+
+INSERT INTO eb
+SELECT 
+    number,
+    now()::date + number
+FROM numbers(1);
+        </code>
+    </pre>
+</details>
+
+<p>Читать данные из буфферной таблицы не получится.</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">eb</span><span class="p">;</span><span class="w"> </span><span class="c1">-- выдаст ошибку</span>
+</code></pre></div>
+
+<p>Выборку можно получить только из таблицы куда сливаются данные.</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ebt</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Чтобы слить данные из ОП в таблицу в ручную, используйте следующий запрос:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">OPTIMIZE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">eb</span><span class="p">;</span>
+</code></pre></div>
+
+<h3 id="memory">Memory</h3>
+<p>В движке Memory данныех храняться только в оперативной памяти, поэтому при перезапуске CH данные будут утеряны. Данный движок часто используется при оптимизации запроса.</p>
+<details>
+    <summary>Выполни данный скрипт</summary>
+    <pre>
+        <code class="sql">
+DROP TABLE IF EXISTS em;
+
+CREATE TABLE em
+(
+    id UInt32,
+    dt date
+)
+ENGINE = Memory;
+
+INSERT INTO em
+SELECT 
+    number,
+    now()::date + number
+FROM numbers(100);
+
+ SELECT * FROM em;
+        </code>
+    </pre>
+</details>
+
+<h3 id="set">Set</h3>
+<p>Движок сет предназначен для использвоании в правой части оператора IN. Не хранит дублирующие заначения. Предназначен для оптимизации запросов.</p>
+<details>
+    <summary>Выполни данный скрипт</summary>
+    <pre>
+        <code class="sql">
+DROP TABLE IF EXISTS es;
+
+CREATE TABLE es
+    (
+        id UInt32
+    )
+    ENGINE = Set
+SETTINGS persistent = 1; -- данные будут считываться из ОП.
+
+INSERT INTO es SELECT number from numbers(30);
+
+-- Создание 2й таблицы
+DROP TABLE IF EXISTS est;
+
+CREATE TABLE est
+(
+    id UInt32
+)
+ENGINE = MergeTree
+ORDER BY (id);
+
+INSERT INTO est SELECT number from numbers(300);
+        </code>
+    </pre>
+</details>
+
+<p>Читать данные из  Set-таблицы не получится. </p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">es</span><span class="w"> </span><span class="c1">-- выдаст ошибку </span>
+</code></pre></div>
+
+<p>Применять можно только таким образом:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">est</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">es</span>
+</code></pre></div>
+
+<p>Так же такая таблица может состоять из нескольких колонок, чтобы правильно к ней обратитсья, необходимо использовать следующий шаблон:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="k">table_name</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="p">(</span><span class="n">col1</span><span class="p">,</span><span class="w"> </span><span class="n">col2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">colN</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">table_set</span>
+</code></pre></div>
+
+<h3 id="generaterandom">GenerateRandom</h3>
+<p><strong>GenerateRandom</strong> -- предназначен для генерации данных в СН, с целью дальнейших тестов.</p>
+<details>
+    <summary>Выполни данный скрипт</summary>
+    <pre>
+        <code class="sql">
+DROP TABLE IF EXISTS eg;
+
+CREATE TABLE eg
+(
+    id UInt32, 
+    val String,
+    dt date,
+    a Float32,
+    b UUID,
+    c Bool,
+    d IPv6,
+    e IPv4,
+    g Array(UInt32)
+)
+ENGINE = GenerateRandom;
+
+select * 
+from eg
+limit 10
+        </code>
+    </pre>
+</details>
+
+<p>Можно запихнуть любой тип данных.</p>
+<h3 id="postgresql">PostgreSQL</h3>
+<p><strong>PostgreSQL</strong> -- позволяет из CH подключаться к PSQL и применять функции CH над данными из PSQL.</p>
+<details>
+    <summary>Выполни данный скрипт</summary>
+    <pre>
+        <code class="sql">
+DROP TABLE IF EXISTS postgresql_table;
+
+CREATE TABLE postgresql_table
+(
+    dept_id Int32,
+    dept_name String,
+    location String
+)
+ENGINE = PostgreSQL(
+                    'postgres_server:5432', -- сервер, порт
+                    'postgres',                           -- БД 
+                    'table_name',                         -- таблица
+                    'postgres',                           -- логин
+                    'postgres',                           -- пароль
+                    'public'                              -- имя схемы
+                    );
+
+select * from postgresql_table;
+        </code>
+    </pre>
+</details>
+
+<p>Если запросы простые и PSQL может с ними справиться самомстоятельно то в CH транслируется только результат, если используются специфичные для CH функции, то PSQL транслирует все данные.</p>
+<h3 id="kafka">Kafka</h3>
+<p>С помощью движка <strong>Kafka</strong> можно как отправлять данные в кафку, так и получать их из неё.</p>
+<h4 id="_4">Отправка данных</h4>
+<p>Сейчас мы будем транслировать данные в кафку, дляначала создадим таблицу с нужным движком:</p>
+<details>
+    <summary>Выполни данный скрипт</summary>
+    <pre>
+        <code class="sql">
+DROP TABLE IF EXISTS kafka_out_message;
+
+ CREATE TABLE kafka_out_message
+(
+    id UInt32
+)
+ENGINE = Kafka
+SETTINGS
+    kafka_broker_list = 'kafka:29093',     -- подключение к брокеру
+    kafka_topic_list = 'clickhouse.topic', -- создай такой же топик
+    kafka_group_name = 'clickhouse_consumer_group',
+    kafka_format = 'JSONEachRow';
+        </code>
+    </pre>
+</details>
+
+<p>Чтобы транслировать данные в кафку необходимо выполнить обычную команду на вставку:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">kafka_out_message</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="nb">number</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">numbers</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+</code></pre></div>
+
+<p>ВСЁ!</p>
+<h4 id="_5">Получение данных</h4>
+<p>Тут капец как муторно, но так придумано разработчиками, поэтому мы просто делаем свою работу и не более того. Создадим очередную таблицу:</p>
+<details>
+    <summary>Выполни данный скрипт</summary>
+    <pre>
+        <code class="sql">
+DROP TABLE IF EXISTS kafka_input_stage;
+
+CREATE TABLE kafka_input_stage
+    (
+        json_kafka String    -- задается только 1 строка с полным JSON-ом из кафки
+    )
+ENGINE = Kafka
+SETTINGS
+    kafka_broker_list = 'kafka:29093',
+    kafka_topic_list = 'source.public.order_events',
+    kafka_group_name = 'clickhouse_consumer_group',
+    kafka_format = 'JSONAsString'; -- достаточно часто истользуется именно этот формат
+        </code>
+    </pre>
+</details>
+
+<p>Считать данные из этой таблицы просто так не получится, данная таблица сохраняет данные в памяти и может только перенаправлять данные в нужную нам таблицу с определённым методом хранения(движком).</p>
+<p>Если всетаки хочется пороверить, а получаем ли мы что то с данного топика, необходимо выполнить следующий запрос:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">SET</span><span class="w"> </span><span class="n">stream_like_engine_allow_direct_select</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">kafka_input_stage</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Теперь создаем таблицу в которой будут непосредственно хранитсья данные:</p>
+<details>
+    <summary>Выполни данный скрипт</summary>
+    <pre>
+        <code class="sql">
+DROP TABLE IF EXISTS table_stage_from_kafka;
+
+CREATE TABLE table_stage_from_kafka 
+(
+    json_kafka String
+)
+Engine = Log
+        </code>
+    </pre>
+</details>
+
+<p>Так же нужно создать <strong>материализованное представление</strong>, которое будет перенаправлять данные из таблицы с движном <strong>Kafka</strong> в таблицу с движком <strong>Log</strong>.</p>
+<details>
+    <summary>Выполни данный скрипт</summary>
+    <pre>
+        <code class="sql">
+DROP VIEW IF EXISTS kafka_input_stage_mv;
+
+CREATE MATERIALIZED VIEW kafka_input_stage_mv TO table_stage_from_kafka AS 
+    SELECT
+        json_kafka
+    FROM kafka_input_stage;
+        </code>
+    </pre>
+</details>
+
+<p>Осталось только достать данные из JSON:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span><span class="w">  </span>
+<span class="w">    </span><span class="n">JSONExtractInt</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;before&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;id&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">before_id</span><span class="p">,</span><span class="w">  </span><span class="c1">-- JSONExtract&lt;тип данных&gt;(&lt;JSON строка&gt;, &lt;ключ&gt;)</span>
+<span class="w">    </span><span class="n">JSONExtractInt</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;before&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;order_id&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">before_order_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;before&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;status&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">before_status</span><span class="p">,</span>
+<span class="w">    </span><span class="n">JSONExtractUInt</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;before&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;ts&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">before_ts</span><span class="p">,</span>
+<span class="w">    </span><span class="n">JSONExtractInt</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;after&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;id&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">after_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">JSONExtractInt</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;after&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;order_id&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">after_order_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;after&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;status&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">after_status</span><span class="p">,</span>
+<span class="w">    </span><span class="n">JSONExtractUInt</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;after&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;ts&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">after_ts</span><span class="p">,</span>
+<span class="w">    </span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;op&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">op</span><span class="p">,</span>
+<span class="w">    </span><span class="n">toDateTime</span><span class="p">(</span><span class="n">JSONExtractInt</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;ts_ms&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">dt</span><span class="w">  </span><span class="c1">-- Перевод времени из timestamp в читаемый вид</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">table_stage_from_kafka</span>
+</code></pre></div>
+
+<h3 id="replicatedmergetree">ReplicatedMergeTree</h3>
+<p>Данный движок позволяет положить копию таблицы на репликационный сервер. Данный сервер предназначен для повышения отказоустойчивости всего кластера. Важно помнить, что репликация не происходит моментально, согласованность основного и репликационного сервера происходит со временем и может произойти ситуация, когда на основном сервере произошел сбой, далее перешли на реплику, а данные на енй не в полном объеме. Это абсолютно нормально для ClickHouse.</p>
+<p>Создается такая таблица с определёнными особенностями, при создании объекста необходимо использваоть конструкцию <strong>ON CLUSTER 'имя кластера'</strong>. Это конструкция копирует объект на каждый сервер всего кластера.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">CLUSTER</span><span class="w"> </span><span class="s1">&#39;company_cluster&#39;</span><span class="w"> </span><span class="p">(</span><span class="w">   </span><span class="c1">-- имя кластера можно задавать по имени и с помощью макроса &#39;{cluster}&#39;</span>
+<span class="w">        </span><span class="k">time</span><span class="w"> </span><span class="n">DateTime</span><span class="p">,</span>
+<span class="w">        </span><span class="n">uid</span><span class="w">  </span><span class="n">Int64</span><span class="p">,</span>
+<span class="w">        </span><span class="k">type</span><span class="w"> </span><span class="n">LowCardinality</span><span class="p">(</span><span class="n">String</span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="w">    </span><span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReplicatedMergeTree</span><span class="p">(</span><span class="s1">&#39;/clickhouse/tables/{cluster}/{shard}/events&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;{replica}&#39;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- путь может быть любой, необходимо смотреть как положено это делать в вашей команде.</span>
+<span class="w">    </span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">toDate</span><span class="p">(</span><span class="k">time</span><span class="p">)</span>
+<span class="w">    </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="p">(</span><span class="n">uid</span><span class="p">);</span>
+</code></pre></div>
+
+<h3 id="distributed">Distributed</h3>
+<p>В продолжении рапределённых таблиц мы не можем не остановиться на теме шардирвания кластера. Шардирование -- это по свой сути обыкновенное разделение даных по серверам, по определенному признаку, для повышения вычислительных способностей всего кластре, т.е. мы ускоряем работу выполенения запросов(но не всех! JOIN и оконные функции будут <strong>ебать мозги</strong> если распределить данные не по ключу соединения и не по ключую разбития окна(PARTITION BY), соотвествено). </p>
+<p>Сама <strong>Distributed</strong> таблица не хранит в себе ничего, она исключительно ссылается на таблицу которая хранит в себе данные. Для примера как хранимую таблицу, мы возьмем из предыдущего запроса "events". Данная таблица будет хранить только те данные которые ей даст <strong>Distributed</strong> таблица на определённой шарде.</p>
+<p>Созадим Distributed таблицу:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">events_distr</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">CLUSTER</span><span class="w"> </span><span class="s1">&#39;company_cluster&#39;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">events</span>
+<span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Distributed</span><span class="p">(</span><span class="s1">&#39;company_cluster&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">-- имя кластера, можно исполльзовать макрос</span>
+<span class="w">                     </span><span class="n">db</span><span class="p">,</span><span class="w">                </span><span class="c1">-- имя БД</span>
+<span class="w">                     </span><span class="n">events</span><span class="p">,</span><span class="w">            </span><span class="c1">-- имя таблицы</span>
+<span class="w">                     </span><span class="n">uid</span><span class="p">);</span><span class="w">              </span><span class="c1">-- имя колонки по которой будет распределять данные</span>
+</code></pre></div>
+
+<p>Конструкция <strong>AS events</strong>, говорит создай таблицу <strong>events_distr</strong>, с такимиже полями как и таблица events. Очень важно, чтобы колонки совпадали.</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">events_distr</span><span class="w"> </span><span class="k">VALUES</span>
+<span class="w">        </span><span class="p">(</span><span class="s1">&#39;2020-01-01 10:00:00&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;view&#39;</span><span class="p">),</span>
+<span class="w">        </span><span class="p">(</span><span class="s1">&#39;2020-01-01 10:05:00&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;view&#39;</span><span class="p">),</span>
+<span class="w">        </span><span class="p">(</span><span class="s1">&#39;2020-01-01 11:00:00&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;contact&#39;</span><span class="p">),</span>
+<span class="w">        </span><span class="p">(</span><span class="s1">&#39;2020-01-01 12:10:00&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;view&#39;</span><span class="p">),</span>
+<span class="w">        </span><span class="p">(</span><span class="s1">&#39;2020-01-02 08:10:00&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;view&#39;</span><span class="p">),</span>
+<span class="w">        </span><span class="p">(</span><span class="s1">&#39;2020-01-03 13:00:00&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">103</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;view&#39;</span><span class="p">);</span>
+</code></pre></div>
+
+<p>Теперь считай данные и распределённой таблицы(events_distr) и из локальной таблицы(events). Ты увидешь что в локальной не хватает данных из-за того что другие данные хранять на другой шарде.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      MIT
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../_frontend/js/toc-home.js"></script>
+      
+        <script src="../../_frontend/js/scroll-to-top.js"></script>
+      
+    
+  </body>
+</html>

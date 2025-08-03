@@ -1,0 +1,14 @@
+version: '3.5'
+  server_clickhouse:
+    image: clickhouse/clickhouse-server
+    container_name: server_clickhouse
+    ports: 
+      - 8123:8123
+    restart: unless-stopped
+    environment:
+      CLICKHOUSE_USER: ${CLICKHOUSE_USER}
+      CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD}
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
+      CLICKHOUSE_DB: ${CLICKHOUSE_DB}
+    volumes:
+      - './clickhouse/ch_command:/docker-entrypoint-initdb.d/'

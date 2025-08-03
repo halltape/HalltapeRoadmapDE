@@ -1,0 +1,1182 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://roadmappers.ru/CLICKHOUSE/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Index - ROADMAPPERS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../_frontend/css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ROADMAPPERS" class="md-header__button md-logo" aria-label="ROADMAPPERS" data-md-component="logo">
+      
+  <img src="../_frontend/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ROADMAPPERS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Index
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/halltape/HalltapeRoadmapDE" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Roadmappers.ru
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ROADMAPPERS" class="md-nav__button md-logo" aria-label="ROADMAPPERS" data-md-component="logo">
+      
+  <img src="../_frontend/images/logo.svg" alt="logo">
+
+    </a>
+    ROADMAPPERS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/halltape/HalltapeRoadmapDE" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Roadmappers.ru
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../page/docs/README.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    В начало
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Куратор раздела
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Напутственные слова перед изучением материала
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Колоночная ориентируемость
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clickhouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Как работает ClickHouse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Типы данных, создание и движки таблиц, создание полей
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Типы данных, создание и движки таблиц, создание полей">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Типы данных
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Типы данных">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Числовые типы
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Строкове типы
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Типы для работы с датой
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Дополнительные типы данных
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Композитные типы данных
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Агригаторные типы данных
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Приведение к типам данных
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Создание таблиц
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Создание таблиц">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      ЭТО ПРЯМ БАЗИЩА
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Атрибуты типов даннных при создании таблиц
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Модификаторы колонок
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Партицирование таблиц
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Индексы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Индексы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      Индекс основного назначения
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Индексы пропуска данных
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Индексы пропуска данных">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minmax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Индекс minmax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Индекс set
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      Итог
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=103580753', 'ym');
+
+    ym(103580753, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/103580753" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<h2 id="_1">Куратор раздела</h2>
+<p><img align="left" width="200" src="../png/shust.jpg" /></p>
+<p><strong>Шустиков Владимир</strong>, оставивший военную жизнь позади и ушедший в данные с головой. Работаю с данными более 3х лет и останавливаться не собираюсь! Веду:</p>
+<p><a href="https://t.me/Shust_DE">Telegram канал</a></p>
+<p><a href="https://www.youtube.com/@shust_de">Youtube канал</a></p>
+<p>Если хочешь сменить текущую профессию на Дата Инженера — пиши не стесняйся, я сам проходил этот не легкий путь и тебе помогу https://t.me/ShustDE.</p>
+<p>Хочешь улучшить текущий раздел, внести недостающее или поправить формулировку? Предлагай PR и тегай <a href="https://github.com/ShustGF">@ShustGF</a>.</p>
+<h2 id="_2">Напутственные слова перед изучением материала</h2>
+<p>"Хера куда ты уже забрался. Может всё стоит бросить, да и ну его этот RoadMap, эту дата инженерию, ааа...? Нет, а че так! Готов идти до конца ради своего будущего! Красавчик! Уважения тебе! Никого не слушай и продолжай в том же духе и ты обязательно добьёшься своей цели!".</p>
+<p>Изучение на практике такого инструмента, как ClickHouse, достаточно интересное занятие. Это OpenSource, с которым мне приходится достаточно часто мучиться, из-за постоянных проблем с нехваткой, каких либо возможностей, находить обходные пути и о них можно почитать у меня на <a href="https://t.me/Shust_DE">канале</a> под хештогом <strong>#ClickHouse_ну_ёпт_опять</strong></p>
+<p>В общем и целом мне очень нравится,  как написана <a href="https://clickhouse.com/docs/ru">документация</a> по ClickHouse, поэтому здесь безумно сжатый материал, который ссылается на другие источники информации. В общем и целом могу сказать по своему опыту, ClickHouse стоит изучать на практике и только на ней, поэтому к материалу я добавил 2 docker-compose файла, которые помогу тебе в обучении по работе с Clickhouse как с однонодовой, так и с кластерной сборкой. </p>
+<p>Запомнить всё без проб и ошибок просто напросто не получится! Так что вперед херачить практику! </p>
+<p>Установить ClickHouse можно по данным docker compose файлам:
+1) <a href="./Dop_mat/clickhouse-cone_node/">однонодовый</a> 
+2) <a href="./Dop_mat/clickhouse-cluster/">расрпределённый</a></p>
+<p>Приятного изучения.</p>
+<hr />
+<h1 style="text-align: center;">CLICKHOUSE</h1>
+
+<p>Первое что нужно запомнить <strong>ClickHouse</strong> — это колоночно-ориентированная БД, т.е. данные считываются по необходимым нам колонкам. В свою очередь это позволяет считывать и агрегировать большой объем данных за коротких промежуток времени.</p>
+<p align="center">
+    <img src="./../png/ch_column_oriented.gif" alt="ch_column_oriented" width="500" height="250"/>
+</p>
+
+<h2 id="_3">Колоночная ориентируемость</h2>
+<p>Перед тем как приступить к изучениию самой БД то необходимо понять, что же такое БД с колоночной ориентацией.</p>
+<p>Физически колоночная ориентированность, представляет каждую колонку ввиде отдельного файла, из-за чего считывать данные через команду <code>SELECT *</code> значит считывать каждый файл таблицы. Сами понимаете, это правило плохого тона.</p>
+<p align="center">
+    <img src="./../png/CH_col_oriented.jpg" alt="Колоночная ориентация" width="500" height="300"/>
+</p>
+
+<p>Колоночная ориентируемость имеет ряд преимуществ:</p>
+<ul>
+<li>Оптимизация хранения данных.</li>
+<li>Быстрое чтение данных большого количества данных</li>
+<li>Бытрое выполнение аграгационнных задач(OLAP-нагрузка)</li>
+</ul>
+<p>Но есть и ряд недостатков:
+* Вообще не подходят под OLTP нагрузку, т.е. изменять, удалять или считывать единичные строки, прям больно
+* Ограниченная поддержка ACID
+* Сложность управления</p>
+<h2 id="clickhouse">Как работает ClickHouse</h2>
+<p>Главной особенностью быстрой работы ClickHouse является использовония <strong>разряженного индекса</strong>. Различие данного индекса от обычного B-tree индекса состоит в том, что помечается не каждое значение колонки, а с каким либо промежутком(по умолчанию оно равно 8192, но можно изменить с помощью параметра <code>index_granularity</code>), в ClickHouse данный промежуток с значениями называется <strong>гранулой</strong>. Если говорить более научно то <strong>гранула</strong> - это логическое разделение строк внутри блока.  Такой индекс по умолчанию создается при создании таблиц семейста MergeTree(по умолчанию если мы не говорим об определенном движке будет подразумеваться именно он). Разряженный индекс, является отдельным объектом, значения которого являются первым значением каждой гранулы и ссылается на файл с засечками.</p>
+<p align="center">
+    <img src="./../png/ch_table.jpg" alt="Колоночная ориентация" width="650" height="400"/>
+</p>
+
+<p>Важно помнить, что при поднятии кластера файл с индексами всегда считывается в оперативную память и храниться именно там (соответственно если вам не хватит места в оперативной памяти то кластер даже не поднимится).</p>
+<h2 id="_4">Типы данных,  создание и движки таблиц, создание полей</h2>
+<h3 id="_5">Типы данных</h3>
+<p>ClickHouse поддерживает достаточно большое количество типов данных. Мы рассмотрим только часть из них:</p>
+<h4 id="_6">Числовые типы</h4>
+<ul>
+<li>
+<p><strong>Int8</strong>, <strong>Int16</strong> ... <strong>Int256</strong> — целые числа фиксированной длины со знаком от 8 до 256 разрядов.</p>
+</li>
+<li>
+<p><strong>UInt8</strong>, <strong>UInt16</strong> ... <strong>UInt256</strong> — целые числа фиксированной длины без знака от 8 до 256 разрядов.</p>
+</li>
+</ul>
+<p>В ClickHouse рекомендуется за частую использовать челые числа, так как они занимают значительно меньше места, чем например строки и за счет это ускоряется работа. Например намного эфективнее хранить <strong>1234</strong> метра, чем <strong>1,234</strong> километра.</p>
+<ul>
+<li><strong>Float32</strong>, <strong>Float64</strong> — числа с плавающей запятой. Эти типы прекрасно подходят для различных статистических математических расчётов. Из-за особенностей данных типов не рекомендуется использовать в точных вычислениях, например финанасах.</li>
+</ul>
+<p>Пример особенности, если выполнить следующий запрос в клике:</p>
+<div class="codehilite"><pre><span></span><code>SELECT 1 - 0.9::float 
+</code></pre></div>
+
+<p>то в итоге мы получим ошибку округления, а именно <strong>0.10000002384185791</strong></p>
+<ul>
+<li><strong>Decimal32(S)</strong> ... <strong>Decimal256(S)</strong> — дробные числа с сохранением точности операций, где S — это количество знаков после запятой. Данный тип уже подойдет для точных вычислений 100%</li>
+</ul>
+<h4 id="_7">Строкове типы</h4>
+<ul>
+<li>
+<p><strong>String</strong> - набор байт произвольной длины. </p>
+</li>
+<li>
+<p><strong>FixedString</strong> - строка фиксированной длины N байт.</p>
+</li>
+</ul>
+<h4 id="_8">Типы для работы с датой</h4>
+<ul>
+<li>
+<p><strong>Date</strong> и <strong>Date32</strong> - предназначен для хранения дат. Различие заключается в поддерживаемом диапазоне дат.</p>
+</li>
+<li>
+<p><strong>DateTime</strong> и <strong>DateTime64</strong> - позволяет хранить даты и время с заданной точностью до секунд, в случае DateTime64 точность до наносекунд. </p>
+</li>
+</ul>
+<h4 id="_9">Дополнительные типы данных</h4>
+<ul>
+<li>
+<p><strong>UUID</strong> (универсальный уникальный идентификатор) — это 16-байтовое число, используемое для идентификации записей.</p>
+</li>
+<li>
+<p><strong>IPv4</strong>, <strong>IPv6</strong> — типы, предназначенные для хранения IP-адресов.</p>
+</li>
+</ul>
+<p>На самом деле в докемунтации таких типо данных на много больше, но эти я выбрал в качетве примера.</p>
+<h4 id="_10">Композитные типы данных</h4>
+<p>Композитные типы данных хранят в себе более сложные структуры, такие как массивы, кортежи и т.д.</p>
+<ul>
+<li>
+<p><strong>Array(Массив)</strong> - хранит в себе N-ое кол-во элеметов любого типа данных. Надо запомнить, что массивы не могут иметь разные типы данных. Первый элемет начинается свою индексацию начитает с 1, а не как в програмировании с нуля.</p>
+</li>
+<li>
+<p><strong>Tuple(Кортеж)</strong> - этот тип данных используется для хранения связанных между собой данных. Например информация о клиетах.</p>
+</li>
+<li>
+<p><strong>Вложенная структура</strong>(Nested Structure) - по сути это таблица в таблице.</p>
+</li>
+<li>
+<p><strong>Map</strong> - данный тип похож на словарь в питоне, хранит пары ключ-значения</p>
+</li>
+<li>
+<p><strong>Enum</strong> - позволяет определить ограниченное количество возможных значений, присваиваемых столбцу, и хранить данные компактнее, чем при использовании строк.</p>
+</li>
+</ul>
+<details>
+    <summary>Пример с типами данных, который ты можешь потыкать сам</summary>
+    <pre>
+        <code class="sql">
+drop table if exists type_data;
+CREATE TABLE type_data
+(
+--------------------------
+-- основные типы данных --
+--------------------------
+    i Int8,          -- Int8-256 (со знаком)
+    ui UInt8,        -- UInt8-256 (без знака)
+    fl Float32,      -- Float32-64 (для мат.расчетов, но не для финансов)  
+    dc Decimal32(5), -- Decimal32-256 (точность после запятой)
+    st String,       -- имеет произвольную длинну
+    fst FixedString(5), -- имеет фиксированную длинну
+--------------------------------
+-- дополнитеьлные типы данных --
+--------------------------------
+    UID UUID, -- уникальный идентификатор
+    ip4 IPv4, -- 127.0.0.1
+    ip6 IPv6, -- f2c6:e19b:da60:52ad:2cef:62fe:0279
+--------------------------------
+--    типы даты и времени     --
+--------------------------------
+    dt Date,          -- Date32 (различаются диапозном дат)
+    dtm DateTime,     -- Сохрняет время с точностью то секунд
+    dtm64 DateTime64, -- Сохрняет время с точностью то наносекунд
+------------------------------------
+--    композитные типы данных     -- - позволяют хранить более сложные структуры данных
+------------------------------------
+    ar Array(UInt8),                      -- массив данных
+    tu Tuple(Date, UInt16, Decimal32(2)), -- кортеж
+    ns Nested(                            -- Вложенные структуры
+            col1 String,
+            col2 UInt64,
+            col3 String
+            ),
+    mp Map(String, Int16), -- хранит в данные в виде ключ -> значение
+    en Enum('bad' = 2,     -- хранит данные определенного значения
+            'udovlet' = 3, 
+            'good' = 4 )      
+)
+ENGINE = Log;
+INSERT INTO type_data
+(
+    i, ui, fl, dc, st, fst,
+    UID, ip4, ip6,
+    dt, dtm, dtm64,
+    ar, tu, 
+    ns.col1, ns.col2, ns.col3,
+    mp, en
+)
+VALUES 
+(
+    -100,                                           -- i Int8
+    200,                                            -- ui UInt8
+    3.14,                                           -- fl Float32
+    123.45,                                         -- dc Decimal32(5)
+    'Пример строки',                                -- st String
+    'ABCDE',                                        -- fst FixedString(5)
+    generateUUIDv4(),                               -- UID UUID
+    '192.168.1.1',                                  -- ip4 IPv4
+    '2001:db8::1',                                  -- ip6 IPv6
+    toDate('2025-04-30'),                           -- dt Date
+    toDateTime('2025-04-30 14:30:00'),              -- dtm DateTime
+    toDateTime64('2025-04-30 14:30:00.123456', 6),  -- dtm64 DateTime64
+    [10, 20, 30],                                   -- ar Array(UInt8)
+    (toDate('2025-04-30'), 150, 99.99),             -- tu Tuple(Date, UInt16, Decimal32(2))
+    ['one'],                                        -- ns.col1 Array(String)
+    [123456],                                       -- ns.col2 Array(UInt64)
+    ['value1'],                                     -- ns.col3 Array(String)
+    {'key1': 10, 'key2': -20},                      -- mp Map(String, Int16)
+    'udovlet'                                       -- en Enum
+);
+select 
+    ar[1],      -- обращение к эл-там массива
+    ar.size0,   -- получение размера массива
+    tu,         -- чтение кортежа
+    ns.col1,    -- обращение к вложенной структуре
+    mp['key1'], -- получение данных из Map
+    en          -- Чтение Enum
+from type_data
+        </code>
+    </pre>
+</details>
+
+<h4 id="_11">Агригаторные типы данных</h4>
+<p>В ClickHouse существуют, так называемые агригаторные типы данных SimpleAggregateFunction и AggregateFunction. Сейчас говорить о них смысла нет, мы затронем данную тему, когда будет расписывать работу джижка AggregatingMergeTree в отдельной статье, для более продвинутого уровня.</p>
+<h3 id="_12">Приведение к типам данных</h3>
+<p>В ClickHouse можно приводить к типам данных разными способами, я покажу 3:</p>
+<ol>
+<li>С помощью символов <code>"::"</code>. Очень знакомое приведение для тех, кто работал с PostgreSQL.</li>
+<li>С помощью функции <code>CAST</code>. Ну в общем и целом это стандарт языка SQL</li>
+<li>С промощью функций разработанных для ClickHouse.</li>
+</ol>
+<p>Не буду тянуть кота за яйца, поэтому к делу, я уже говорил что клик не похож на другие БД, поэтому при работе с кликом забудьте сразу про первые 2 метода, как минимум потому что они не обрабатывают пустые значения <strong>NULL</strong> в колонке. А это иногда критично. </p>
+<p>Возьмите за практику всегда использовать 3й вариант, как минимум потому что он имеет свои приятные фишечки.</p>
+<p>Данные функции очень легко запомнить так как имеют единый шаблон:</p>
+<div class="codehilite"><pre><span></span><code>to&lt;тип данных&gt;&lt;разрядноть если такая имеется&gt;&lt;модификатор если ннн-ннн-нада&gt;
+</code></pre></div>
+
+<p>Модификатор позволяет вернуть какое-то значение, даже если не удалось выполнить преобразование к нужному типу.</p>
+<p>Существует 3 модификатора:</p>
+<ul>
+<li><strong>OrNull</strong> — если не удалось преобразовать в требуемый тип, возвращает NULL.</li>
+<li><strong>OrZero</strong> — если не удалось преобразовать, возвращает 0.</li>
+<li><strong>OrDefault</strong> — если не удалось преобразовать, возвращает значение по умолчанию.</li>
+</ul>
+<details>
+    <summary>Пример который ты можешь потыкать сам</summary>
+    <pre>
+        <code class="sql">
+DROP TABLE IF EXISTS cast_type_data;
+CREATE TABLE cast_type_data (
+    col String
+)
+ENGINE = Log;
+INSERT INTO cast_type_data values ('1'),('2'),('1a'),('-1');
+select CAST(NULL as Int64); -- не кастонётся
+select
+    col,
+    toInt64OrNull(col),
+    toInt8OrZero(col),
+    toInt8OrDefault(col, -100),
+    toUInt8(-1), toUInt8(-1.1), toUInt8(256) -- выход за пределы преобразует в значение по модулю диапозона
+from cast_type_data;
+        </code>
+    </pre>
+</details>
+
+<p>В примере особое внимание уделите данной строке.</p>
+<div class="codehilite"><pre><span></span><code>toUInt8(-1), toUInt8(-1.1), toUInt8(256)
+</code></pre></div>
+
+<p>Заметь, что выход за пределы диапозона <strong>не выдаст ошибку</strong> а преобразует данные по модулю диапозона.</p>
+<h3 id="_13">Создание таблиц</h3>
+<h4 id="_14">ЭТО ПРЯМ БАЗИЩА</h4>
+<p>Создание таблиц в Clickhouse делается абсолютно также как и в других БД за исключением того, что в ClickHouse необходимо указывать <strong>движок</strong> таблицы, например:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">&lt;</span><span class="err">имя</span><span class="w"> </span><span class="err">таблицы</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">Id</span><span class="w"> </span><span class="n">String</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">)</span>
+<span class="n">engine</span><span class="o">=</span><span class="n">MergeTree</span>
+<span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">Id</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span>
+<span class="n">OREDR</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="p">(</span><span class="n">Id</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span>
+</code></pre></div>
+
+<p>О движках таблиц можно узнать либо из <a href="https://clickhouse.com/docs/ru/engines/table-engines">официльной документации</a> ClickHouse, либо из следующей статьи про движки, где мы их рассматриваем на примерах и под разными углами. Здесь мы поверхностно рассмотрим синтаксис самого ходового движка MergeTree.</p>
+<p>Основная идея MergeTree состоит в том, что данные записываются по частям, небольшими кусками, а потом объединяются в фоновом режиме. Физически это выглядит следующим образом:</p>
+<p align="center">
+    <img src="./../png/ch_merge.gif" alt="merge" width="350" height="250"/>
+</p>
+
+<p>Имя файла у таких таблиц состоит из следующих частей:</p>
+<p align="center">
+    <img src="./../png/ch_filename.jpg" alt="merge" width="550" height="150"/>
+</p>
+
+<p>Обязательно при создании таблицы семейства MergeTree требует указать ключ сортировки через модификатор <code>ORDER BY</code>. По умолчанию он будет являться первичным ключом, однако можно указать другой первичный ключ через <code>PRIMARY KEY</code>. Также нужно запомнить, что если мы указываем <code>PRIMARY KEY</code>, то он должен начинаться абсолютно так же как и ORDER BY иначе будет ошибка.</p>
+<p>Чуть позже мы поговорим об еще одном параметре <code>PARTITION BY</code> который позволяет разбить таблицу на партиции.</p>
+<h4 id="_15">Атрибуты типов даннных при создании таблиц</h4>
+<p>Существует 2 ключевых атрибута: <strong>LowСardinality</strong> и <strong>Nullable</strong>.</p>
+<ul>
+<li>
+<p><strong>LowCardinality</strong> - меняет способ хранения низкокоординальных полей. Данный атрибут стоит использовать, когда в колонке содержится менее ста тысяч уникальных значений.</p>
+</li>
+<li>
+<p><strong>Nullable</strong> - разрешает вставку со значением NULL. По умолчанию в поле с таким атрибутом вместо NULL будут вставляться значения по умолчанию, для строк это пустое значение, для чисел это 0.</p>
+</li>
+</ul>
+<details>
+    <summary>Пример который ты можешь потыкать сам</summary>
+    <pre>
+        <code class="sql">
+drop table nl_lc_tabl;
+CREATE TABLE nl_lc_tabl (
+    a Nullable(UInt32),         -- разрешает вставку с пропуском значения.
+    b LowCardinality(String),   -- ускоряет работу малокоординальных данных(часто повторяющихся)
+    c UInt32
+) ENGINE = MergeTree 
+ORDER BY tuple(); -- определяет порядок сток по порядку вставки данных
+INSERT INTO nl_lc_tabl VALUES (NULL,'test' ,1);
+INSERT INTO nl_lc_tabl VALUES (1,'test2',NULL); -- null вставится как 0. Если тип данны строка вставляется как пустое значение
+INSERT INTO nl_lc_tabl VALUES (1, NULL, 3); 
+INSERT INTO nl_lc_tabl VALUES (1, 'test2', 4); 
+SET input_format_null_as_default = 0; -- параметр отвечающий за вставку пустых значений. Выполняется совместно с командой на вставку
+INSERT INTO nl_lc_tabl VALUES (1, 'sdasda', NULL)
+SELECT 
+    a, 
+    b, 
+    c 
+from nl_lc_tabl;
+SELECT 
+    toTypeName(a), 
+    toTypeName(b), 
+    toTypeName(c) 
+from nl_lc_tabl;
+        </code>
+    </pre>
+</details>
+
+<h4 id="_16">Модификаторы колонок</h4>
+<p>Давай рассмотрим пример создания таблицы:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">test_fields</span>
+<span class="p">(</span>
+<span class="w">      </span><span class="n">col_default</span><span class="w"> </span><span class="n">UInt64</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">42</span>
+<span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">col_materialized</span><span class="w"> </span><span class="n">UInt64</span><span class="w"> </span><span class="n">MATERIALIZED</span><span class="w"> </span><span class="n">col_default</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">33</span>
+<span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">col_alias</span><span class="w"> </span><span class="n">UInt64</span><span class="w"> </span><span class="k">ALIAS</span><span class="w"> </span><span class="n">col_default</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">col_codec</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">CODEC</span><span class="p">(</span><span class="n">ZSTD</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">col_comment</span><span class="w"> </span><span class="nb">Date</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Some comment&#39;</span>
+<span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">col_ttl</span><span class="w"> </span><span class="n">UInt64</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">10</span><span class="w">  </span><span class="n">TTL</span><span class="w"> </span><span class="n">col_comment</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">INTERVAL</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="k">DAY</span>
+<span class="p">)</span>
+<span class="p">...</span>
+</code></pre></div>
+
+<p>Здесь мы наблюдаем, что после типов данных стоят дополнительные конструкции - модификаторы, разберем их более подробнее.</p>
+<ul>
+<li><code>DEFAULT</code> - если не передается значение, то будет вставлено значение по умолчанию.</li>
+<li><code>MATERIALIZED</code> - Данное поле будет материализовано и физически вычисляться при добавлении данных</li>
+<li><code>ALIAS</code> - все тоже самое, только вычисляется по факту вызова в запросе</li>
+<li><code>CODEC</code> - предназначено для сжатия файлов</li>
+<li><code>COMMENT</code> - можно оставить комментарий для будущих поколений💬</li>
+<li><code>TTL</code> - time to live, время жизни значения. В случе истечения времени, значение либо удалится, либо можно преобразовать в дефолное значение. TTL нельзя примень к полям входящие в ключ сортировки! Можно использовать только в движках MergeTree.</li>
+</ul>
+<details>
+    <summary>Пример который ты можешь потыкать сам</summary>
+    <pre>
+        <code class="sql">
+drop table if exists test_fields_without_ttl;
+CREATE TABLE test_fields_without_ttl
+(
+     col_default UInt64 DEFAULT 42
+    ,col_materialized UInt64 MATERIALIZED col_default * 33 -- к данной колонке можно обратиться только по имени
+    ,col_alias UInt64 ALIAS col_default + 1                -- к данной колонке можно обратиться только по имени
+    ,col_codec String CODEC(ZSTD(10))
+    ,col_comment Date COMMENT 'Some comment'
+)
+ENGINE = Log;
+INSERT INTO test_fields_without_ttl (
+    col_default,
+    col_codec,
+    col_comment,
+)
+SELECT
+    number,
+    'какой-то текст +' || toString(number),
+    toDate(now()) + number
+FROM numbers(60);
+select * from test_fields_without_ttl;
+drop table if exists test_fields_with_ttl;
+CREATE TABLE test_fields_with_ttl
+(
+      col_default UInt64 DEFAULT 42
+    , col_materialized UInt64 MATERIALIZED col_default * 33
+    , col_alias UInt64 ALIAS col_default + 1
+    , col_codec String CODEC(ZSTD(10))
+    , col_comment Date COMMENT 'Some comment'
+    , col_ttl UInt64 DEFAULT 10  TTL col_comment + INTERVAL 5 DAY
+)
+ENGINE = MergeTree()
+ORDER BY (col_default);
+INSERT INTO test_fields_with_ttl (
+    col_default,
+    col_codec,
+    col_comment,
+    col_ttl
+)
+    SELECT
+        number,
+        'какой-то текст +' || toString(number),
+        toDate(now()) - number,
+        rand(1) % 100000000
+    FROM numbers(20);
+select 
+      col_default
+    , col_materialized 
+    , col_alias 
+    , col_codec 
+    , col_comment
+    , col_ttl
+from test_fields_with_ttl;
+SHOW FULL COLUMNS FROM test_fields_with_ttl;  -- тут можно увидеть комментарий к столбцу
+        </code>
+    </pre>
+</details>
+
+<p>Теперь я вместе с тобой выполню скипт описанный выше (хотя я знаю, что ты ленивый и просто пробегаешься по теории. Не ленись подними клик и протесть, через руки лучше дойдёт). И давай на все это деяние с тобой посмотрим.</p>
+<p>Я выполню только первую чать скипра, где создается таблица <strong>test_fields_without_ttl</strong> создам таблицу в движком <code>Log</code>. Не обращай на это внимание, просто знай, что в данном движке каждая колонка лежит в отдельном файле. </p>
+<p>И какую же картину мы с тобой увидим, когда загляем под капот.(я просто зашел на тачку в докере)</p>
+<p align="center">
+    <img src="./../png/ch_mater_col.png" alt="ch_column_oriented" width="600" height="150"/>
+</p>
+
+<p>Мы видем что создалось 4 колонки, что в целом и логично, колонка с модификаторм ALIAS должна будет вычисляться налету.</p>
+<p>Теперь выполним запрос:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">test_fields_without_ttl</span><span class="p">;</span>
+</code></pre></div>
+
+<p>А увидим мы следующую, ужасную историю:</p>
+<p align="center">
+    <img src="./../png/ch_no_column.png" alt="ch_column_oriented" width="600" height="150"/>
+</p>
+
+<div class="codehilite"><pre><span></span><code>- ГДЕ ЕЩЕ 2 КОЛОНКИ КАРЛЛЛЛЛ!!!!!
+- А их нет! Тю-Тю!
+</code></pre></div>
+
+<p>Да к сожалению ни материализованную (хоть она физически существует), ни алис мы вызвать через <code>SELECT *</code> не можем, чтобы их вызнать, необходимо в SELECT обращаться к их именам, попробуйте это сделать самостоятельно на основе примера описанного выше.</p>
+<h2 id="_17">Партицирование таблиц</h2>
+<p>Хотел бы я сказать, что вы тут узнаете что-то новое о партиция, но нет.</p>
+<p>Партиция - это набор данных объединённые единым критерием, например по месяцу. Это позволяет ускорить процес считывания данных по выбранному критерию при фильтрации.</p>
+<p align="center">
+    <img src="./../png/ch_partition.jpg" alt="ch_partition" width="600" height="150"/>
+</p>
+
+<p>В ClickHouse создавать партиции можно только на таблицах семейста MergeTree. Партиция указывается при создании таблицы с помощью ключевой конструкции <code>PARTITION BY</code>. Например:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">partition_table</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">)</span>
+<span class="n">ENGINE</span><span class="w"> </span><span class="n">MergeTree</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+<span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">toYYYYMM</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+<span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">dt</span><span class="p">);</span>
+</code></pre></div>
+
+<p>Существует несколько типов партицирования:</p>
+<ul>
+<li><strong>range</strong> - по диапозонам значений</li>
+</ul>
+<details>
+    <summary>Пример</summary>
+    <pre>
+        <code class="sql">
+CREATE TABLE table_range
+(
+    id UInt32,
+    name String,
+    created_at Date
+)
+ENGINE = MergeTree
+PARTITION BY
+    CASE
+        WHEN id < 10000 THEN 'range_1'
+        WHEN id < 20000 THEN 'range_2'
+        ELSE 'range_3'
+    END
+ORDER BY id;
+        </code>
+    </pre>
+</details>
+
+<ul>
+<li><strong>interval</strong> - по интервалу значений</li>
+</ul>
+<details>
+    <summary>Пример</summary>
+    <pre>
+        <code class="sql">
+CREATE TABLE table_interval
+(
+    id UInt32,
+    amount Float32,
+    sale_date Date
+)
+ENGINE = MergeTree
+PARTITION BY toYYYYMM(sale_date)
+ORDER BY id;
+        </code>
+    </pre>
+</details>
+
+<ul>
+<li><strong>Хеш-партицирование</strong> - на основе хеш-функции</li>
+</ul>
+<details>
+    <summary>Пример</summary>
+    <pre>
+        <code class="sql">
+CREATE TABLE table_hash
+(
+    user_id UInt64,
+    event String
+)
+ENGINE = MergeTree
+PARTITION BY cityHash64(user_id) % 10
+ORDER BY user_id;
+        </code>
+    </pre>
+</details>
+
+<ul>
+<li><strong>Cостаное партицирование</strong> - может включать несколько полей</li>
+</ul>
+<details>
+    <summary>Пример</summary>
+    <pre>
+        <code class="sql">
+CREATE TABLE table_composiste
+(
+    order_id UInt64,
+    customer_id UInt64,
+    order_date Date
+)
+ENGINE = MergeTree
+PARTITION BY (toYYYYMM(order_date), customer_id % 10)
+ORDER BY order_id;
+        </code>
+    </pre>
+</details>
+
+<p>Важно понимать что при разделении таблиц по патициям, данные сливаются в рамках своих партиций. Из-за этого случаются небольшие коолизии в данных на опредленённых движках.(Об этом мы поговорим в стать о движках)</p>
+<h2 id="_18">Индексы</h2>
+<h3 id="_19">Индекс основного назначения</h3>
+<p>С данными видами индексов мы уже познакомились. Это первичный ключ или ключ сортировки, который создается с таблицей и хранился в файле <code>primary.idx</code>.(разряженный индекс)</p>
+<p>Напоминаю, что данный ключ создается с помощью ключевых конструкций <code>ORDER BY (...)</code> или <code>PRIMARY KEY (...)</code>(набор полей должен повторять ключ сортировки и не может быть больше него). </p>
+<p>!!!ИНДЕКС ВСЕГДА ХРАНИТСЯ В ОПЕРАТИВНОЙ ПАМЯТИ!!!</p>
+<h3 id="_20">Индексы пропуска данных</h3>
+<p>С данными видами мы поработаем чуть поплотнее, но глубоко закапываться не будем. А то утоним, зуб даю😄 (Если ты конечно еще не утонул)</p>
+<p>Сущесвует несколько типов индексов пропуска данных:</p>
+<ul>
+<li><strong>minmax</strong> - индекс хранит мин-ое и макс-ое значение для указанного поля. Подходит для дат и чисел.</li>
+<li><strong>set</strong> - Индекс хранит уникальные значения столбца в рамках блока. Имеет параметр <code>max_rows</code> который задает блок, если значение равно <strong>0</strong>, то берется весь кусок данных. </li>
+<li><strong>bloom_filter</strong> - реализован на основе фильтра Блума для поиска по точному совподению. </li>
+<li><strong>ngrambf_v1</strong> - реализован на основе фильтра Блума для полнотекствого поиска по n-граммам</li>
+<li><strong>tokenbf_v1</strong> - реализован на основе фильтра Блума для полнотекствого поиска по фразам</li>
+</ul>
+<details>
+    <summary>Синтаксис создания</summary>
+    <pre>
+        <code class="sql">
+ALTER TABLE <имя таблицы>
+    ADD INDEX <имя индекса> <имя колонки> TYPE <тип индекса> GRANULARITY <число>
+        </code>
+    </pre>
+</details>
+
+<p>Далее мы разберем только первые 2 индекса. Блум фильтрация я оставлю исключительно для самостоятельно изучения, чтобы было интереснее😄</p>
+<h4 id="minmax">Индекс minmax</h4>
+<p>Индекс <strong>minmax</strong> требует кореляции с первичным ключом, т.е. по мере возрастания первичного ключа должна быть кореляция с колонкой, на которую мы хотим повесить индекс.</p>
+<p>Данный индекс работает достаточно просто, берутся определенные гарнулы, заданные с помощью параметра <code>GRANULARITY</code> и в данном куске ищется минимальное и маскимальное значение.</p>
+<p align="center">
+    <img src="./../png/ch_minmax.jpg" alt="ch_minmax" width="600" height="400"/>
+</p>
+
+<h4 id="set">Индекс set</h4>
+<p>Здесть тоже все просто. </p>
+<p>Вот вам небольшая ассациация, помните Python, что будет если список [1,2,2,3,3,3] преобразовать в множество set(), правильно остануться только уникальные значения (1,2,3). </p>
+<p>И здесь все тоже самое, берутся гранулы и удаляются дубликаты:</p>
+<p align="center">
+    <img src="./../png/ch_set_idx.jpg" alt="ch_set_idx" width="600" height="400"/>
+</p>
+
+<h2 id="_21">Итог</h2>
+<p>Для начала этого хватит, впереди еще куча информации Движки, Оптимизация запросов(Матвьюхи, проекции,словари), распределённый Клик. Короче, то ли еще будет!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      MIT
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../_frontend/js/toc-home.js"></script>
+      
+        <script src="../_frontend/js/scroll-to-top.js"></script>
+      
+    
+  </body>
+</html>

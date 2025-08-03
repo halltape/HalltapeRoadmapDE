@@ -1,0 +1,986 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://roadmappers.ru/SPARK/ARCHITECTURE/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Index - ROADMAPPERS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../_frontend/css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ROADMAPPERS" class="md-header__button md-logo" aria-label="ROADMAPPERS" data-md-component="logo">
+      
+  <img src="../../_frontend/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ROADMAPPERS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Index
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/halltape/HalltapeRoadmapDE" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Roadmappers.ru
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ROADMAPPERS" class="md-nav__button md-logo" aria-label="ROADMAPPERS" data-md-component="logo">
+      
+  <img src="../../_frontend/images/logo.svg" alt="logo">
+
+    </a>
+    ROADMAPPERS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/halltape/HalltapeRoadmapDE" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Roadmappers.ru
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../page/docs/README.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    В начало
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Куратор раздела
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Немного об этой главе
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apache-spark-rdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Основы Apache Spark и RDD
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Основы Apache Spark и RDD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Введение
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache-spark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ключевые идеи Apache Spark
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rdd-resilient-distributed-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      RDD (Resilient Distributed Dataset)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RDD (Resilient Distributed Dataset)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Основные свойства RDD:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Архитектура и модель вычислений Spark
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Архитектура и модель вычислений Spark">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Компоненты архитектуры
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spark_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Как работает модель вычислений Spark
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apache-spark_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Экосистема Apache Spark
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Экосистема Apache Spark">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Архитектура уровней
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Архитектура уровней">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-spark-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Spark Core
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-dataframe-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. DataFrame API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-spark" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Библиотеки Spark
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-data-source-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Data Source API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Поддерживаемые языки
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataframe-api-catalyst-optimizer-apache-spark" class="md-nav__link">
+    <span class="md-ellipsis">
+      DataFrame API и Catalyst Optimizer в Apache Spark
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DataFrame API и Catalyst Optimizer в Apache Spark">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dataframe-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Что такое DataFrame API?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#catalyst-optimizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Как работает Catalyst Optimizer?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Как работает Catalyst Optimizer?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#catalyst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Этапы обработки запроса в Catalyst:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql-dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQL или DataFrame запрос
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unresolved-logical-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unresolved Logical Plan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logical-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Physical Planning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cost Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Generation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#catalyst-dataframe-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Преимущества Catalyst и DataFrame API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Заключение
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=103580753', 'ym');
+
+    ym(103580753, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/103580753" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<h2 id="_1">Куратор раздела</h2>
+<p><img align="left" width="200" src="../../png/amp.jpg" /></p>
+<p><strong>Подвальный Артем</strong>, 
+                                                                                                                      <em>Data Engineer/Data Scientist</em></p>
+<p><a href="https://t.me/dataengineerlab">Канал Data Engineer Lab</a></p>
+<p>Хочешь перейти в дата-инженерию, но не знаешь с чего начать? Пиши -  составим резюме, продумаем твое развитие <a href="https://t.me/ampodvalniy">https://t.me/ampodvalniy</a></p>
+<p>Хочешь улучшить текущий раздел, внести недостающее или поправить формулировку? Предлагай PR и тегай <a href="https://github.com/Artemlin6231">@Artemlin6231</a></p>
+<h2 id="_2">Немного об этой главе</h2>
+<p>Apache spark - это распределенный фреймворк обработки данных, ставший де-факто стандартом в обработке больших данных. Требуется практически повсевместо в работе дата-инженера.</p>
+<p>Приятного изучения)</p>
+<h1 id="apache-spark-rdd">Основы Apache Spark и RDD</h1>
+<h2 id="_3">Введение</h2>
+<p><strong>Apache Spark</strong> — это масштабируемая платформа для распределённой обработки данных, которая позволяет выполнять вычисления в памяти, обеспечивая высокую производительность и гибкость. Она подходит как для пакетной (batch), так и для потоковой (streaming) обработки данных.</p>
+<hr />
+<h2 id="apache-spark">Ключевые идеи Apache Spark</h2>
+<ul>
+<li>
+<p><strong>Эффективная DAG-модель вычислений</strong><br />
+  Spark строит направленный ациклический граф (DAG), отображающий зависимости между этапами обработки. Это обеспечивает более гибкое и оптимизированное планирование по сравнению с классическим MapReduce.</p>
+</li>
+<li>
+<p><strong>Ленивая модель исполнения</strong><br />
+  Преобразования не выполняются сразу. Spark откладывает их выполнение до вызова операции-действия, что позволяет эффективно планировать и объединять задачи.</p>
+</li>
+<li>
+<p><strong>Гибкое управление памятью</strong>  </p>
+</li>
+<li>Предпочтение хранения данных в памяти</li>
+<li>Сброс данных на диск при нехватке ресурсов</li>
+<li>Возможность комбинированного хранения</li>
+<li>
+<p>Поддержка различных форматов сериализации</p>
+</li>
+<li>
+<p><strong>Широкая поддержка языков</strong><br />
+  Поддерживаются API для <strong>Scala</strong>, <strong>Java</strong>, <strong>Python</strong> и <strong>R</strong></p>
+</li>
+<li>
+<p><strong>Единый API для batch и streaming обработки</strong></p>
+</li>
+</ul>
+<hr />
+<h2 id="rdd-resilient-distributed-dataset">RDD (Resilient Distributed Dataset)</h2>
+<p><strong>RDD</strong> — основная абстракция данных в Spark, представляющая собой неизменяемую, распределённую коллекцию объектов.</p>
+<h3 id="rdd">Основные свойства RDD:</h3>
+<ul>
+<li>
+<p><strong>Неизменяемость и отказоустойчивость (fault tolerance)</strong><br />
+  Все операции над RDD являются детерминированными и безопасными к сбоям.</p>
+</li>
+<li>
+<p><strong>Два типа операций:</strong></p>
+</li>
+<li><strong>Transformations</strong> — возвращают новый RDD, операции ленивые<br />
+    Примеры: <code>map</code>, <code>filter</code>, <code>join</code></li>
+<li>
+<p><strong>Actions</strong> — инициируют выполнение вычислений<br />
+    Примеры: <code>count</code>, <code>collect</code>, <code>save</code></p>
+</li>
+<li>
+<p><strong>Партиционирование</strong><br />
+  Данные разбиты на независимые части (partition), которые обрабатываются параллельно.</p>
+</li>
+<li>
+<p><strong>Кэширование данных</strong><br />
+  Поддерживаются различные уровни хранения:</p>
+</li>
+<li><code>memory</code></li>
+<li><code>disk</code></li>
+<li><code>memory &amp; disk</code></li>
+<li><code>external*</code> (при внешней настройке)</li>
+</ul>
+<h2 id="spark">Архитектура и модель вычислений Spark</h2>
+<p align="center">
+    <img src="../../png/spark_arch.png" alt="hadoop"/>
+</p>
+
+<h3 id="_4">Компоненты архитектуры</h3>
+<ul>
+<li><strong>Driver Program</strong><br />
+  Главный управляющий процесс, с которого начинается выполнение приложения Spark. Он:</li>
+<li>инициализирует <code>SparkContext</code>;</li>
+<li>строит DAG вычислений;</li>
+<li>управляет разбиением на задачи;</li>
+<li>
+<p>распределяет задачи по <code>executors</code>.</p>
+</li>
+<li>
+<p><strong>SparkContext</strong><br />
+  Ядро взаимодействия приложения с кластером. Он:</p>
+</li>
+<li>подключается к <code>Cluster Manager</code>;</li>
+<li>планирует вычисления;</li>
+<li>
+<p>отслеживает выполнение задач и собирает результаты.</p>
+</li>
+<li>
+<p><strong>Cluster Manager</strong><br />
+  Менеджер ресурсов, который:</p>
+</li>
+<li>отслеживает доступные ресурсы;</li>
+<li>выделяет <code>worker</code>-узлы;</li>
+<li>
+<p>запускает <code>executors</code>.<br />
+  Поддерживаемые варианты: <strong>Standalone</strong>, <strong>YARN</strong>, <strong>Kubernetes</strong>, <strong>Mesos</strong>.</p>
+</li>
+<li>
+<p><strong>Worker Node</strong><br />
+  Узел, на котором исполняются задачи Spark. Каждый узел может запускать один или несколько <code>executors</code>.</p>
+</li>
+<li>
+<p><strong>Executor</strong><br />
+  Процесс, который:</p>
+</li>
+<li>исполняет задачи;</li>
+<li>кэширует промежуточные данные;</li>
+<li>
+<p>взаимодействует с <code>driver</code> для отправки результатов.</p>
+</li>
+<li>
+<p><strong>Task</strong><br />
+  Минимальная единица вычислений в Spark. Каждое преобразование над данными разбивается на множество <code>tasks</code>, которые распределяются между <code>executors</code>.</p>
+</li>
+<li>
+<p><strong>Cache</strong><br />
+  Используется для хранения данных в памяти или на диске с целью ускорения повторных вычислений.</p>
+</li>
+</ul>
+<hr />
+<h3 id="spark_1">Как работает модель вычислений Spark</h3>
+<ol>
+<li>Пользователь пишет Spark-программу с использованием <code>RDD</code>, <code>DataFrame</code> или <code>Dataset</code>.</li>
+<li>Программа запускается, и <code>Driver</code> создаёт <code>SparkContext</code>.</li>
+<li>Spark строит <strong>DAG (направленный ациклический граф)</strong> всех ленивых операций (<code>transformations</code>).</li>
+<li>DAG разбивается на <strong>этапы (stages)</strong>, каждый из которых состоит из задач (<code>tasks</code>).</li>
+<li>Через <code>Cluster Manager</code>, Spark запускает <code>executor</code>'ы на <code>worker</code>-узлах.</li>
+<li><code>Tasks</code> исполняются параллельно на <code>executors</code>.</li>
+<li>Промежуточные данные могут кэшироваться.</li>
+<li>После завершения все результаты собираются и возвращаются <code>Driver</code>-у.</li>
+</ol>
+<h1 id="apache-spark_1">Экосистема Apache Spark</h1>
+<p>Apache Spark — представляет собой целую экосистему модулей, предоставляющую мощные средства для работы с данными в различных форматах и задачах: от SQL-запросов и машинного обучения до потоковой обработки и анализа графов.</p>
+<p align="center">
+    <img src="../../png/spark_eco.png" alt="hadoop"/>
+</p>
+
+<hr />
+<h2 id="_5">Архитектура уровней</h2>
+<p>Экосистема Spark построена на <strong>многоуровневой архитектуре</strong>, где каждый уровень отвечает за свою часть функциональности.</p>
+<h3 id="1-spark-core">1. Spark Core</h3>
+<p>Базовый компонент Spark, реализующий:</p>
+<ul>
+<li>Распределённое планирование и выполнение задач</li>
+<li>Управление памятью</li>
+<li>Отказоустойчивость</li>
+<li>Модель RDD (Resilient Distributed Dataset)</li>
+</ul>
+<p>Все остальные компоненты построены поверх <code>Spark Core</code>.</p>
+<hr />
+<h3 id="2-dataframe-api">2. DataFrame API</h3>
+<p>Предоставляет более высокоуровневую абстракцию над RDD — <strong>DataFrame</strong> (табличное представление данных). Обеспечивает:</p>
+<ul>
+<li>SQL-подобный синтаксис</li>
+<li>Оптимизацию исполнения через <strong>Catalyst Optimizer</strong></li>
+<li>Поддержку различных источников данных через <strong>Data Source API</strong></li>
+</ul>
+<hr />
+<h3 id="3-spark">3. Библиотеки Spark</h3>
+<p>На верхнем уровне располагаются модули для специализированных задач:</p>
+<table>
+<thead>
+<tr>
+<th>Модуль</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Spark SQL</strong></td>
+<td>Выполнение SQL-запросов, работа с таблицами, интеграция с Hive</td>
+</tr>
+<tr>
+<td><strong>Spark Streaming</strong></td>
+<td>Обработка потоковых данных в реальном времени</td>
+</tr>
+<tr>
+<td><strong>MLlib</strong></td>
+<td>Машинное обучение: классификация, регрессия, кластеризация и др.</td>
+</tr>
+<tr>
+<td><strong>GraphX</strong></td>
+<td>Графовые вычисления и анализ социальных сетей</td>
+</tr>
+<tr>
+<td><strong>Packages</strong></td>
+<td>Расширения и сторонние библиотеки, добавляемые через Spark Packages</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="4-data-source-api">4. Data Source API</h3>
+<p>Позволяет подключаться к множеству внешних источников данных:</p>
+<ul>
+<li><strong>Hadoop / HDFS</strong></li>
+<li><strong>Apache Hive</strong></li>
+<li><strong>Apache HBase</strong></li>
+<li><strong>PostgreSQL</strong>, <strong>MySQL</strong></li>
+<li><strong>CSV</strong>, <strong>JSON</strong>, <strong>Parquet</strong></li>
+<li><strong>Elasticsearch</strong> и другие</li>
+</ul>
+<p>Spark автоматически оптимизирует чтение, запись и обработку данных из этих источников.</p>
+<hr />
+<h2 id="_6">Поддерживаемые языки</h2>
+<p>Spark поддерживает API на нескольких языках:</p>
+<ul>
+<li><strong>Scala</strong> (родной язык для Spark)</li>
+<li><strong>Java</strong></li>
+<li><strong>Python (PySpark)</strong></li>
+<li><strong>R (SparkR)</strong></li>
+</ul>
+<h1 id="dataframe-api-catalyst-optimizer-apache-spark">DataFrame API и Catalyst Optimizer в Apache Spark</h1>
+<hr />
+<h2 id="dataframe-api">Что такое DataFrame API?</h2>
+<p><strong>DataFrame</strong> — это одна из высокоуровневых абстракций в Apache Spark, представляющая собой распределённую коллекцию данных в виде таблицы (аналогично таблице в реляционной базе или датафрейму в Pandas/R).</p>
+<p>DataFrame API предоставляет удобные и декларативные средства работы с данными:</p>
+<ul>
+<li>SQL-подобный синтаксис (<code>select</code>, <code>filter</code>, <code>groupBy</code> и т.д.)</li>
+<li>Поддержка различных источников: JSON, CSV, Parquet, Hive, JDBC, и т.д.</li>
+<li>Поддержка нескольких языков: Scala, Python (PySpark), Java, R</li>
+<li>Интеграция с <strong>Catalyst Optimizer</strong> для автоматической оптимизации запросов</li>
+</ul>
+<hr />
+<h2 id="catalyst-optimizer">Как работает Catalyst Optimizer?</h2>
+<p><strong>Catalyst</strong> — это движок оптимизации запросов в Spark SQL и DataFrame API. Он обеспечивает автоматическую трансформацию запросов в эффективные планы выполнения с учётом структуры данных и статистики.</p>
+<p align="center">
+    <img src="../../png/spark_catalyst.jpg" alt="hadoop"/>
+</p>
+<hr />
+<h3 id="catalyst">Этапы обработки запроса в Catalyst:</h3>
+<ol>
+<li>
+<h3 id="sql-dataframe">SQL или DataFrame запрос</h3>
+<p>Пользователь пишет SQL-запрос или использует DataFrame API.</p>
+</li>
+<li>
+<h3 id="unresolved-logical-plan">Unresolved Logical Plan</h3>
+<p>Spark строит первоначальный <strong>логический план</strong>, который ещё не содержит информации о типах данных и таблицах.</p>
+</li>
+<li>
+<h3 id="analysis">Analysis</h3>
+<p>С помощью <strong>каталога</strong> (catalog) Spark разрешает имена таблиц, столбцов и типов данных. Получается <strong>разрешённый логический план</strong> (<code>Logical Plan</code>).</p>
+</li>
+<li>
+<h3 id="logical-optimization">Logical Optimization</h3>
+<p>На этом этапе Spark применяет <strong>правила оптимизации</strong>, такие как:</p>
+</li>
+<li>удаление ненужных столбцов (projection pruning),</li>
+<li>фильтрация как можно раньше (predicate pushdown),</li>
+<li>переупорядочивание <code>joins</code>.</li>
+</ol>
+<p>Результат — <strong>оптимизированный логический план</strong> (<code>Optimized Logical Plan</code>).</p>
+<ol>
+<li>
+<h3 id="physical-planning">Physical Planning</h3>
+<p>Spark генерирует несколько вариантов <strong>физического плана</strong> — конкретных стратегий выполнения операций.</p>
+</li>
+<li>
+<h3 id="cost-model">Cost Model</h3>
+<p>Для выбора наилучшего плана Spark применяет <strong>модель стоимости</strong>, оценивая ресурсоёмкость каждого варианта.</p>
+</li>
+<li>
+<h3 id="code-generation">Code Generation</h3>
+<p>Выбранный физический план используется для <strong>генерации Java/Scala кода</strong>, который преобразуется в <strong>RDD-процессы</strong>.</p>
+</li>
+</ol>
+<hr />
+<h2 id="catalyst-dataframe-api">Преимущества Catalyst и DataFrame API</h2>
+<table>
+<thead>
+<tr>
+<th>Преимущество</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Высокая производительность</td>
+<td>Благодаря автоматической оптимизации</td>
+</tr>
+<tr>
+<td>Упрощение разработки</td>
+<td>SQL-подобный синтаксис, декларативный подход</td>
+</tr>
+<tr>
+<td>Поддержка многих форматов</td>
+<td>CSV, Parquet, JSON, Hive, JDBC и др.</td>
+</tr>
+<tr>
+<td>Расширяемость</td>
+<td>Поддержка пользовательских функций (UDF) и типов данных</td>
+</tr>
+<tr>
+<td>Совместимость</td>
+<td>Интеграция с MLlib, GraphX, Streaming и др.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_7">Заключение</h2>
+<p>DataFrame API и движок Catalyst являются основой гибкости и производительности Spark. Они позволяют пользователям сосредоточиться на логике анализа данных, а оптимизация и исполнение остаются на стороне платформы.</p>
+<blockquote>
+<p><em>Spark SQL и DataFrame API дают декларативный уровень, а Catalyst автоматически превращает его в оптимальный код.</em></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      MIT
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../_frontend/js/toc-home.js"></script>
+      
+        <script src="../../_frontend/js/scroll-to-top.js"></script>
+      
+    
+  </body>
+</html>

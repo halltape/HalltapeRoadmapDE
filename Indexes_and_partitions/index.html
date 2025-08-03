@@ -1,0 +1,1013 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://roadmappers.ru/Indexes_and_partitions/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Index - ROADMAPPERS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../_frontend/css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ROADMAPPERS" class="md-header__button md-logo" aria-label="ROADMAPPERS" data-md-component="logo">
+      
+  <img src="../_frontend/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ROADMAPPERS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Index
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/halltape/HalltapeRoadmapDE" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Roadmappers.ru
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ROADMAPPERS" class="md-nav__button md-logo" aria-label="ROADMAPPERS" data-md-component="logo">
+      
+  <img src="../_frontend/images/logo.svg" alt="logo">
+
+    </a>
+    ROADMAPPERS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/halltape/HalltapeRoadmapDE" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Roadmappers.ru
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../page/docs/README.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    В начало
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Куратор раздела
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Индексы и партиции
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Индексы и партиции">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Объяснение на пальцах:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Индексы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Индексы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Классификация индексов
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Классификация индексов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Кластеризованные и некластеризованные индексы
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Уникальные и неуникальные индексы
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Простые и составные индексы
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Классификация по структуре
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Партиции
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Партиции">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#range-partitioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Разделение диапазона (Range Partitioning)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-partitioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Разделение списка (List Partitioning)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash-partitioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Разделение хэша (Hash Partitioning)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=103580753', 'ym');
+
+    ym(103580753, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/103580753" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<h2 id="_1">Куратор раздела</h2>
+<p><img align="left" width="200" src="../png/pengwin.jpg" /></p>
+<p><strong>it пингвин</strong>, 
+                                                                                                                      Data Engineer</p>
+<p>Мне 25 лет, и я - главный разработчик озера данных в одном из топовых банков России. За плечами - опыт работы в крупных IT-компаниях (телеком и банки), а в трудовой книжке есть записи: инженер КХД, ETL-разработчик, Data Engineer</p>
+<p>Также я веду <a href="https://t.me/data_penguin">Telegram канал</a>. </p>
+<p>Этот канал - это место, где я делюсь тем, что было бы полезно и интересно мне самому. Здесь много интересной  информации: от базовых основ для новичков до продвинутых лайфхаков и хардкорных инсайдов. </p>
+<p>Также на канале делаю обзоры и разборы своих собеседований, объясняю всякие теоритические штуки и на канале решаем много задачек разного уровня. В планах еще много всего интересного.</p>
+<p>Хочешь улучшить текущий раздел, внести недостающее или поправить формулировку? Предлагай PR и тегай <a href="https://github.com/it-pengwin">@it-pengwin</a></p>
+<h1 id="_2">Индексы и партиции</h1>
+<h2 id="_3">Объяснение на пальцах:</h2>
+<p><strong>1. Таблица без индексов и партиций (просто мешок)</strong></p>
+<p>Давайте представим, что у нас есть мешок с кубиками, на которых номерки:</p>
+<p>Как выглядит:</p>
+<p align="center">
+    <img src="../png/indexes_and_partitions/ind_part_bag.png" alt="indexes_and_partitions" />
+</p>
+
+<p>Есть один большой мешок, куда все номерки (данные) бросаются в случайном порядке.</p>
+<p>Пример:</p>
+<div class="codehilite"><pre><span></span><code>CREATE TABLE bags (
+
+  number_cube INT  -- цифра на кубике
+
+);
+</code></pre></div>
+
+<p><strong>Как работает:</strong></p>
+<p>Чтобы найти нужный номерок (number_cube=5) придётся перебрать весь мешок вручную - сканируем всю таблицу (Full Scan).</p>
+<p>Плюс: Быстрая запись (просто кидаем в мешок).</p>
+<p>Минус: Медленный поиск.</p>
+<p><strong>2. Таблица с партициями (Несколько мешков с разделением)</strong></p>
+<p><strong>Как работает:</strong></p>
+<p>Теперь у нас есть несколько мешков, разделённых по правилу. Например, можно брать на каждый диапазон номеров новый мешок - 1-10 мешок №1, 11-20 мешок №2, 21-30 мешок №3 и тд.
+Когда нам нужно найти кубик с номеров 15, мы сразу идем в мешок №2 и просматриваем только 10 кубиков (11-20).</p>
+<p>Или можно представить, что у кубиков еще есть цвета (нейронка не смогла числа  нарисовать, ну ничего страшного):</p>
+<p align="center">
+    <img src="../png/indexes_and_partitions/ind_part_three_bags.png" alt="indexes_and_partitions" />
+</p>
+
+<p>Пример:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">partitioned_bags</span><span class="w"> </span><span class="p">(</span>
+
+<span class="w">    </span><span class="n">number_cube</span><span class="w"> </span><span class="n">INT</span><span class="p">,</span>
+
+<span class="w">    </span><span class="n">color</span><span class="w"> </span><span class="n">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w">  </span><span class="c1">-- Цвет номерка (ключ партиции)</span>
+
+<span class="p">)</span><span class="w"> </span>
+<span class="k">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">LIST</span><span class="w"> </span><span class="p">(</span><span class="n">color</span><span class="p">);</span>
+
+<span class="c1">-- Создаём отдельные мешки для каждого цвета</span>
+
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">bags_red</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">partitioned_bags</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">);</span>
+
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">bags_blue</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">partitioned_bags</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">);</span>
+</code></pre></div>
+
+<p><strong>Как работает:</strong></p>
+<p>Если ищем красный номерок (color='red'), СУБД полезет только в мешок bags_red.</p>
+<p>Плюс: Ускорение поиска по ключу партиции.</p>
+<p>Минус: Если ищем без указания цвета — проверяем все мешки. Чуть сложнее сопровождать, чем таблицу без партиций.</p>
+<p>*Если мало данных (&lt;1млн) нет смысла делить таблицу по партициям. Прироста производительности не будет.</p>
+<p><strong>3. Таблица с индексом (Мешок + каталог номерков)</strong></p>
+<p>Если все 1000 лежат в перемешку (мешок), нам нужно просмотреть все кубики, пока не найдем нужный. Можем найти его первым, а можем 1000-ым. А если мы будем знать, что среди кубиком <strong>могут быть повторения</strong> номерков, тогда мы будем <strong>обязаны</strong> всегда смотреть <strong>все 1000</strong> кубиков. </p>
+<p>Индекс может ускорить поиск номерков.</p>
+<p>Можно представить, что у нас вообще нет мешка и все кубики лежат <strong>отсортированные</strong> и тогда мы найдем нужный номерок быстрее. </p>
+<p>Допустим, на полу лежат 1000 кубиков отсортированные от 1 до 1000. </p>
+<p>Нужно достать номер 410. Нам не нужно смотреть каждый номерок, мы будем просмотреть сразу большим срезами. Например, находим кубик с номером 500. 410&lt;500, значит правую половину (501-1000) мы сразу отсекаем, она нам не подходит. Далее находим 250. 250&lt;410 - отсекаем левую часть (1-250) и тд. Мы найдем наш номерок за несколько шагов. </p>
+<p>Такой индекс будет называться <strong>кластерным</strong>, когда не создается дополнительная сущность, а сразу вся таблица сортируется.</p>
+<p>Минус: мы будем дольше записывать данные. Например, number_cube=5 мы не можем записать в конец, как было раньше (просто кинули в мешок), а должны найти подходящее место в списке и все оставшиеся кубики подвинуть (перестроить индекс). </p>
+<p>Другой вариант <strong>некластерный</strong> индекс.</p>
+<p>Как выглядит:</p>
+<p>У нас есть как раньше один мешок, но есть еще отдельный список (индекс), где записано:
+«Номерок 5 лежит на дне, номерок 12 — у горловины».</p>
+<p>Пример:</p>
+<div class="codehilite"><pre><span></span><code>CREATE TABLE indexed_bags (
+    number_cube INT
+);
+
+-- Создаём &quot;каталог&quot; для быстрого поиска номерков
+
+CREATE INDEX idx_number ON indexed_bags (number_cube);
+</code></pre></div>
+
+<p><strong>Как работает:</strong></p>
+<p>При поиске number_cube=5 СУБД сначала смотрит в индекс (каталог). Так как в каталоге все <strong>отсортировано</strong>, СУБД быстро находит нужный номер, где в соседней ячейке будут написаны координаты положения этого кубика в мешке (в таблице это ctid или rowid). Далее СУБД знает координаты местоположения кубика в мешке (всей строки, например с 30 полями) и быстро находит его, не просматривая все кубики из мешка. </p>
+<p>Плюс: Быстрый поиск по number_cube.</p>
+<p>Минус: Запись медленнее (нужно обновлять и мешок, и каталог). Необходимо еще место на диске для католога. Неоптимизированный индекс может весить больше, чем сама таблица.</p>
+<p><strong>Когда что использовать?</strong></p>
+<ul>
+<li>
+<p>Просто мешок — если данные пишутся часто, а читаются редко (логи).</p>
+</li>
+<li>
+<p>Несколько мешков (партиции) — если данные можно чётко разделить (например, по дате, по региону, по бизнес сегменту).</p>
+</li>
+<li>
+<p>Отсортированный список/Мешок + каталог (индекс) — если нужен быстрый поиск по ключевому полю (id, email). Если это поле используется в условии соединения таблиц, или в where, group by, order by и тд. Когда данные в таблицах редко меняются (каждый INSERT/UPDATE/DELETE требует обновления индекса). Если выбирается небольшой процент данных, до 5%. Объем данных свыше 5% эффективнее "фулл сканить". </p>
+</li>
+</ul>
+<p>С детскими аналогиями закончим :)</p>
+<p>Теперь попробую рассказть поподробнее про партиции и индексы</p>
+<h1 id="_4"><strong>Индексы</strong></h1>
+<p>Это очень популярная тема на собеседованиях. Спрашивают что такое индексы, когда их нужно испольльзовать, когда не нельзя? Какие есть виды индексов?</p>
+<p><strong>Индексы в базах данных</strong> — это специальные структуры, ускоряющие поиск и сортировку данных. Они работают подобно оглавлению в книге, позволяя СУБД быстро находить строки без полного сканирования таблицы.</p>
+<p>Если грамотно использовать индекс скорость запроса может увеличиться в тысячи раз. И также наоборот, неправильное использование индекса может положить на лопатки весь запрос и сожрать все ресурсы.</p>
+<p><strong>Рекомендуемые случаи для индексов</strong></p>
+<ul>
+<li>
+<p>Первичные и внешние ключи - автоматически индексируются в большинстве СУБД</p>
+</li>
+<li>
+<p>Часто используемые в WHERE - столбцы, по которым часто фильтруют данные</p>
+</li>
+<li>
+<p>Столбцы в JOIN условиях - для ускорения соединений таблиц</p>
+</li>
+<li>
+<p>Столбцы в ORDER BY - особенно если часто требуется сортировка</p>
+</li>
+<li>
+<p>Столбцы в GROUP BY - для ускорения агрегации</p>
+</li>
+<li>
+<p>Уникальные значения - столбцы с высокой селективностью (много уникальных значений)</p>
+</li>
+</ul>
+<p><strong>Когда индексы могут быть неэффективны</strong>
+- Часто изменяемые таблицы - каждый INSERT/UPDATE/DELETE требует обновления индекса</p>
+<ul>
+<li>
+<p>Столбцы с малым количеством уникальных значений (низкая селективность)</p>
+</li>
+<li>
+<p>Очень большие таблицы с редкими запросами - затраты на поддержку индекса могут превысить выгоду</p>
+</li>
+<li>Выбор большого количество данных из таблицы(&gt;5%). Быстрее будет прочитать фулл сканом.</li>
+</ul>
+<h2 id="_5">Классификация индексов</h2>
+<p>Индексы можно делить по группам по многим разным признакам.</p>
+<h3 id="_6">Кластеризованные и некластеризованные индексы</h3>
+<p>*они же кластерный/некластерный индексы.</p>
+<p><strong>Что такое кластеризованный индекс?</strong></p>
+<p><strong>Кластеризованный</strong> индекс – это тип индекса, который сортирует строки данных в таблице по их ключевым значениям. В базе данных существует только один кластеризованный индекс на таблицу.
+Кластерный индекс определяет порядок, в котором данные хранятся в таблице и могут быть отсортированы только одним способом. Таким образом, для каждой таблицы может быть только один кластеризованный индекс. В СУБД, как правило, первичный ключ позволяет создавать кластерный индекс на основе этого конкретного столбца.</p>
+<p><strong>Что такое некластеризованный индекс?</strong></p>
+<p><strong>Некластеризованный</strong> индекс хранит данные в одном месте и индексы в другом месте. Индекс содержит указатели на местоположение этих данных. Одна таблица может иметь много некластеризованных индексов, поскольку индекс в некластеризованном индексе хранится в разных местах.
+Например, книга может иметь более одного индекса, один в начале, который отображает содержание книги, а второй индекс показывает индекс терминов в алфавитном порядке.
+Некластеризованный индекс определяется в неупорядоченном поле таблицы. Этот тип метода индексации помогает повысить производительность запросов, использующих ключи, которые не назначены в качестве первичного ключа. Некластеризованный индекс позволяет добавить уникальный ключ для таблицы.</p>
+<p align="center">
+    <img src="../png/indexes_and_partitions/ind_clust_vs_non_clust.png" alt="indexes_and_partitions" />
+</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Кластеризованный индекс</th>
+<th>Некластеризованный индекс</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Использовать для</td>
+<td>Вы можете сортировать записи и физически хранить кластерный индекс в памяти в соответствии с порядком</td>
+<td>Некластеризованный индекс помогает вам создать логический порядок для строк данных и использует указатели для физических файлов данных</td>
+</tr>
+<tr>
+<td>Метод хранения</td>
+<td>Позволяет хранить страницы данных в конечных узлах индекса.</td>
+<td>Этот метод индексации никогда не сохраняет страницы данных в конечных узлах индекса.</td>
+</tr>
+<tr>
+<td>Размер</td>
+<td>Размер кластерного индекса довольно велик.</td>
+<td>Размер некластеризованного индекса невелик по сравнению с кластеризованным индексом.</td>
+</tr>
+<tr>
+<td>Доступ к данным</td>
+<td>Быстрее</td>
+<td>Медленнее по сравнению с кластерным индексом</td>
+</tr>
+<tr>
+<td>Дополнительное дисковое пространство</td>
+<td>Не требуется</td>
+<td>Требуется хранить индекс отдельно</td>
+</tr>
+<tr>
+<td>Тип ключа</td>
+<td>По умолчанию первичные ключи таблицы являются кластерным индексом.</td>
+<td>Его можно использовать с уникальным ограничением на таблицу, которое действует как составной ключ.</td>
+</tr>
+<tr>
+<td>Главная особенность</td>
+<td>Кластерный индекс может повысить производительность поиска данных.</td>
+<td>Он должен быть создан на столбцах, которые используются в соединениях.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">Уникальные и неуникальные индексы</h3>
+<p><strong>Уникальный</strong> (Unique index) — все значения встречаются только один раз. Если в столбец с уникальным индексом попробовать добавить неуникальное значение, то возникнет ошибка.</p>
+<p><strong>Неуникальный</strong> (Non-unique index) — индекс, при котором значения могут повторяться.</p>
+<h3 id="_8">Простые и составные  индексы</h3>
+<p><strong>Простой</strong> (Simple index) — индекс, состоящий из одного поля.</p>
+<p><strong>Составной</strong> (Composite Index) — индекс, который строится по нескольким столбцам таблицы. В данном типе индекса расположение полей является важным. Здесь поля сортируются как и в order by сначала по 1,потом по 2 и тд. Если в 1 поле одинаковые значения, сортируем по следующим полям.</p>
+<h3 id="_9">Классификация по структуре</h3>
+<p><strong>1. B-деревья (B-Tree и B+Tree)</strong></p>
+<p>Самое главное, что нужно запомнить - B-Tree индекс используется в 90% случаях.</p>
+<p><strong>B-Tree</strong> – это самобалансирующаяся древовидная структура данных, которая поддерживает отсортированные данные и позволяет выполнять поиск, последовательный доступ, вставки и удаления за логарифмическое время . B-дерево обобщает двоичное дерево поиска , допуская узлы с более чем двумя потомками. В отличие от других самобалансирующихся двоичных деревьев поиска , B-дерево хорошо подходит для систем хранения, которые считывают и записывают относительно большие блоки данных , таких как базы данных и файловые системы .</p>
+<p>Не путать с бинарным деревом. В бинарном дереве делим на 2 и оно получается очень "высоким". Сбалансированное дерево "широкое" и в глубь обычно немного уровней. Для большого количества данных, коненчно, сбалансированное дерево более эффективно.</p>
+<p align="center">
+    <img src="../png/indexes_and_partitions/ind_btree.png" alt="indexes_and_partitions" />
+</p>
+
+<p>balanced tree индекс -  это индекс сгруппированный по листьям сбалансированного дерева. Применяется для больших индексов, <strong>по сути это индекс индексов</strong>. Ну скажем индексы с величиной от 1 до 10 хранятся в одной ветке, от 11 до 20 в другой и т.д., когда приходит запрос на индекс с номером 35, идем к 3-й ветке и находим там 5-й элемент. </p>
+<ul>
+<li>
+<p>Данные сортируются по ключу.</p>
+</li>
+<li>
+<p>Поиск происходит за O(log n).</p>
+</li>
+</ul>
+<p>Команда для создания обычного B-Tree индекса следующая: </p>
+<div class="codehilite"><pre><span></span><code>CREATE INDEX idx_user ON test.user (id);
+</code></pre></div>
+
+<p><strong>B+Tree</strong> (используется в MySQL, PostgreSQL) - это улучшенная версия, где данные хранятся только в листьях, а внутренние узлы содержат ключи для быстрого поиска. Подходят для диапазонных запросов (WHERE age BETWEEN 18 AND 30).</p>
+<p>Подробнее можно почитать здесь: 
+- https://en.wikipedia.org/wiki/B-tree
+- https://habr.com/ru/companies/quadcode/articles/696498/ </p>
+<p>Здесь еще хочется упоминуть <strong>реверсивные индексы</strong>.</p>
+<p><strong>Реверсивный индекс</strong> — это особый вид B-Tree индекса, где ключи хранятся в обратном порядке (например, значение 1234 становится 4321). Специализированные индексы для оптимизации вставок. </p>
+<p>Оригинальный ключ: 1001, 1002, 1003</p>
+<p>В реверсивном индексе: 1001 → 1001, 1002 → 2001, 1003 → 3001</p>
+<p><strong>Зачем они нужны?</strong>
+- Основная цель — снижение конкуренции (contention) в высоконагруженных OLTP-системах, особенно при вставке последовательных значений (например, автоинкрементных ID).
+Используется в больших кластерных системах и позволяют равномерно распределить индексы по серверам кластера. </p>
+<p>В обычном B-Tree индекс с последовательными ключами (1, 2, 3, ...) все новые записи попадают в один "правый" лист дерева, создавая "горячую точку" (hot spot).</p>
+<p>Реверсивный индекс <strong>распределяет вставки равномерно</strong> по всему дереву. </p>
+<p align="left">
+    <img src="../png/indexes_and_partitions/ind_btree_revers1.png" alt="indexes_and_partitions" />
+</p>
+
+<p>Пусть для хранения индекса слов используется кластер, состоящий из 5 серверов:</p>
+<p align="center">
+    <img src="../png/indexes_and_partitions/ind_btree_revers2.png" alt="indexes_and_partitions" />
+</p>
+
+<p>Данный пример показывает, что применение реверсивного индекса позволяет снизить нагрузку на сервер вдвое (распределить её между другими).</p>
+<p><strong>2. Хеш-индексы (Hash Indexes)</strong></p>
+<p>Хеш-индексы используют хеш-функцию для быстрого доступа к данным. Хеш-функция — это алгоритм, который преобразует входные данные (или ключ) в число фиксированного размера, называемое хеш-значением. В PostgreSQL хеш-функция всегда возвращает значение типа integer, что составляет примерно 4 миллиарда возможных значений.</p>
+<p>Когда новый ключ добавляется в индекс, PostgreSQL применяет к нему хеш-функцию, которая преобразует ключ в хеш-значение. Это значение будет использоваться для быстрого поиска соответствующих записей.</p>
+<p>Хеш-значение используется для определения номера бакета (корзины), в который будет помещена запись. В PostgreSQL количество бакетов изначально равно двум и увеличивается динамически по мере роста данных. Номер бакета вычисляется с помощью битовой арифметики на основе хеш-значения.</p>
+<p align="center">
+    <img src="../png/indexes_and_partitions/ind_hash.png" alt="indexes_and_partitions" />
+</p>
+
+<p>Структура хеш-индекса
+Хеш-индексы в PostgreSQL имеют сложную внутреннюю структуру, которая состоит из нескольких типов страниц: мета-страницы, страницы бакетов, переполненные страницы и битовые карты.</p>
+<p>Хеш-индексы предназначены в первую очередь для нагрузки с большим количеством операций SELECT и UPDATE, которые выполняют сканирование с проверкой равенства для больших таблиц. В индексе-B-дереве поиск должен проходить по дереву до тех пор, пока не будет найдена листовая страница. В таблицах с миллионами строк такой «спуск» может увеличить время доступа к данным. Листовым страницам в хеш-индексе соответствуют страницы ячеек. В отличие от индекса-B-дерева хеш-индекс позволяет напрямую обращаться к страницам ячеек, тем самым потенциально сокращая время доступа к индексу в больших таблицах. Это сокращение «логического ввода-вывода» становится ещё более заметным для индексов/данных, которые не умещаются в общих буферах/ОЗУ.</p>
+<p><strong>Коллизии</strong></p>
+<p>Нетрудно догадаться, что разные данные на входе могут привести к одному и тому же хэш-коду и бакету на выходе. Это называется коллизией. Например, хэш-функция mod(3) возвращает один и тот же код 2 для значений 2, 5, 8.</p>
+<p>На деле система поступает хитрее. Сначала используем хэш-функцию для вычисления хэш-кода.</p>
+<div class="codehilite"><pre><span></span><code>db=# SELECT
+    hashtext(&#39;text&#39;),
+    hashchar(&#39;c&#39;),
+    hash_array(array[1,2,3]),
+    jsonb_hash(&#39;{&quot;me&quot;: &quot;haki&quot;}&#39;::jsonb),
+    timestamp_hash(now()::timestamp);
+─[ RECORD 1 ]──┬────────────
+hashtext       │ -451854347
+hashchar       │ 203891234
+hash_array     │ -325393530
+jsonb_hash     │ -1784498999
+timestamp_hash │ 1082344883
+</code></pre></div>
+
+<p>Затем используем mod(кол-во бакетов) для определения номера бакета. Это все равно может привести к тому, что несколько значений попадут в один и тот же бакет. Поэтому даже после того, как бакет идентифицирован, системе все еще необходимо просеять хэш-коды в корзине и перепроверить условие, чтобы отфильтровать только совпадающие кортежи.</p>
+<p>По мере того, как новые ряды добавляются и индекс пересчитывается, первичная страница индекса заполняется. Далее новые ряды пишутся в дополнительные страницы.
+Подробнее </p>
+<p>B-Tree индекс дает скорость выборки порядка log(N), hash дает линейную. В реальной жизни hash и B-Tree применяются совместно, то есть для вычисления значений B-Tree индекса все равно применяются хэши.</p>
+<p>Подробнее можно почитать здесь: 
+- https://postgrespro.ru/docs/postgresql/17/hash-index 
+- https://habr.com/ru/companies/otus/articles/814537/<br />
+- https://habr.com/ru/articles/747910/ </p>
+<p><strong>3. Bitmap-индексы</strong></p>
+<p>Битовая карта (Bitmap) - это эффективная техника индексирования, разработанная для повышения производительности запросов к скалярным полям с низкой кардинальностью. Под кардинальностью понимается количество отдельных значений в поле. Поля с меньшим количеством отдельных элементов считаются низкокардинальными.</p>
+<p>Этот тип индекса помогает сократить время поиска скалярных запросов, представляя значения полей в компактном двоичном формате и выполняя над ними эффективные побитовые операции. По сравнению с другими типами индексов, растровые индексы обычно занимают больше места и обеспечивают более высокую скорость выполнения запросов при работе с полями с низкой кардинальностью.</p>
+<ul>
+<li>Быстро выполняет логические операции (AND, OR).</li>
+</ul>
+<p>Пару картинок-примеров для понимания :)</p>
+<p align="center">
+    <img src="../png/indexes_and_partitions/ind_bitmap1.png" alt="indexes_and_partitions" />
+     <img src="../png/indexes_and_partitions/ind_bitmap2.png" alt="indexes_and_partitions" />
+</p>
+
+<p>Рассмотрим еще один пример -  коллекцию документов с полями Category и Public. Мы хотим получить документы, которые относятся к категории Tech и открыты для публики. В этом случае ключами для наших растровых индексов будут Tech и Public.</p>
+<p align="center">
+    <img src="../png/indexes_and_partitions/ind_bitmap3.png" alt="indexes_and_partitions" />
+</p>
+
+<p>Как показано на рисунке, растровые индексы для Category и Public будут следующими.</p>
+<p>Tech: [1, 0, 1, 0, 0], что показывает, что только 1-й и 3-й документы попадают в категорию Tech.</p>
+<p>Public: [1, 0, 0, 1, 0], что показывает, что только 1-й и 4-й документы открыты для публики.</p>
+<p>Чтобы найти документы, соответствующие обоим критериям, мы выполняем побитовую операцию AND на этих двух битовых картах.</p>
+<p>Tech AND Public: [1, 0, 0, 0, 0]
+Полученное битовое изображение [1, 0, 0, 0, 0] указывает на то, что только первый документ(ID 1) удовлетворяет обоим критериям. Используя растровые индексы и эффективные побитовые операции, мы можем быстро сузить область поиска, избавившись от необходимости сканировать весь набор данных.</p>
+<p>Подробнее можно почитать здесь:
+- https://habr.com/ru/companies/otus/articles/433090/
+- https://milvus.io/docs/ru/bitmap.md
+- https://www.scaler.com/topics/sql/bitmap-index/</p>
+<p><strong>4. GiST, GIN, SP-GiST (PostgreSQL)</strong></p>
+<p>GiST (Generalized Search Tree) – универсальный индекс для сложных типов данных (геоданные, текстовый поиск).</p>
+<ul>
+<li>Основан на идее сбалансированного дерева, но поддерживает произвольные методы поиска.</li>
+<li>Каждый узел содержит предикаты (условия), по которым можно отфильтровать поддеревья.</li>
+<li>Подходит для данных, где обычные B-деревья неэффективны (например, пересечение геометрических объектов).</li>
+<li>Может использоваться для k-ближайших соседей (KNN) и расстояний.</li>
+</ul>
+<p>GIN (Generalized Inverted Index) – для полнотекстового поиска и массивов.</p>
+<ul>
+<li>Похож на инвертированный индекс (хранит пары элемент → список строк).</li>
+<li>Эффективен, когда нужно искать вхождение элементов (например, слова в тексте).</li>
+<li>Поддерживает быстрый поиск по частичным совпадениям.</li>
+<li>Требует больше места, чем GiST, но обычно быстрее для точных запросов.</li>
+</ul>
+<p>SP-GiST (Space-Partitioned GiST) – для нерегулярных структур (IP-адреса)</p>
+<ul>
+<li>Разбивает пространство данных на непересекающиеся области (в отличие от GiST, где области могут перекрываться).</li>
+<li>Использует разделение на основе префиксов или пространственных разбиений.</li>
+<li>Хорошо подходит для рекурсивных структур (например, префиксные деревья).</li>
+</ul>
+<p>Тема сложная, на собеседованиях принцип работы не спрашивают. Просто нужно знать что такие индексы есть. Если интересно прочитайте статьи:
+- https://habr.com/ru/companies/postgrespro/articles/333878/
+-  https://habr.com/ru/companies/postgrespro/articles/340978/</p>
+<hr />
+<ul>
+<li>У ораклистов любят спрашивать, что такое локальные и глобальные индексы? Локальные создают на каждую партицию отдельный индекс, глобальный индекс - индекс на всю таблицу. Когда есть большие партиции локальные индексы могут быть суперэффективны. Поле, по которому строятся партциии тоже участвует в индексе. В PostgreSQL нет такого разделения и все индексы по умолчанию можно считать локальными.</li>
+</ul>
+<p>Индексы на самом деле очень сложная и глубокая тема. На моей прошлой работе в красном банке был один эксперт, который только и строил индексы, изучал планы и оптимизировал сложные запросы. И этим он занимается больше 10 лет, его очень ценят за глубокие знания. Но горизонтально он не сильно развивается, и многие популярные инструменты он не знает, ему это неинтересно и пока что не нужно (это его слова).</p>
+<p>По индексам в интернете есть много статей, документации, видео. От себя могу еще порекомендовать:
+- видео от разраба из Озона, как выбрать индекс https://youtu.be/DyqtBiDrz3g?si=xIw5OlHteTI1bfF3
+- канал ораклиста, где он на пальцах разбирает разные концепции, пишет запросы и сравнивает планы запросов, можно смотреть в Яндекс браузере с переводчиком https://www.youtube.com/watch?v=DGAisQZxk-s</p>
+<h1 id="_10"><strong>Партиции</strong></h1>
+<p><strong>Партиционирование</strong> таблиц (оно же секционирование) - это метод проектирования базы данных, используемый для разделения большой таблицы на более мелкие, более управляемые фрагменты, называемые разделами. Каждый раздел по сути является отдельной таблицей, которая хранит подмножество исходных данных. Этот метод может значительно улучшить производительность запросов и управление данными для больших наборов данных.</p>
+<p>Разделение может быть выполнено на основе одного или нескольких столбцов, таких как столбец даты или диапазон значений. Например, вы можете разбить таблицу на основе даты записей, где каждый раздел представляет данные для определенного диапазона дат. При запросе данных СУБД может быстро исключить разделы, которые не имеют отношения к запросу, что приводит к более быстрому выполнению запроса.</p>
+<p>Каждый раздел — это отдельный сегмент таблицы, которым можно управлять независимо. Например, вы можете разделить данные о продажах по годам, при этом каждый год будет находиться в своем собственном разделе.</p>
+<p align="center">
+    <img src="../png/indexes_and_partitions/partitions.png" alt="indexes_and_partitions" />
+</p>
+
+<p>Большинство СУБД позволяет дробить партиции еще на секции - субпартиции.</p>
+<p>Преимущества партицированных таблиц:
+1. Улучшенная производительность запросов: разделение позволяет базе данных быстро сузить данные до определенного раздела, уменьшая объем данных, которые необходимо сканировать во время запросов. Это приводит к более быстрому времени выполнения запросов, особенно для больших наборов данных.</p>
+<ol>
+<li>
+<p>Более простое управление данными: с помощью секционирования таблиц вы можете легко управлять большими наборами данных, разделяя их на более мелкие, более управляемые секции. Это может упростить такие задачи, как архивирование данных, очистка данных, а также операции резервного копирования и восстановления.</p>
+</li>
+<li>
+<p>Улучшенная загрузка и индексация данных: при загрузке данных в секционированную таблицу процесс может быть распараллелен, что приводит к более быстрому приему данных. Кроме того, индексы в секционированных таблицах могут быть более эффективными, поскольку им нужно охватывать только меньший подмножество данных.</p>
+</li>
+<li>
+<p>Экономичное хранение: разделение позволяет хранить старые или редко используемые данные на более дешевых носителях, а часто используемые данные — на более быстрых устройствах хранения.</p>
+</li>
+</ol>
+<p>Существует два основных варианта партиционирования в СУБД — горизонтальное и вертикальное.</p>
+<p>Горизонтальное партиционирование предполагает разделение таблицы на партиции, основанное на строках. Каждая партиция содержит определенное количество строк. Такой подход используется, когда таблица имеет очень большой объем данных и необходима более эффективная обработка.</p>
+<p>Вертикальное партиционирование, в свою очередь, разделяет таблицу на партиции, основываясь на столбцах. Каждая партиция содержит определенный набор столбцов. Такой подход может быть полезным, когда таблица имеет много столбцов и только некоторые из них часто используются.</p>
+<p>Комбинация горизонтального и вертикального - Редкое сочетание горизонтального и вертикального разбиения, которое делит таблицу как по строкам, так и по столбцам.</p>
+<p>В целом, принцип партиционирования во всех СУБД одинаковый, но как всегда есть нюансы.
+Для конкретики, разберем устройство партиционивания в PostgreSQL.</p>
+<p>PostgreSQL предлагает различные методы секционирования, в том числе:</p>
+<ul>
+<li>
+<p>Разделение диапазона</p>
+</li>
+<li>
+<p>Разделение списка</p>
+</li>
+<li>
+<p>Разделение хэша</p>
+</li>
+</ul>
+<h3 id="range-partitioning"><strong>Разделение диапазона (Range Partitioning)</strong></h3>
+<p>Принцип работы: Таблица разделяется на партиции по диапазонам значений ключевого столбца. Каждая партиция содержит данные, попадающие в определенный диапазон.</p>
+<p>Когда использовать:
+- Для временных данных (по датам, месяцам, годам)
+- Для числовых значений с естественными диапазонами (например, суммы, возраст)</p>
+<p>Пример:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">-- Создаем основную партиционированную таблицу</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">sales</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="n">SERIAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">sale_date</span><span class="w"> </span><span class="kt">DATE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">product_id</span><span class="w"> </span><span class="n">INT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">amount</span><span class="w"> </span><span class="k">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="p">)</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="kt">RANGE</span><span class="w"> </span><span class="p">(</span><span class="n">sale_date</span><span class="p">);</span>
+
+<span class="c1">-- Создаем партиции для каждого квартала 2023 года</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">sales_q1_2023</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">sales</span>
+<span class="w">    </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;2023-01-01&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;2023-04-01&#39;</span><span class="p">);</span>
+
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">sales_q2_2023</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">sales</span>
+<span class="w">    </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;2023-04-01&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;2023-07-01&#39;</span><span class="p">);</span>
+
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">sales_q3_2023</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">sales</span>
+<span class="w">    </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;2023-07-01&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;2023-10-01&#39;</span><span class="p">);</span>
+
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">sales_q4_2023</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">sales</span>
+<span class="w">    </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;2023-10-01&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;2024-01-01&#39;</span><span class="p">);</span>
+
+<span class="c1">-- Создаем дефолтную партицию для данных вне указанных диапазонов</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">sales_default</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">sales</span><span class="w"> </span><span class="k">DEFAULT</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Особенности:
+- Диапазоны не должны пересекаться
+- Можно создавать партиции заранее для будущих данных
+- Эффективно для запросов с условиями по ключу партиционирования</p>
+<h3 id="list-partitioning"><strong>Разделение списка (List Partitioning)</strong></h3>
+<p>Принцип работы: Таблица разделяется на партиции по списку значений ключевого столбца. Каждая партиция содержит данные с определенными значениями.</p>
+<p>Когда использовать:</p>
+<ul>
+<li>Когда данные естественным образом группируются по дискретным значениям</li>
+<li>Для географических регионов, категорий продуктов и т.д.</li>
+</ul>
+<p>Пример:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">-- Создаем основную партиционированную таблицу</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="n">SERIAL</span><span class="p">,</span>
+<span class="w">    </span><span class="k">name</span><span class="w"> </span><span class="n">TEXT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">department</span><span class="w"> </span><span class="n">TEXT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">salary</span><span class="w"> </span><span class="k">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="p">)</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">LIST</span><span class="w"> </span><span class="p">(</span><span class="n">department</span><span class="p">);</span>
+
+<span class="c1">-- Создаем партиции для каждого отдела</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">employees_hr</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;HR&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Human Resources&#39;</span><span class="p">);</span>
+
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">employees_it</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;IT&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Information Technology&#39;</span><span class="p">);</span>
+
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">employees_sales</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Sales&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Marketing&#39;</span><span class="p">);</span>
+
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">employees_finance</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">employees</span>
+<span class="w">    </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Finance&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Accounting&#39;</span><span class="p">);</span>
+
+<span class="c1">-- Партиция для всех остальных отделов</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">employees_default</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">DEFAULT</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Особенности:</p>
+<ul>
+<li>Значения в списке не должны пересекаться между партициями</li>
+<li>Хорошо подходит для данных с известным набором категорий</li>
+<li>Эффективно для запросов с фильтрацией по категориям</li>
+</ul>
+<h3 id="hash-partitioning"><strong>Разделение хэша (Hash Partitioning)</strong></h3>
+<p>Принцип работы: Таблица разделяется на партиции с использованием хэш-функции от значения ключевого столбца. Данные распределяются по партициям равномерно.</p>
+<p>Когда использовать:</p>
+<ul>
+<li>Когда нет естественного критерия для диапазонного или спискового разделения</li>
+<li>Для равномерного распределения данных и нагрузки</li>
+<li>Для больших таблиц, где важна параллельная обработка</li>
+</ul>
+<p>Пример:</p>
+<p>```
+-- Создаем основную партиционированную таблицу
+CREATE TABLE user_sessions (
+    session_id UUID,
+    user_id BIGINT,
+    created_at TIMESTAMP,
+    session_data JSONB
+) PARTITION BY HASH (user_id);</p>
+<p>-- Создаем 4 партиции, используя остаток от деления хэша
+CREATE TABLE user_sessions_p0 PARTITION OF user_sessions
+    FOR VALUES WITH (MODULUS 4, REMAINDER 0);</p>
+<p>CREATE TABLE user_sessions_p1 PARTITION OF user_sessions
+    FOR VALUES WITH (MODULUS 4, REMAINDER 1);</p>
+<p>CREATE TABLE user_sessions_p2 PARTITION OF user_sessions
+    FOR VALUES WITH (MODULUS 4, REMAINDER 2);</p>
+<p>CREATE TABLE user_sessions_p3 PARTITION OF user_sessions
+    FOR VALUES WITH (MODULUS 4, REMAINDER 3);</p>
+<p>```</p>
+<p>Особенности:</p>
+<ul>
+<li>
+<p>Обеспечивает равномерное распределение данных</p>
+</li>
+<li>
+<p>Количество партиций лучше выбирать степенью двойки</p>
+</li>
+<li>
+<p>Не поддерживает исключение партиций при запросах (partition pruning) так же эффективно, как range/list</p>
+</li>
+<li>
+<p>Хорошо подходит для распределения нагрузки при параллельных операциях</p>
+</li>
+</ul>
+<p>PostgreSQL также поддерживает:</p>
+<ul>
+<li>Композитное партиционирование (сочетание разных методов)</li>
+<li>Присоединение внешних таблиц как партиций (с PostgreSQL 12)</li>
+<li>Автоматическое создание партиций (с помощью расширений)</li>
+</ul>
+<p>Подробнее можно почитать здесь:
+- https://docs.arenadata.io/ru/ADB/current/concept/data-model/tables/partitioning.html
+- https://sql-ex.ru/blogs/?/Rukovodstvo_po_sekcionirovaniju_tablic_v_PostgreSQL_.html
+- https://habr.com/ru/companies/skyeng/articles/583222/</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      MIT
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../_frontend/js/toc-home.js"></script>
+      
+        <script src="../_frontend/js/scroll-to-top.js"></script>
+      
+    
+  </body>
+</html>
