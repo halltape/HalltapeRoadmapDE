@@ -105,7 +105,7 @@ body {
 
 /* Убрать меню слева */
 .md-sidebar--primary {
-  display: none !important;
+  display: block !important;
 }
 
 /* Карточки зарплат: контейнер и отдельные карточки */
@@ -182,8 +182,14 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.12);
   padding: 10px;
   margin: 0px auto;
-  max-width: 100vw; /* Очень большой max-width (можно уменьшить) */
+  max-width: 100% !important;
   transition: background 0.3s, box-shadow 0.3s;
+}
+
+.md-grid {
+  max-width: 100% !important; /* растягивает сетку */
+  margin: 0 !important;       /* убирает автоцентрирование */
+  padding: 0 !important;      /* убирает боковые паддинги */
 }
 
 /* Скрыть основное боковое меню */
