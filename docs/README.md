@@ -30,7 +30,7 @@
 - Полное погружение в профессию
 
 <p align="center">
-  <a href="https://roadmappers.ru.tuna.am/#top">
+  <a href="https://roadmappers.ru">
     <button style="padding:10px 20px; background:#4CAF50; color:white; border:none; border-radius:8px; cursor:pointer; font-size:16px;">
       Узнать больше о BootCamp
     </button>
@@ -38,8 +38,8 @@
 </p>
 
 <p align="center">
-  <a href="https://roadmappers.ru.tuna.am/#top">
-    <img src="png/bootcamp_banner.png" alt="BootCamp Data Engineering" width="600"/>
+  <a href="https://roadmappers.ru">
+    <img src="png/bootcamp_banner.png" alt="BootCamp Data Engineering" />
   </a>
 </p>
 
@@ -195,7 +195,7 @@
 ➜ [Работа с Linux / Terminal](Linux/README.md)
 
 ***
-## 4.🏛️ Data Warehouse
+## 5.🏛️ Data Warehouse
 
 <p align="center">
     <img src="png/data_warehouse.png" alt="dwh" width="600"/>
@@ -208,7 +208,7 @@
 
 
 ***
-## 5.📐 Нормальные формы
+## 6.📐 Нормальные формы
 
 <p align="center">
     <img src="png/normal_table.jpg" alt="nf" width="600"/>
@@ -221,7 +221,7 @@
 
 
 ***
-## 6.🗂️ Модели данных
+## 7.🗂️ Модели данных
 
 <p align="center">
     <img src="png/models_data.jpeg" alt="nf" width="600"/>
@@ -233,7 +233,7 @@
 
 
 ***
-## 7.🔗 Data Vault (Hub - Satellite - Link)
+## 8.🔗 Data Vault (Hub - Satellite - Link)
 
 <p align="center">
     <img src="png/dv.png" alt="nf" width="600"/>
@@ -248,7 +248,7 @@
 
 
 ***
-## 8.📑 Индексы и партиции
+## 9.📑 Индексы и партиции
 
 <p align="center">
     <img src="png/ind_part_logo.png" alt="nf" width="600"/>
@@ -261,7 +261,7 @@
  
 
 ***
-## 9.📦 Docker
+## 10.📦 Docker
 
 <p align="center">
     <img src="png/docker_logo.png" alt="nf" width="600"/>
@@ -270,7 +270,7 @@
 ➜ [Теория по Docker](DOCKER/README.md)
 
 ***
-## 10.🐘 Hadoop
+## 11.🐘 Hadoop
 
 <p align="center">
     <img src="png/hadoop_logo.png" alt="hdfs" width="600"/>
@@ -289,7 +289,7 @@
 Презентация из видео ➜ [HDFS](files/deep_dive_hdfs_pdf.pdf)
 
 ***
-## 11.⏳ Airflow
+## 12.⏳ Airflow
 
 <p align="center">
     <img src="png/airflow_logo.jpg" alt="hdfs" width="600"/>
@@ -301,7 +301,7 @@
 ➜ [Теория по Airflow](AIRFLOW/README.md)
 
 ***
-## 12.🟢 Greenplum
+## 13.🟢 Greenplum
 
 <p align="center">
     <img src="png/gp_logo.png" width="640" height="320"/>
@@ -332,7 +332,7 @@ Greenplum будет в 50% вакансиях на DE. Остальные бу�
 ➜ [Бесплатный курс от Яндекс.Практикум](https://yandex.cloud/ru/training/greenplum)
 
 ***
-## 13.⚡ ClickHouse
+## 14.⚡ ClickHouse
 
 <p align="center">
     <img src="png/ch_logo.jpg"/>
@@ -351,7 +351,7 @@ ClickHouse будет в 80% вакансиях для постоения вит
 ➜ [Docker compose кластера](CLICKHOUSE/Dop_mat/clickhouse-cluster/README.md)
 
 ***
-## 14.🔥 Spark
+## 15.🔥 Spark
 
 <p align="center">
     <img src="png/spark.png" alt="spark" width="600"/>
@@ -382,7 +382,7 @@ Spark изучайте только **после** **того**, как науч
 
 
 ***
-## 15.🛠️ dbt (data build tool)
+## 16.🛠️ dbt (data build tool)
 
 <p align="center">
     <img src="png/dbt_logo.png"
@@ -397,7 +397,7 @@ Spark изучайте только **после** **того**, как науч
  ➜ [Видео от Дмитрия Аношина по dbt](https://t.me/rockyourdata/4977)
 
 ***
-## 16.📡 Apache Kafka
+## 17.📡 Apache Kafka
 
 <p align="center">
     <img src="png/kafka_logo.png"
@@ -413,7 +413,7 @@ Spark изучайте только **после** **того**, как науч
  Для мидлов знания по ней частенько спрашивают
  ➜ [Теория по КАФКЕ](KAFKA/README.md)
 ***
-## 17.🧪 Pet Project
+## 18.🧪 Pet Project
 
 <p align="center">
     <img src="png/pet_project.png" alt="pet_project" width="600"/>
@@ -427,7 +427,7 @@ Spark изучайте только **после** **того**, как науч
 
 
 ***
-## 18.📚 Теоретические вопросы c собеседований
+## 19.📚 Теоретические вопросы c собеседований
 
 <p align="center">
     <img src="png/que.jpg" alt="nf" width="600"/>
@@ -442,7 +442,7 @@ Spark изучайте только **после** **того**, как науч
 
 
 ***
-## 19.📄 Резюме и Работа
+## 20.📄 Резюме и Работа
 
 <p align="center">
     <img src="png/resume.jpg" width="500"/>
@@ -456,7 +456,7 @@ Spark изучайте только **после** **того**, как науч
 
 
 ***
-## 20.🧑‍💼 Рабочие кейсы
+## 21.🧑‍💼 Рабочие кейсы
 
 <p align="center">
     <img src="png/cases.jpg" width="600"/>
@@ -468,7 +468,7 @@ Spark изучайте только **после** **того**, как науч
 
 
 ***
-## 21.🔗 Полезные ссылки
+## 22.🔗 Полезные ссылки
 
 <p align="center">
     <img src="png/links.jpeg" width="600"/>
