@@ -7,30 +7,30 @@ copyright: MIT
 # Явное, лаконичное меню
 nav:
   - В начало: README.md
-  - BootCamp: /#bootcamp-data-engineer
-  - Деньги: /#0
-  - Кто такой DE: /#1
-  - Курсы: /#2
-  - Git: /#3-github-git
-  - Linux/Terminal: /#4-linux-terminal
-  - DWH: /#5-data-warehouse
-  - NF: /#6
-  - Модели Данных: /#7
-  - DataVault: /#8-data-vault-hub-satellite-link
-  - Индексы: /#9
-  - Docker: /#10-docker
-  - Hadoop: /#11-hadoop
-  - Airflow: /#12-airflow
-  - Greenplum: /#13-greenplum
-  - Clickhosue: /#14-clickhouse
-  - Spark: /#15-spark
-  - dbt: /#16-dbt-data-build-tool
-  - Kafka: /#17-apache-kafka
-  - Pet Project: /#18-pet-project
-  - Собесы: /#19-c
-  - Резюме и Работа: /#20
-  - Кейсы: /#21
-  - Полезные ссылки: /#22
+  - BootCamp: /HalltapeRoadmapDE/#bootcamp-data-engineer
+  - Деньги: /HalltapeRoadmapDE/#0
+  - Кто такой DE: /HalltapeRoadmapDE/#1
+  - Курсы: /HalltapeRoadmapDE/#2
+  - Git: /HalltapeRoadmapDE/#3-github-git
+  - Linux/Terminal: /HalltapeRoadmapDE/#4-linux-terminal
+  - DWH: /HalltapeRoadmapDE/#5-data-warehouse
+  - NF: /HalltapeRoadmapDE/#6
+  - Модели Данных: /HalltapeRoadmapDE/#7
+  - DataVault: /HalltapeRoadmapDE/#8-data-vault-hub-satellite-link
+  - Индексы: /HalltapeRoadmapDE/#9
+  - Docker: /HalltapeRoadmapDE/#10-docker
+  - Hadoop: /HalltapeRoadmapDE/#11-hadoop
+  - Airflow: /HalltapeRoadmapDE/#12-airflow
+  - Greenplum: /HalltapeRoadmapDE/#13-greenplum
+  - Clickhosue: /HalltapeRoadmapDE/#14-clickhouse
+  - Spark: /HalltapeRoadmapDE/#15-spark
+  - dbt: /HalltapeRoadmapDE/#16-dbt-data-build-tool
+  - Kafka: /HalltapeRoadmapDE/#17-apache-kafka
+  - Pet Project: /HalltapeRoadmapDE/#18-pet-project
+  - Собесы: /HalltapeRoadmapDE/#19-c
+  - Резюме и Работа: /HalltapeRoadmapDE/#20
+  - Кейсы: /HalltapeRoadmapDE/#21
+  - Полезные ссылки: /HalltapeRoadmapDE/#22
 
 theme:
   name: material
