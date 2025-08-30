@@ -40,7 +40,7 @@ theme:
     text: Roboto
     code: Fira Mono
   code:
-    highlight_theme: dracula
+    highlight_theme: material
   logo: _frontend/images/logo_v2.svg
 
 # Только свой CSS
@@ -54,6 +54,14 @@ extra_javascript:
 
 markdown_extensions:
   - admonition
-  - codehilite
+  - tables
+  - footnotes
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true       # номера строк якорями
+      line_spans: __span          # для подсветки отдельных строк
+      pygments_lang_class: true   # классы языка для тем
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
   - tables
   - footnotes
