@@ -1134,9 +1134,8 @@
 <li><strong>Float32</strong>, <strong>Float64</strong> — числа с плавающей запятой. Эти типы прекрасно подходят для различных статистических математических расчётов. Из-за особенностей данных типов не рекомендуется использовать в точных вычислениях, например финанасах.</li>
 </ul>
 <p>Пример особенности, если выполнить следующий запрос в клике:</p>
-<div class="codehilite"><pre><span></span><code>SELECT 1 - 0.9::float 
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>SELECT 1 - 0.9::float 
+</span></code></pre></div>
 <p>то в итоге мы получим ошибку округления, а именно <strong>0.10000002384185791</strong></p>
 <ul>
 <li><strong>Decimal32(S)</strong> ... <strong>Decimal256(S)</strong> — дробные числа с сохранением точности операций, где S — это количество знаков после запятой. Данный тип уже подойдет для точных вычислений 100%</li>
@@ -1287,9 +1286,8 @@ from type_data
 <p>Не буду тянуть кота за яйца, поэтому к делу, я уже говорил что клик не похож на другие БД, поэтому при работе с кликом забудьте сразу про первые 2 метода, как минимум потому что они не обрабатывают пустые значения <strong>NULL</strong> в колонке. А это иногда критично. </p>
 <p>Возьмите за практику всегда использовать 3й вариант, как минимум потому что он имеет свои приятные фишечки.</p>
 <p>Данные функции очень легко запомнить так как имеют единый шаблон:</p>
-<div class="codehilite"><pre><span></span><code>to&lt;тип данных&gt;&lt;разрядноть если такая имеется&gt;&lt;модификатор если ннн-ннн-нада&gt;
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>to&lt;тип данных&gt;&lt;разрядноть если такая имеется&gt;&lt;модификатор если ннн-ннн-нада&gt;
+</span></code></pre></div>
 <p>Модификатор позволяет вернуть какое-то значение, даже если не удалось выполнить преобразование к нужному типу.</p>
 <p>Существует 3 модификатора:</p>
 <ul>
@@ -1320,22 +1318,20 @@ from cast_type_data;
 </details>
 
 <p>В примере особое внимание уделите данной строке.</p>
-<div class="codehilite"><pre><span></span><code>toUInt8(-1), toUInt8(-1.1), toUInt8(256)
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>toUInt8(-1), toUInt8(-1.1), toUInt8(256)
+</span></code></pre></div>
 <p>Заметь, что выход за пределы диапозона <strong>не выдаст ошибку</strong> а преобразует данные по модулю диапозона.</p>
 <h3 id="_13">Создание таблиц</h3>
 <h4 id="_14">ЭТО ПРЯМ БАЗИЩА</h4>
 <p>Создание таблиц в Clickhouse делается абсолютно также как и в других БД за исключением того, что в ClickHouse необходимо указывать <strong>движок</strong> таблицы, например:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">&lt;</span><span class="err">имя</span><span class="w"> </span><span class="err">таблицы</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="n">Id</span><span class="w"> </span><span class="n">String</span>
-<span class="w">    </span><span class="p">...</span>
-<span class="p">)</span>
-<span class="n">engine</span><span class="o">=</span><span class="n">MergeTree</span>
-<span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">Id</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span>
-<span class="n">OREDR</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="p">(</span><span class="n">Id</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">&lt;</span><span class="err">имя</span><span class="w"> </span><span class="err">таблицы</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="n">Id</span><span class="w"> </span><span class="n">String</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">engine</span><span class="o">=</span><span class="n">MergeTree</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">Id</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">OREDR</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="p">(</span><span class="n">Id</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span>
+</span></code></pre></div>
 <p>О движках таблиц можно узнать либо из <a href="https://clickhouse.com/docs/ru/engines/table-engines">официльной документации</a> ClickHouse, либо из следующей статьи про движки, где мы их рассматриваем на примерах и под разными углами. Здесь мы поверхностно рассмотрим синтаксис самого ходового движка MergeTree.</p>
 <p>Основная идея MergeTree состоит в том, что данные записываются по частям, небольшими кусками, а потом объединяются в фоновом режиме. Физически это выглядит следующим образом:</p>
 <p align="center">
@@ -1392,18 +1388,17 @@ from nl_lc_tabl;
 
 <h4 id="_16">Модификаторы колонок</h4>
 <p>Давай рассмотрим пример создания таблицы:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">test_fields</span>
-<span class="p">(</span>
-<span class="w">      </span><span class="n">col_default</span><span class="w"> </span><span class="n">UInt64</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">42</span>
-<span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">col_materialized</span><span class="w"> </span><span class="n">UInt64</span><span class="w"> </span><span class="n">MATERIALIZED</span><span class="w"> </span><span class="n">col_default</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">33</span>
-<span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">col_alias</span><span class="w"> </span><span class="n">UInt64</span><span class="w"> </span><span class="k">ALIAS</span><span class="w"> </span><span class="n">col_default</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
-<span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">col_codec</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">CODEC</span><span class="p">(</span><span class="n">ZSTD</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-<span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">col_comment</span><span class="w"> </span><span class="nb">Date</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Some comment&#39;</span>
-<span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">col_ttl</span><span class="w"> </span><span class="n">UInt64</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">10</span><span class="w">  </span><span class="n">TTL</span><span class="w"> </span><span class="n">col_comment</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">INTERVAL</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="k">DAY</span>
-<span class="p">)</span>
-<span class="p">...</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">test_fields</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">(</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">      </span><span class="n">col_default</span><span class="w"> </span><span class="n">UInt64</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">42</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">col_materialized</span><span class="w"> </span><span class="n">UInt64</span><span class="w"> </span><span class="n">MATERIALIZED</span><span class="w"> </span><span class="n">col_default</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">33</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">col_alias</span><span class="w"> </span><span class="n">UInt64</span><span class="w"> </span><span class="k">ALIAS</span><span class="w"> </span><span class="n">col_default</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">col_codec</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">CODEC</span><span class="p">(</span><span class="n">ZSTD</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">col_comment</span><span class="w"> </span><span class="nb">Date</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Some comment&#39;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">col_ttl</span><span class="w"> </span><span class="n">UInt64</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">10</span><span class="w">  </span><span class="n">TTL</span><span class="w"> </span><span class="n">col_comment</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">INTERVAL</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="k">DAY</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="p">)</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="p">...</span>
+</span></code></pre></div>
 <p>Здесь мы наблюдаем, что после типов данных стоят дополнительные конструкции - модификаторы, разберем их более подробнее.</p>
 <ul>
 <li><code>DEFAULT</code> - если не передается значение, то будет вставлено значение по умолчанию.</li>
@@ -1484,18 +1479,16 @@ SHOW FULL COLUMNS FROM test_fields_with_ttl;  -- тут можно увидет�
 
 <p>Мы видем что создалось 4 колонки, что в целом и логично, колонка с модификаторм ALIAS должна будет вычисляться налету.</p>
 <p>Теперь выполним запрос:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">test_fields_without_ttl</span><span class="p">;</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">test_fields_without_ttl</span><span class="p">;</span>
+</span></code></pre></div>
 <p>А увидим мы следующую, ужасную историю:</p>
 <p align="center">
     <img src="./../png/ch_no_column.png" alt="ch_column_oriented" width="600" height="150"/>
 </p>
 
-<div class="codehilite"><pre><span></span><code>- ГДЕ ЕЩЕ 2 КОЛОНКИ КАРЛЛЛЛЛ!!!!!
-- А их нет! Тю-Тю!
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>- ГДЕ ЕЩЕ 2 КОЛОНКИ КАРЛЛЛЛЛ!!!!!
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>- А их нет! Тю-Тю!
+</span></code></pre></div>
 <p>Да к сожалению ни материализованную (хоть она физически существует), ни алис мы вызвать через <code>SELECT *</code> не можем, чтобы их вызнать, необходимо в SELECT обращаться к их именам, попробуйте это сделать самостоятельно на основе примера описанного выше.</p>
 <h2 id="_17">Партицирование таблиц</h2>
 <p>Хотел бы я сказать, что вы тут узнаете что-то новое о партиция, но нет.</p>
@@ -1505,16 +1498,15 @@ SHOW FULL COLUMNS FROM test_fields_with_ttl;  -- тут можно увидет�
 </p>
 
 <p>В ClickHouse создавать партиции можно только на таблицах семейста MergeTree. Партиция указывается при создании таблицы с помощью ключевой конструкции <code>PARTITION BY</code>. Например:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">partition_table</span>
-<span class="p">(</span>
-<span class="w">    </span><span class="p">...</span>
-<span class="p">)</span>
-<span class="n">ENGINE</span><span class="w"> </span><span class="n">MergeTree</span>
-<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
-<span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">toYYYYMM</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
-<span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">dt</span><span class="p">);</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">partition_table</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">(</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">)</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">ENGINE</span><span class="w"> </span><span class="n">MergeTree</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">toYYYYMM</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">dt</span><span class="p">);</span>
+</span></code></pre></div>
 <p>Существует несколько типов партицирования:</p>
 <ul>
 <li><strong>range</strong> - по диапозонам значений</li>

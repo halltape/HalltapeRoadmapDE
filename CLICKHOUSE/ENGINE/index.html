@@ -1090,43 +1090,37 @@ from numbers(30);
 </details>
 
 <p>Запомни что данные сливаются только в рамках <strong>партиции</strong>. Посмотри на данные</p>
-<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">summing_mt</span>
-</code></pre></div>
-
+<div class="language-SQL highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">summing_mt</span>
+</span></code></pre></div>
 <p>Теперь снова добавь данных и выведи данные предыдущим запросом. Обрати внимание на разницу с предыдущем шагом до добавления данных.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">summing_mt</span>
-<span class="k">SELECT</span><span class="w"> </span>
-<span class="w">    </span><span class="nb">number</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="p">(</span><span class="nb">number</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="n">now</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span>
-<span class="w">    </span><span class="p">(</span><span class="nb">number</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span>
-<span class="k">from</span><span class="w"> </span><span class="n">numbers</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
-</code></pre></div>
-
+<div class="language-SQL highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">summing_mt</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">SELECT</span><span class="w"> </span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nb">number</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="p">(</span><span class="nb">number</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="n">now</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="p">(</span><span class="nb">number</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">from</span><span class="w"> </span><span class="n">numbers</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+</span></code></pre></div>
 <p>Как мы видим создался новый блок данных, теперь эти блоки необходими слить друг с другом. В движке происходит автомотическое суммирование данных, при "ленивом слиянии", но мы это сделаем вручную, следующей командой:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">OPTIMIZE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">summing_mt</span><span class="w"> </span><span class="k">FINAL</span><span class="p">;</span><span class="w"> </span><span class="c1">-- ручное слияние</span>
-</code></pre></div>
-
+<div class="language-SQL highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">OPTIMIZE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">summing_mt</span><span class="w"> </span><span class="k">FINAL</span><span class="p">;</span><span class="w"> </span><span class="c1">-- ручное слияние</span>
+</span></code></pre></div>
 <p>А теперь еще раз иди и посмотри что у тебя с данными. Да они слились в единое и соотвественно посчиталась общая сумма. Но ты же не будешь так жедать каждый раз, запуская ручное слияние данных, темболее у тебя не будет на это прав в реальном проекте, для этого есть ключевое слово <strong>FINAL</strong>.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">summing_mt</span><span class="w"> </span><span class="k">FINAL</span>
-</code></pre></div>
-
+<div class="language-SQL highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">summing_mt</span><span class="w"> </span><span class="k">FINAL</span>
+</span></code></pre></div>
 <h3 id="aggregatingmergetree">AggregatingMergeTree</h3>
 <p><strong>AggregatingMergeTree</strong> - это таблица, которая группирует одинаковые записи по ключу сортировки и применяет агрегатные функции к полям</p>
 <h4 id="_2">Комбинаторы агрегатных функций</h4>
 <p>Перед тем как мы перейдём к рассмотрению данного движка, я хочу с того, что у агрегаторов есть так называемые <a href="https://clickhouse.com/docs/ru/sql-reference/aggregate-functions/combinators"><strong>Комбинаторы агрегатных функций</strong></a>.</p>
 <p>Если быть в кратце то данные комбинаторы дают достаточно большой спектр творчества при работе с аргигационными функциями, помните в PostgreSQL можно делать так </p>
-<div class="codehilite"><pre><span></span><code><span class="p">...</span>
-<span class="k">count</span><span class="p">(</span><span class="k">Distinct</span><span class="w"> </span><span class="n">col1</span><span class="p">)</span><span class="w"> </span><span class="n">filter</span><span class="p">(</span><span class="k">where</span><span class="w"> </span><span class="n">col1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
-<span class="p">...</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">...</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">count</span><span class="p">(</span><span class="k">Distinct</span><span class="w"> </span><span class="n">col1</span><span class="p">)</span><span class="w"> </span><span class="n">filter</span><span class="p">(</span><span class="k">where</span><span class="w"> </span><span class="n">col1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">...</span>
+</span></code></pre></div>
 <p>так вот в ClickHouse это можно сделать вот так:</p>
-<div class="codehilite"><pre><span></span><code><span class="p">...</span>
-<span class="n">countDistinctIf</span><span class="p">(</span><span class="n">col1</span><span class="p">,</span><span class="w"> </span><span class="n">col1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span>
-<span class="p">...</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">...</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">countDistinctIf</span><span class="p">(</span><span class="n">col1</span><span class="p">,</span><span class="w"> </span><span class="n">col1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">...</span>
+</span></code></pre></div>
 <p>Как ты понимаешь <strong>-Distinct</strong> и <strong>-If</strong> являются комбинаторами, их в целом очень много, так что обязательно перейди по ссылочке и посмотри что там есть.</p>
 <p>Вообще комбинаторов очень много, а в связке с движком <strong>AggregatingMergeTree</strong> - это превращется в лютейшую пушку бомбу.</p>
 <h4 id="_3">Агрегаторные типы данных</h4>
@@ -1161,22 +1155,19 @@ INSERT INTO simple SELECT  1, number, number from numbers(8);
 </details>
 
 <p>Выведим результат запроса и увидем, что движок агрегирует данные в блоке данных при вставке. В итоге мы увидем 3 строки</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">simple</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">simple</span>
+</span></code></pre></div>
 <p>Но нам же нужно для ID=1 получить 1 строку. Можно дождаться следующего слияния, а можно выполнитьследующий запрос, которое сделает <strong>логическое</strong> слияние и выдаст конечный результат:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">simple</span><span class="w"> </span><span class="k">FINAL</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">simple</span><span class="w"> </span><span class="k">FINAL</span>
+</span></code></pre></div>
 <p>На больших таблицах? где данные поступаю большими блоками и достаточно часто, намного эффективнее получить тот же результат следущим запросом:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span>
-<span class="w">        </span><span class="n">id</span><span class="p">,</span><span class="w"> </span>
-<span class="w">        </span><span class="k">sum</span><span class="p">(</span><span class="n">val_sum</span><span class="p">),</span>
-<span class="w">        </span><span class="k">max</span><span class="p">(</span><span class="n">val_max</span><span class="p">)</span><span class="w"> </span>
-<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="k">simple</span>
-<span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">        </span><span class="n">id</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">        </span><span class="k">sum</span><span class="p">(</span><span class="n">val_sum</span><span class="p">),</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">        </span><span class="k">max</span><span class="p">(</span><span class="n">val_max</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="k">simple</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id</span>
+</span></code></pre></div>
 <h5 id="aggregatefunction">AggregateFunction</h5>
 <p>Здесь немного все посложнее так как нужно использовать специальные комбинаторы.</p>
 <p>Комбинаторы агрегаторных типов данных:
@@ -1214,20 +1205,17 @@ FROM
 </details>
 
 <p>Вот мы создали все что нам нужно, теперь достаём выборку:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">aggr_func_tbl</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">aggr_func_tbl</span>
+</span></code></pre></div>
 <p>Ой ошибка, ай-ай-ай, а я же говорил. Не парься, чтобы получить какой-то результат, можно выполнить следующую команду:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">aggr_func_tbl</span><span class="w">  </span><span class="n">FORMAT</span><span class="w"> </span><span class="n">Vertical</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">aggr_func_tbl</span><span class="w">  </span><span class="n">FORMAT</span><span class="w"> </span><span class="n">Vertical</span>
+</span></code></pre></div>
 <p>А теперь посмотри на данные, их же прочитать не возможно, поэтому смысла от того что мы сейчас делали нет. Чтобы достать необходимые для нас данные необходимо воспользоваться коомбинатом <strong>-Merge</strong>, вот так:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">       </span><span class="k">SELECT</span><span class="w"> </span><span class="n">uniqMerge</span><span class="p">(</span><span class="n">val_uniq</span><span class="p">),</span><span class="w"> </span>
-<span class="w">              </span><span class="n">quantilesMerge</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">9</span><span class="p">)(</span><span class="n">val_quant</span><span class="p">),</span><span class="w"> </span>
-<span class="w">              </span><span class="n">anyIfMerge</span><span class="p">(</span><span class="n">val_any</span><span class="p">)</span><span class="w"> </span>
-<span class="w">       </span><span class="k">FROM</span><span class="w"> </span><span class="n">aggr_func_tbl</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w">       </span><span class="k">SELECT</span><span class="w"> </span><span class="n">uniqMerge</span><span class="p">(</span><span class="n">val_uniq</span><span class="p">),</span><span class="w"> </span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">              </span><span class="n">quantilesMerge</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">9</span><span class="p">)(</span><span class="n">val_quant</span><span class="p">),</span><span class="w"> </span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">              </span><span class="n">anyIfMerge</span><span class="p">(</span><span class="n">val_any</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">       </span><span class="k">FROM</span><span class="w"> </span><span class="n">aggr_func_tbl</span>
+</span></code></pre></div>
 <h3 id="replacingmergetree">ReplacingMergeTree</h3>
 <p>Данный движок убирает дубликаты строк с одинаковым ключом сотрировки в блоке и во время слияния блоков.</p>
 <p>Опять создаем таблицу и наполняем ее данными.</p>
@@ -1254,20 +1242,17 @@ VALUES (1, '2025-01-01', 'Djo'), (2, '2025-01-01', 'JB'),(3, '2025-01-01', 'JD')
 </details>
 
 <p>Теперь посмотри, что у тебя в данных:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">replacing_merge_tree</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">replacing_merge_tree</span>
+</span></code></pre></div>
 <p>Не удивительно у тебя там 3 строки. Давайте теперь еще добавим пару строк, а потом посмотрим на результат.</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">replacing_merge_tree</span>
-<span class="w">    </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2025-01-02&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Djo&#39;</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2025-01-03&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Djo&#39;</span><span class="p">);</span>
-
-<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">replacing_merge_tree</span><span class="p">;</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="w">    </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">replacing_merge_tree</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2025-01-02&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Djo&#39;</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2025-01-03&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Djo&#39;</span><span class="p">);</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">replacing_merge_tree</span><span class="p">;</span>
+</span></code></pre></div>
 <p>И что мы видим добавилась 1 из данных записей, потому что дубликаты по ключу удаляются в одном блоке и при слиянии. Давайте запустим ручное слияние и у нас останется только 3 строки.</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">OPTIMIZE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">replacing_merge_tree</span><span class="p">;</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="w">    </span><span class="n">OPTIMIZE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">replacing_merge_tree</span><span class="p">;</span>
+</span></code></pre></div>
 <p>Ну вот и все. Но что если нам нужно всегда оставлять только полследнее знание, для этого в движок можно передать колоку, относительно которой Clickhouse будет оставлять последнюю версию строки. Ну что еще раз создадим новую таблицу:</p>
 <details>
     <summary>Выполни данный скрипт</summary>
@@ -1322,17 +1307,14 @@ ORDER BY ID
 </details>
 
 <p>Пользователь открывает книгу 1 на странице 1:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Books</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="w">    </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Books</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</span></code></pre></div>
 <p>Далее перелистывает на страницу 2:</p>
-<div class="codehilite"><pre><span></span><code>    INSERT INTO Books values (1, 1, -1),(1, 2, 1);
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>    INSERT INTO Books values (1, 1, -1),(1, 2, 1);
+</span></code></pre></div>
 <p>Выполним логическое слияние блоков и сразу выведем результат на экран:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Books</span><span class="w"> </span><span class="k">FINAL</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Books</span><span class="w"> </span><span class="k">FINAL</span>
+</span></code></pre></div>
 <p>Остаётся актуальная страница книги</p>
 <h3 id="log">Log</h3>
 <p>Ни чем не примичательный движок, предназначен для тестов и хранения небольших данных. Каждая котолонка такого движка хранится в отдельном файле.</p>
@@ -1430,17 +1412,14 @@ FROM numbers(1);
 </details>
 
 <p>Читать данные из буфферной таблицы не получится.</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">eb</span><span class="p">;</span><span class="w"> </span><span class="c1">-- выдаст ошибку</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">eb</span><span class="p">;</span><span class="w"> </span><span class="c1">-- выдаст ошибку</span>
+</span></code></pre></div>
 <p>Выборку можно получить только из таблицы куда сливаются данные.</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ebt</span><span class="p">;</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ebt</span><span class="p">;</span>
+</span></code></pre></div>
 <p>Чтобы слить данные из ОП в таблицу в ручную, используйте следующий запрос:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">OPTIMIZE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">eb</span><span class="p">;</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="w">    </span><span class="n">OPTIMIZE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">eb</span><span class="p">;</span>
+</span></code></pre></div>
 <h3 id="memory">Memory</h3>
 <p>В движке Memory данныех храняться только в оперативной памяти, поэтому при перезапуске CH данные будут утеряны. Данный движок часто используется при оптимизации запроса.</p>
 <details>
@@ -1500,21 +1479,18 @@ INSERT INTO est SELECT number from numbers(300);
 </details>
 
 <p>Читать данные из  Set-таблицы не получится. </p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">es</span><span class="w"> </span><span class="c1">-- выдаст ошибку </span>
-</code></pre></div>
-
-<p>Применять можно только таким образом:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
-<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">est</span>
-<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">es</span>
-</code></pre></div>
-
+<p><div class="language-sql highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">es</span><span class="w"> </span><span class="c1">-- выдаст ошибку </span>
+</span></code></pre></div>
+Применять можно только таким образом:</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">est</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">es</span>
+</span></code></pre></div>
 <p>Так же такая таблица может состоять из нескольких колонок, чтобы правильно к ней обратитсья, необходимо использовать следующий шаблон:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
-<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="k">table_name</span>
-<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="p">(</span><span class="n">col1</span><span class="p">,</span><span class="w"> </span><span class="n">col2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">colN</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">table_set</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="k">table_name</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="p">(</span><span class="n">col1</span><span class="p">,</span><span class="w"> </span><span class="n">col2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">colN</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">table_set</span>
+</span></code></pre></div>
 <h3 id="generaterandom">GenerateRandom</h3>
 <p><strong>GenerateRandom</strong> -- предназначен для генерации данных в СН, с целью дальнейших тестов.</p>
 <details>
@@ -1599,10 +1575,9 @@ SETTINGS
 </details>
 
 <p>Чтобы транслировать данные в кафку необходимо выполнить обычную команду на вставку:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">kafka_out_message</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="nb">number</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">numbers</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">kafka_out_message</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="nb">number</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">numbers</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+</span></code></pre></div>
 <p>ВСЁ!</p>
 <h4 id="_5">Получение данных</h4>
 <p>Тут капец как муторно, но так придумано разработчиками, поэтому мы просто делаем свою работу и не более того. Создадим очередную таблицу:</p>
@@ -1628,10 +1603,9 @@ SETTINGS
 
 <p>Считать данные из этой таблицы просто так не получится, данная таблица сохраняет данные в памяти и может только перенаправлять данные в нужную нам таблицу с определённым методом хранения(движком).</p>
 <p>Если всетаки хочется пороверить, а получаем ли мы что то с данного топика, необходимо выполнить следующий запрос:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">SET</span><span class="w"> </span><span class="n">stream_like_engine_allow_direct_select</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">kafka_input_stage</span><span class="p">;</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">SET</span><span class="w"> </span><span class="n">stream_like_engine_allow_direct_select</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">kafka_input_stage</span><span class="p">;</span>
+</span></code></pre></div>
 <p>Теперь создаем таблицу в которой будут непосредственно хранитсья данные:</p>
 <details>
     <summary>Выполни данный скрипт</summary>
@@ -1664,54 +1638,50 @@ CREATE MATERIALIZED VIEW kafka_input_stage_mv TO table_stage_from_kafka AS
 </details>
 
 <p>Осталось только достать данные из JSON:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span><span class="w">  </span>
-<span class="w">    </span><span class="n">JSONExtractInt</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;before&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;id&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">before_id</span><span class="p">,</span><span class="w">  </span><span class="c1">-- JSONExtract&lt;тип данных&gt;(&lt;JSON строка&gt;, &lt;ключ&gt;)</span>
-<span class="w">    </span><span class="n">JSONExtractInt</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;before&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;order_id&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">before_order_id</span><span class="p">,</span>
-<span class="w">    </span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;before&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;status&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">before_status</span><span class="p">,</span>
-<span class="w">    </span><span class="n">JSONExtractUInt</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;before&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;ts&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">before_ts</span><span class="p">,</span>
-<span class="w">    </span><span class="n">JSONExtractInt</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;after&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;id&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">after_id</span><span class="p">,</span>
-<span class="w">    </span><span class="n">JSONExtractInt</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;after&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;order_id&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">after_order_id</span><span class="p">,</span>
-<span class="w">    </span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;after&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;status&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">after_status</span><span class="p">,</span>
-<span class="w">    </span><span class="n">JSONExtractUInt</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;after&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;ts&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">after_ts</span><span class="p">,</span>
-<span class="w">    </span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;op&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">op</span><span class="p">,</span>
-<span class="w">    </span><span class="n">toDateTime</span><span class="p">(</span><span class="n">JSONExtractInt</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;ts_ms&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">dt</span><span class="w">  </span><span class="c1">-- Перевод времени из timestamp в читаемый вид</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">table_stage_from_kafka</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">SELECT</span><span class="w">  </span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">    </span><span class="n">JSONExtractInt</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;before&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;id&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">before_id</span><span class="p">,</span><span class="w">  </span><span class="c1">-- JSONExtract&lt;тип данных&gt;(&lt;JSON строка&gt;, &lt;ключ&gt;)</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">    </span><span class="n">JSONExtractInt</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;before&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;order_id&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">before_order_id</span><span class="p">,</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">    </span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;before&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;status&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">before_status</span><span class="p">,</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">    </span><span class="n">JSONExtractUInt</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;before&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;ts&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">before_ts</span><span class="p">,</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="w">    </span><span class="n">JSONExtractInt</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;after&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;id&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">after_id</span><span class="p">,</span>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="w">    </span><span class="n">JSONExtractInt</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;after&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;order_id&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">after_order_id</span><span class="p">,</span>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="w">    </span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;after&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;status&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">after_status</span><span class="p">,</span>
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="w">    </span><span class="n">JSONExtractUInt</span><span class="p">(</span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;after&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;ts&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">after_ts</span><span class="p">,</span>
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="w">    </span><span class="n">JSONExtractString</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;op&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">op</span><span class="p">,</span>
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="w">    </span><span class="n">toDateTime</span><span class="p">(</span><span class="n">JSONExtractInt</span><span class="p">(</span><span class="n">json_kafka</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;ts_ms&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">dt</span><span class="w">  </span><span class="c1">-- Перевод времени из timestamp в читаемый вид</span>
+</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="k">FROM</span><span class="w"> </span><span class="n">table_stage_from_kafka</span>
+</span></code></pre></div>
 <h3 id="replicatedmergetree">ReplicatedMergeTree</h3>
 <p>Данный движок позволяет положить копию таблицы на репликационный сервер. Данный сервер предназначен для повышения отказоустойчивости всего кластера. Важно помнить, что репликация не происходит моментально, согласованность основного и репликационного сервера происходит со временем и может произойти ситуация, когда на основном сервере произошел сбой, далее перешли на реплику, а данные на енй не в полном объеме. Это абсолютно нормально для ClickHouse.</p>
 <p>Создается такая таблица с определёнными особенностями, при создании объекста необходимо использваоть конструкцию <strong>ON CLUSTER 'имя кластера'</strong>. Это конструкция копирует объект на каждый сервер всего кластера.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">CLUSTER</span><span class="w"> </span><span class="s1">&#39;company_cluster&#39;</span><span class="w"> </span><span class="p">(</span><span class="w">   </span><span class="c1">-- имя кластера можно задавать по имени и с помощью макроса &#39;{cluster}&#39;</span>
-<span class="w">        </span><span class="k">time</span><span class="w"> </span><span class="n">DateTime</span><span class="p">,</span>
-<span class="w">        </span><span class="n">uid</span><span class="w">  </span><span class="n">Int64</span><span class="p">,</span>
-<span class="w">        </span><span class="k">type</span><span class="w"> </span><span class="n">LowCardinality</span><span class="p">(</span><span class="n">String</span><span class="p">)</span>
-<span class="w">    </span><span class="p">)</span>
-<span class="w">    </span><span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReplicatedMergeTree</span><span class="p">(</span><span class="s1">&#39;/clickhouse/tables/{cluster}/{shard}/events&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;{replica}&#39;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- путь может быть любой, необходимо смотреть как положено это делать в вашей команде.</span>
-<span class="w">    </span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">toDate</span><span class="p">(</span><span class="k">time</span><span class="p">)</span>
-<span class="w">    </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="p">(</span><span class="n">uid</span><span class="p">);</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">CLUSTER</span><span class="w"> </span><span class="s1">&#39;company_cluster&#39;</span><span class="w"> </span><span class="p">(</span><span class="w">   </span><span class="c1">-- имя кластера можно задавать по имени и с помощью макроса &#39;{cluster}&#39;</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">        </span><span class="k">time</span><span class="w"> </span><span class="n">DateTime</span><span class="p">,</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">        </span><span class="n">uid</span><span class="w">  </span><span class="n">Int64</span><span class="p">,</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">        </span><span class="k">type</span><span class="w"> </span><span class="n">LowCardinality</span><span class="p">(</span><span class="n">String</span><span class="p">)</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">    </span><span class="p">)</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">    </span><span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReplicatedMergeTree</span><span class="p">(</span><span class="s1">&#39;/clickhouse/tables/{cluster}/{shard}/events&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;{replica}&#39;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- путь может быть любой, необходимо смотреть как положено это делать в вашей команде.</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">    </span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">toDate</span><span class="p">(</span><span class="k">time</span><span class="p">)</span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">    </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="p">(</span><span class="n">uid</span><span class="p">);</span>
+</span></code></pre></div>
 <h3 id="distributed">Distributed</h3>
 <p>В продолжении рапределённых таблиц мы не можем не остановиться на теме шардирвания кластера. Шардирование -- это по свой сути обыкновенное разделение даных по серверам, по определенному признаку, для повышения вычислительных способностей всего кластре, т.е. мы ускоряем работу выполенения запросов(но не всех! JOIN и оконные функции будут <strong>ебать мозги</strong> если распределить данные не по ключу соединения и не по ключую разбития окна(PARTITION BY), соотвествено). </p>
 <p>Сама <strong>Distributed</strong> таблица не хранит в себе ничего, она исключительно ссылается на таблицу которая хранит в себе данные. Для примера как хранимую таблицу, мы возьмем из предыдущего запроса "events". Данная таблица будет хранить только те данные которые ей даст <strong>Distributed</strong> таблица на определённой шарде.</p>
 <p>Созадим Distributed таблицу:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">events_distr</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">CLUSTER</span><span class="w"> </span><span class="s1">&#39;company_cluster&#39;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">events</span>
-<span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Distributed</span><span class="p">(</span><span class="s1">&#39;company_cluster&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">-- имя кластера, можно исполльзовать макрос</span>
-<span class="w">                     </span><span class="n">db</span><span class="p">,</span><span class="w">                </span><span class="c1">-- имя БД</span>
-<span class="w">                     </span><span class="n">events</span><span class="p">,</span><span class="w">            </span><span class="c1">-- имя таблицы</span>
-<span class="w">                     </span><span class="n">uid</span><span class="p">);</span><span class="w">              </span><span class="c1">-- имя колонки по которой будет распределять данные</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">events_distr</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">CLUSTER</span><span class="w"> </span><span class="s1">&#39;company_cluster&#39;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">events</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Distributed</span><span class="p">(</span><span class="s1">&#39;company_cluster&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">-- имя кластера, можно исполльзовать макрос</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">                     </span><span class="n">db</span><span class="p">,</span><span class="w">                </span><span class="c1">-- имя БД</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="w">                     </span><span class="n">events</span><span class="p">,</span><span class="w">            </span><span class="c1">-- имя таблицы</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="w">                     </span><span class="n">uid</span><span class="p">);</span><span class="w">              </span><span class="c1">-- имя колонки по которой будет распределять данные</span>
+</span></code></pre></div>
 <p>Конструкция <strong>AS events</strong>, говорит создай таблицу <strong>events_distr</strong>, с такимиже полями как и таблица events. Очень важно, чтобы колонки совпадали.</p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">events_distr</span><span class="w"> </span><span class="k">VALUES</span>
-<span class="w">        </span><span class="p">(</span><span class="s1">&#39;2020-01-01 10:00:00&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;view&#39;</span><span class="p">),</span>
-<span class="w">        </span><span class="p">(</span><span class="s1">&#39;2020-01-01 10:05:00&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;view&#39;</span><span class="p">),</span>
-<span class="w">        </span><span class="p">(</span><span class="s1">&#39;2020-01-01 11:00:00&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;contact&#39;</span><span class="p">),</span>
-<span class="w">        </span><span class="p">(</span><span class="s1">&#39;2020-01-01 12:10:00&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;view&#39;</span><span class="p">),</span>
-<span class="w">        </span><span class="p">(</span><span class="s1">&#39;2020-01-02 08:10:00&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;view&#39;</span><span class="p">),</span>
-<span class="w">        </span><span class="p">(</span><span class="s1">&#39;2020-01-03 13:00:00&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">103</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;view&#39;</span><span class="p">);</span>
-</code></pre></div>
-
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="w">    </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">events_distr</span><span class="w"> </span><span class="k">VALUES</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">        </span><span class="p">(</span><span class="s1">&#39;2020-01-01 10:00:00&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;view&#39;</span><span class="p">),</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">        </span><span class="p">(</span><span class="s1">&#39;2020-01-01 10:05:00&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;view&#39;</span><span class="p">),</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">        </span><span class="p">(</span><span class="s1">&#39;2020-01-01 11:00:00&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;contact&#39;</span><span class="p">),</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="w">        </span><span class="p">(</span><span class="s1">&#39;2020-01-01 12:10:00&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;view&#39;</span><span class="p">),</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="w">        </span><span class="p">(</span><span class="s1">&#39;2020-01-02 08:10:00&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;view&#39;</span><span class="p">),</span>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="w">        </span><span class="p">(</span><span class="s1">&#39;2020-01-03 13:00:00&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">103</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;view&#39;</span><span class="p">);</span>
+</span></code></pre></div>
 <p>Теперь считай данные и распределённой таблицы(events_distr) и из локальной таблицы(events). Ты увидешь что в локальной не хватает данных из-за того что другие данные хранять на другой шарде.</p>
 
 

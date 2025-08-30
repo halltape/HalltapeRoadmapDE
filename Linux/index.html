@@ -823,72 +823,72 @@
 В операционной системе Windows с bash-строкой можно поработать используя Git Bash, установленный на предыдущем шаге, либо через WSL (Windows Subsystem for Linux).</p>
 <ul>
 <li>ls - список файлов и директорий в текущем каталоге
-    <code>bash
-    ls -l  # подробный список
-    ls -a  # включая скрытые файлы</code></li>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ls<span class="w"> </span>-l<span class="w">  </span><span class="c1"># подробный список</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>ls<span class="w"> </span>-a<span class="w">  </span><span class="c1"># включая скрытые файлы</span>
+</span></code></pre></div></li>
 <li>cd - смена текущего каталога
-    <code>bash
-    cd /path/to/directory
-    cd ..  # выйти из текущей папки на уровень выше</code></li>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>/path/to/directory
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">cd</span><span class="w"> </span>..<span class="w">  </span><span class="c1"># выйти из текущей папки на уровень выше</span>
+</span></code></pre></div></li>
 <li>pwd - показать текущий путь в каталог, где вы находитесь
-    <code>bash
-    pwd</code></li>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">pwd</span>
+</span></code></pre></div></li>
 <li>cp - копирование файлов и директорий
-    <code>bash
-    cp source destination</code></li>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cp<span class="w"> </span><span class="nb">source</span><span class="w"> </span>destination
+</span></code></pre></div></li>
 <li>mv - перемещение или переименование файлов и директорий
     ```bash
     mv source destination</li>
 <li>touch - создание файлов
-    <code>bash
-    touch file.txt # создать файл</code></li>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>touch<span class="w"> </span>file.txt<span class="w"> </span><span class="c1"># создать файл</span>
+</span></code></pre></div></li>
 <li>vim - встроенный редактор кода
-    <code>bash
-    vim my_code.py
-    # Чтобы отредактировать текст, нужно нажать i (insert, режим ввода)
-    # Чтобы выйти из vim, нужно нажать esc (выход из режима ввода), потом :wq (это сохраняет файл и выходит из него)</code></li>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>vim<span class="w"> </span>my_code.py
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># Чтобы отредактировать текст, нужно нажать i (insert, режим ввода)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Чтобы выйти из vim, нужно нажать esc (выход из режима ввода), потом :wq (это сохраняет файл и выходит из него)</span>
+</span></code></pre></div></li>
 <li>rm - удаление файлов и директорий
-    <code>bash
-    rm file
-    rm -r directory  # удаление директории и её содержимого</code></li>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>rm<span class="w"> </span>file
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>rm<span class="w"> </span>-r<span class="w"> </span>directory<span class="w">  </span><span class="c1"># удаление директории и её содержимого</span>
+</span></code></pre></div></li>
 <li>cat - вывод содержимого файла.
-    <code>bash
-    cat file</code></li>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cat<span class="w"> </span>file
+</span></code></pre></div></li>
 <li>less - режим постраничного просмотра содержимого файла.
-    <code>bash
-    less file</code></li>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>less<span class="w"> </span>file
+</span></code></pre></div></li>
 <li>tail -f - режим просмотра окончания файла в режиме реального времени (если, например, файл продолжает наполняться данными).
-    <code>bash
-    tail -f file</code></li>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>tail<span class="w"> </span>-f<span class="w"> </span>file
+</span></code></pre></div></li>
 <li>grep - поиск строк в файле.
-    <code>bash
-    grep "apple" file</code></li>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>grep<span class="w"> </span><span class="s2">&quot;apple&quot;</span><span class="w"> </span>file
+</span></code></pre></div></li>
 <li>chmod - изменение прав доступа к файлам и директориям.
-    <code>bash
-    chmod 755 test.txt</code></li>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>test.txt
+</span></code></pre></div></li>
 <li>echo - запись в файл
-  <code>bash
-  echo "data goes to file" &gt;&gt; data.txt</code></li>
+  <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;data goes to file&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>data.txt
+</span></code></pre></div></li>
 <li>mkdir - создать директорию (папку)
-  <code>bash
-  mkdir halltape_directory
-  mkdir -m 755 halltape_directory # Создание каталога с заданными правами доступа</code></li>
+  <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>mkdir<span class="w"> </span>halltape_directory
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>mkdir<span class="w"> </span>-m<span class="w"> </span><span class="m">755</span><span class="w"> </span>halltape_directory<span class="w"> </span><span class="c1"># Создание каталога с заданными правами доступа</span>
+</span></code></pre></div></li>
 <li>history - показать историю команд
-  <code>bash
-  history</code></li>
+  <div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">history</span>
+</span></code></pre></div></li>
 </ul>
 <p>Пример использования chmod (пригодится, когда нужно, чтобы файл мог запускаться сторонней программой и не было конфликтов)
 - Создадим файл и изменим права доступа (смотрите, как меняются права доступа в буквенном выражении)
-    <code>bash
-    halltape@MacBookPro Desktop % touch test.txt
-    halltape@MacBookPro Desktop % ls -l
-    -rw-r--r--   1 halltape  staff    0 Oct  3 12:37 test.txt
-    halltape@MacBookPro Desktop % chmod 755 test.txt 
-    halltape@MacBookPro Desktop % ls -l
-    -rwxr-xr-x   1 halltape  staff    0 Oct  3 12:37 test.txt
-    halltape@MacBookPro Desktop % chmod 777 test.txt 
-    halltape@MacBookPro Desktop % ls -l
-    -rwxrwxrwx   1 halltape  staff    0 Oct  3 12:37 test.txt</code></p>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>halltape@MacBookPro<span class="w"> </span>Desktop<span class="w"> </span>%<span class="w"> </span>touch<span class="w"> </span>test.txt
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>halltape@MacBookPro<span class="w"> </span>Desktop<span class="w"> </span>%<span class="w"> </span>ls<span class="w"> </span>-l
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>-rw-r--r--<span class="w">   </span><span class="m">1</span><span class="w"> </span>halltape<span class="w">  </span>staff<span class="w">    </span><span class="m">0</span><span class="w"> </span>Oct<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">12</span>:37<span class="w"> </span>test.txt
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>halltape@MacBookPro<span class="w"> </span>Desktop<span class="w"> </span>%<span class="w"> </span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>test.txt<span class="w"> </span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>halltape@MacBookPro<span class="w"> </span>Desktop<span class="w"> </span>%<span class="w"> </span>ls<span class="w"> </span>-l
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>-rwxr-xr-x<span class="w">   </span><span class="m">1</span><span class="w"> </span>halltape<span class="w">  </span>staff<span class="w">    </span><span class="m">0</span><span class="w"> </span>Oct<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">12</span>:37<span class="w"> </span>test.txt
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>halltape@MacBookPro<span class="w"> </span>Desktop<span class="w"> </span>%<span class="w"> </span>chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>test.txt<span class="w"> </span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>halltape@MacBookPro<span class="w"> </span>Desktop<span class="w"> </span>%<span class="w"> </span>ls<span class="w"> </span>-l
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>-rwxrwxrwx<span class="w">   </span><span class="m">1</span><span class="w"> </span>halltape<span class="w">  </span>staff<span class="w">    </span><span class="m">0</span><span class="w"> </span>Oct<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">12</span>:37<span class="w"> </span>test.txt
+</span></code></pre></div></p>
 <p>Таблица с обозначениями для chmod
 | Число | Право доступа                   |
 |-------|---------------------------------|
@@ -906,8 +906,8 @@ cron позволяет автоматически выполнять скрип
 Основные шаги по использованию:</p>
 <ul>
 <li>crontab -e - отредактировать файл cron
-  <code>bash
-  crontab -e</code></li>
+  <div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>crontab<span class="w"> </span>-e
+</span></code></pre></div></li>
 </ul>
 <p>Запись в crontab имеет следующий формат:</p>
 <p>* * * * * команда</p>
@@ -919,8 +919,8 @@ cron позволяет автоматически выполнять скрип
 Пятая * — день недели (0-7) (где 0 и 7 — воскресенье)</p>
 <p>Например:
 - Создадим задачу на запуск python-скрипта (script.py) каждый день в 7 вечера, для этого откроем файл cron:
-    <code>bash
-    halltape@MacBookPro Desktop % crontab -e</code></p>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>halltape@MacBookPro<span class="w"> </span>Desktop<span class="w"> </span>%<span class="w"> </span>crontab<span class="w"> </span>-e
+</span></code></pre></div></p>
 <ul>
 <li>Если вы не создавали ранее файл cron, появится сообщение с выбором текстового редактора (можно воспользоваться vim или nano):</li>
 </ul>

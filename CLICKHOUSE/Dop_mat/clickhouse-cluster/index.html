@@ -874,13 +874,11 @@
 <p>Кластер Clickhouse был честно спизжен с данного ресурса, ибо нахер придумывать велосипед когда и так всё хорошо работает</p>
 <h2 id="_1">Запуск</h2>
 <p>Установите пакет <strong>make</strong> и перейдите в каталог с кластером.</p>
-<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>make
-</code></pre></div>
-
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>make
+</span></code></pre></div>
 <p>Для поднятия всего кластера необходимо выполнить одну единственную команду:</p>
-<div class="codehilite"><pre><span></span><code>make<span class="w"> </span>config<span class="w"> </span>up
-</code></pre></div>
-
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>make<span class="w"> </span>config<span class="w"> </span>up
+</span></code></pre></div>
 <p>В итоге поднимится кластер с именем <code>company_cluster</code>.</p>
 <p>Контейнер находится в сети <code>172.23.0.0/24</code> (эта инфа нужна если вы делаете пет-проект и вы разграничиваете сети)</p>
 <table>
@@ -919,16 +917,14 @@
 <li><code>admin</code> - password <code>123</code></li>
 </ul>
 <h2 id="_3">Старт и останвка</h2>
-<p>Старт и остановка контейнерос</p>
-<div class="codehilite"><pre><span></span><code>make<span class="w"> </span>start
-make<span class="w"> </span>stop
-</code></pre></div>
-
+<p>Старт и остановка контейнерос
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>make<span class="w"> </span>start
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>make<span class="w"> </span>stop
+</span></code></pre></div></p>
 <h2 id="_4">Полная остановка</h2>
-<p>Полная остановка с удалением контейнера</p>
-<div class="codehilite"><pre><span></span><code>make<span class="w"> </span>down
-</code></pre></div>
-
+<p>Полная остановка с удалением контейнера
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>make<span class="w"> </span>down
+</span></code></pre></div></p>
 <h2 id="_5">Дополнительная конфигурация</h2>
 <p>Полазте по проекту, там нет абсолютно ничего сложного. Если захотите настройте его под себя.</p>
 

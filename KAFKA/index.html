@@ -1492,13 +1492,12 @@
 <li>Топик делится на <strong>партиции</strong> — независимые, упорядоченные логи сообщений.</li>
 <li>Партиции позволяют масштабировать топик горизонтально.</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>Topic: &quot;Orders&quot;
-Partition 0: [msg1, msg2, msg3]
-Partition 1: [msg4, msg5, msg6]
-Partition 2: [msg7, msg8, msg9]
-Partition 3: [msg10, msg11, msg12]
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Topic: &quot;Orders&quot;
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Partition 0: [msg1, msg2, msg3]
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Partition 1: [msg4, msg5, msg6]
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Partition 2: [msg7, msg8, msg9]
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Partition 3: [msg10, msg11, msg12]
+</span></code></pre></div>
 <hr />
 <h2 id="kafka_2">Как работает Kafka</h2>
 <h3 id="producers">Продюсеры (Producers)</h3>
@@ -1527,10 +1526,9 @@ Partition 3: [msg10, msg11, msg12]
 - Определения, какие сообщения уже были прочитаны.
 - Продолжения чтения с нужного места при повторном запуске.</p>
 <h3 id="_18">Пример:</h3>
-<div class="codehilite"><pre><span></span><code>Messages: [msg1, msg2, msg3]
-Offsets:  [  0 ,   1 ,   2 ]
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Messages: [msg1, msg2, msg3]
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Offsets:  [  0 ,   1 ,   2 ]
+</span></code></pre></div>
 <p>Если консьюмер дошёл до offset = 1, при следующем запуске он начнёт с offset = 2.</p>
 <hr />
 <h2 id="kafka_3">Структура сообщения Kafka</h2>

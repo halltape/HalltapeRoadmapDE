@@ -940,64 +940,61 @@
 <p><strong>Dockerfile</strong> — это текстовый файл с инструкциями для создания Docker-образа. </p>
 <p>Образ — это шаблон для создания контейнеров. Вы описываете в Dockerfile, какие программы и зависимости нужны вашему приложению, чтобы оно работало.</p>
 <h3 id="dockerfile_1">Пример Dockerfile:</h3>
-<div class="codehilite"><pre><span></span><code><span class="c"># Используем базовый образ Python</span>
-<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.10-slim</span>
-
-<span class="c"># Копируем файлы проекта в контейнер</span>
-<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>/app
-
-<span class="c"># Устанавливаем рабочую директорию</span>
-<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
-
-<span class="c"># Устанавливаем зависимости</span>
-<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-
-<span class="c"># Запускаем приложение</span>
-<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;app.py&quot;</span><span class="p">]</span>
-</code></pre></div>
-
+<div class="language-Dockerfile highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># Используем базовый образ Python</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">FROM</span><span class="w"> </span><span class="s">python:3.10-slim</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c"># Копируем файлы проекта в контейнер</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>/app
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c"># Устанавливаем рабочую директорию</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c"># Устанавливаем зависимости</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c"># Запускаем приложение</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;app.py&quot;</span><span class="p">]</span>
+</span></code></pre></div>
 <h3 id="docker-compose">Что такое docker-compose?</h3>
 <p>docker-compose — это инструмент для запуска нескольких связанных контейнеров.</p>
 <p>Вместо запуска контейнеров вручную, вы описываете их конфигурацию в одном YAML-файле и управляете ими как единой системой. Кстати формат файла пишут, как <strong>.yaml или .yml</strong> (Разницы нет)</p>
 <p>Файлик называют <strong>docker-compose.yaml</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="c"># Можно собирать из нескольких сервисов</span>
-version:<span class="w"> </span><span class="s2">&quot;3.6&quot;</span><span class="w"> </span>#<span class="w"> </span>Версия<span class="w"> </span>формата<span class="w"> </span>файла<span class="w"> </span>Docker<span class="w"> </span>Compose,<span class="w"> </span>используемая<span class="w"> </span>в<span class="w"> </span>данном<span class="w"> </span>случае,<span class="w"> </span>—<span class="w"> </span><span class="sb">`</span><span class="m">3</span>.6<span class="sb">`</span>.
-services:
-<span class="w">  </span>jupyterlab:
-<span class="w">    </span>image:<span class="w"> </span>andreper/jupyterlab:3.0.0-spark-3.0.0<span class="w"> </span>#<span class="w"> </span>Образ:<span class="w"> </span><span class="sb">`</span>andreper/jupyterlab:3.0.0-spark-3.0.0<span class="sb">`</span>
-<span class="w">    </span>container_name:<span class="w"> </span>jupyterlab<span class="w"> </span>#<span class="w"> </span>Имя<span class="w"> </span>контейнера:<span class="w"> </span><span class="sb">`</span>jupyterlab<span class="sb">`</span>
-<span class="w">    </span>ports:
-<span class="w">      </span>-<span class="w"> </span><span class="m">8888</span>:8888<span class="w"> </span>#<span class="w"> </span><span class="m">8888</span>:8888<span class="w"> </span><span class="o">(</span>интерфейс<span class="w"> </span>JupyterLab<span class="o">)</span>
-<span class="w">      </span>-<span class="w"> </span><span class="m">4040</span>:4040<span class="w"> </span>#<span class="w"> </span><span class="m">4040</span>:4040<span class="w"> </span><span class="o">(</span>интерфейс<span class="w"> </span>Spark<span class="w"> </span>UI<span class="o">)</span>
-<span class="w">    </span>volumes:
-<span class="w">      </span>-<span class="w"> </span>./build/workspace:/opt/workspace<span class="w"> </span>#<span class="w"> </span>Слева<span class="w"> </span>папка<span class="w"> </span>у<span class="w"> </span>вас<span class="w"> </span>на<span class="w"> </span>компе,<span class="w"> </span>а<span class="w"> </span>справа<span class="w"> </span>папка<span class="w"> </span>внутри<span class="w"> </span>контейнера.<span class="w"> </span>Все,<span class="w"> </span>что<span class="w"> </span>положишь<span class="w"> </span>в<span class="w"> </span>папку<span class="w"> </span>workspace,<span class="w"> </span>будет<span class="w"> </span>автоматически<span class="w"> </span>и<span class="w"> </span>внутри<span class="w"> </span>контейнера!
-<span class="w">  </span>spark-master:
-<span class="w">    </span>image:<span class="w"> </span>andreper/spark-master:3.0.0
-<span class="w">    </span>container_name:<span class="w"> </span>spark-master
-<span class="w">    </span>ports:
-<span class="w">      </span>-<span class="w"> </span><span class="m">8080</span>:8080
-<span class="w">      </span>-<span class="w"> </span><span class="m">7077</span>:7077
-<span class="w">    </span>volumes:
-<span class="w">      </span>-<span class="w"> </span>./build/workspace:/opt/workspace
-<span class="w">  </span>spark-worker-1:
-<span class="w">    </span>image:<span class="w"> </span>andreper/spark-worker:3.0.0
-<span class="w">    </span>container_name:<span class="w"> </span>spark-worker-1
-<span class="w">    </span>environment:
-<span class="w">      </span>-<span class="w"> </span><span class="nv">SPARK_WORKER_CORES</span><span class="o">=</span><span class="m">2</span>
-<span class="w">      </span>-<span class="w"> </span><span class="nv">SPARK_WORKER_MEMORY</span><span class="o">=</span>2g
-<span class="w">    </span>ports:
-<span class="w">      </span>-<span class="w"> </span><span class="m">8081</span>:8081
-<span class="w">    </span>volumes:
-<span class="w">      </span>-<span class="w"> </span>./build/workspace:/opt/workspace
-<span class="w">    </span>depends_on:
-<span class="w">      </span>-<span class="w"> </span>spark-master<span class="w"> </span>#<span class="w"> </span>Зависит<span class="w"> </span>от<span class="w"> </span>сервиса<span class="w"> </span>spark-master,<span class="w"> </span>чтобы<span class="w"> </span>гарантировать<span class="w"> </span>его<span class="w"> </span>запуск<span class="w"> </span>после<span class="w"> </span>мастера.
-</code></pre></div>
-
+<div class="language-Dockerfile highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c"># Можно собирать из нескольких сервисов</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>version:<span class="w"> </span><span class="s2">&quot;3.6&quot;</span><span class="w"> </span>#<span class="w"> </span>Версия<span class="w"> </span>формата<span class="w"> </span>файла<span class="w"> </span>Docker<span class="w"> </span>Compose,<span class="w"> </span>используемая<span class="w"> </span>в<span class="w"> </span>данном<span class="w"> </span>случае,<span class="w"> </span>—<span class="w"> </span><span class="sb">`</span><span class="m">3</span>.6<span class="sb">`</span>.
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>services:
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>jupyterlab:
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span>image:<span class="w"> </span>andreper/jupyterlab:3.0.0-spark-3.0.0<span class="w"> </span>#<span class="w"> </span>Образ:<span class="w"> </span><span class="sb">`</span>andreper/jupyterlab:3.0.0-spark-3.0.0<span class="sb">`</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span>container_name:<span class="w"> </span>jupyterlab<span class="w"> </span>#<span class="w"> </span>Имя<span class="w"> </span>контейнера:<span class="w"> </span><span class="sb">`</span>jupyterlab<span class="sb">`</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span>ports:
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span>-<span class="w"> </span><span class="m">8888</span>:8888<span class="w"> </span>#<span class="w"> </span><span class="m">8888</span>:8888<span class="w"> </span><span class="o">(</span>интерфейс<span class="w"> </span>JupyterLab<span class="o">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">      </span>-<span class="w"> </span><span class="m">4040</span>:4040<span class="w"> </span>#<span class="w"> </span><span class="m">4040</span>:4040<span class="w"> </span><span class="o">(</span>интерфейс<span class="w"> </span>Spark<span class="w"> </span>UI<span class="o">)</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span>volumes:
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">      </span>-<span class="w"> </span>./build/workspace:/opt/workspace<span class="w"> </span>#<span class="w"> </span>Слева<span class="w"> </span>папка<span class="w"> </span>у<span class="w"> </span>вас<span class="w"> </span>на<span class="w"> </span>компе,<span class="w"> </span>а<span class="w"> </span>справа<span class="w"> </span>папка<span class="w"> </span>внутри<span class="w"> </span>контейнера.<span class="w"> </span>Все,<span class="w"> </span>что<span class="w"> </span>положишь<span class="w"> </span>в<span class="w"> </span>папку<span class="w"> </span>workspace,<span class="w"> </span>будет<span class="w"> </span>автоматически<span class="w"> </span>и<span class="w"> </span>внутри<span class="w"> </span>контейнера!
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span>spark-master:
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span>image:<span class="w"> </span>andreper/spark-master:3.0.0
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span>container_name:<span class="w"> </span>spark-master
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span>ports:
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">      </span>-<span class="w"> </span><span class="m">8080</span>:8080
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">      </span>-<span class="w"> </span><span class="m">7077</span>:7077
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span>volumes:
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">      </span>-<span class="w"> </span>./build/workspace:/opt/workspace
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">  </span>spark-worker-1:
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span>image:<span class="w"> </span>andreper/spark-worker:3.0.0
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span>container_name:<span class="w"> </span>spark-worker-1
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">    </span>environment:
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">      </span>-<span class="w"> </span><span class="nv">SPARK_WORKER_CORES</span><span class="o">=</span><span class="m">2</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">      </span>-<span class="w"> </span><span class="nv">SPARK_WORKER_MEMORY</span><span class="o">=</span>2g
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">    </span>ports:
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">      </span>-<span class="w"> </span><span class="m">8081</span>:8081
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">    </span>volumes:
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">      </span>-<span class="w"> </span>./build/workspace:/opt/workspace
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">    </span>depends_on:
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">      </span>-<span class="w"> </span>spark-master<span class="w"> </span>#<span class="w"> </span>Зависит<span class="w"> </span>от<span class="w"> </span>сервиса<span class="w"> </span>spark-master,<span class="w"> </span>чтобы<span class="w"> </span>гарантировать<span class="w"> </span>его<span class="w"> </span>запуск<span class="w"> </span>после<span class="w"> </span>мастера.
+</span></code></pre></div>
 <p><strong>Для запуска:</strong>
-Этой командой можно запустить сборку и запуск docker-контейнера в фоновом режиме (в терминале не будут отображаться логи)</p>
-<div class="codehilite"><pre><span></span><code>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
-</code></pre></div>
-
+Этой командой можно запустить сборку и запуск docker-контейнера в фоновом режиме (в терминале не будут отображаться логи)
+<div class="language-Dockerfile highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
+</span></code></pre></div></p>
 <p>Пример docker-compose взят <a href="https://github.com/halltape/HalltapeSparkCluster">отсюда</a></p>
 <h2 id="docker_3">Распространённые команды Docker</h2>
 <h3 id="_1">Управление образами</h3>

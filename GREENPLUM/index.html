@@ -1363,10 +1363,9 @@
 
 <p>Принцип заключается в том, что от значения ключа берётся хеш-значение, которое указывает на какой сегмент класть данные.</p>
 <p>Согласно рекомендации не рекомендуется делать составной ключ, состоящий из более чем 3х колонок. Код создания такой таблицы выглядит следующим образом:</p>
-<div class="codehilite"><pre><span></span><code>CREATE TABLE ...
-DISTRIBUTED BY (id);
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>CREATE TABLE ...
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>DISTRIBUTED BY (id);
+</span></code></pre></div>
 <h3 id="_14">Случайная дистрибуция</h3>
 <p>Если не получается подобрать ключ, то можно использовать дистрибуцию <strong>случайным образом</strong>. В данном случае строки будут просто распределены равномерно по сегментам.</p>
 <p align="center">
@@ -1374,10 +1373,9 @@ DISTRIBUTED BY (id);
 </p>
 
 <p>Код создания такой таблицы выглядит следующим образом:</p>
-<div class="codehilite"><pre><span></span><code>CREATE TABLE ...
-DISTRIBUTED RANDOMLY;
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>CREATE TABLE ...
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>DISTRIBUTED RANDOMLY;
+</span></code></pre></div>
 <h3 id="_15">Реплицируемая дистрибуция</h3>
 <p>Если у нас есть небольшая таблица, то лучше использовать <strong>реплицируемое распределение</strong>. В данном случае таблица будет находиться на всех сегментах. Такой тип дистрибуции ускоряет запросы, но занимает больше пространства, поэтому лучше его использовать для таблиц-словарей.</p>
 <p align="center">
@@ -1385,10 +1383,9 @@ DISTRIBUTED RANDOMLY;
 </p>
 
 <p>Код создания такой таблицы выглядит следующим образом:</p>
-<div class="codehilite"><pre><span></span><code>CREATE TABLE ...
-DISTRIBUTED REPLICATED;
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>CREATE TABLE ...
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>DISTRIBUTED REPLICATED;
+</span></code></pre></div>
 <p><strong>Важно</strong> всегда явно прописывать какой тип дистрибуции использовать и какие ключи выбираем, от этого зависит распределение данных. Если в запросе при создании таблицы не указать вид дистрибуции, то будет выбрана дистрибуция по ключу и выбрана 1я колонка по типу данных, которой можно хешироваться.</p>
 <p>Из-за неправильного распределения страдает оптимизация и, соответственно, время выполнения запроса.</p>
 <h2 id="_16">Виды таблиц</h2>
@@ -1413,11 +1410,10 @@ DISTRIBUTED REPLICATED;
 <p>HEAP-таблицы в GreenPlum позволяют оптимизатору считывать только необходимые данные, что ускоряет выполнение операций <code>INSERT</code>, <code>UPDATE</code> и <code>DELETE</code>. Однако использование <code>SELECT *</code> может привести к долгому считыванию данных, из-за того что колонка таблицы находится в TOAST-сегменте.</p>
 <p>Таким образом, HEAP-таблицы в GreenPlum могут быть полезны для OLTP-нагрузок, но требуют осторожности при использовании <code>SELECT *</code> и <code>JOIN</code>.</p>
 <p>Чтобы создать такую таблицу используется следующий синтаксис:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">CREATE</span> <span class="n">TABLE</span> <span class="err">…</span>
-<span class="kr">WITH</span> <span class="p">(</span><span class="n">APPENDONLY</span><span class="o">=</span><span class="n">false</span><span class="p">)</span>
-<span class="n">DISTRIBUTED</span> <span class="kr">BY</span> <span class="err">…</span>
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>CREATE TABLE …
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>WITH (APPENDONLY=false)
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>DISTRIBUTED BY …
+</span></code></pre></div>
 <h3 id="append-optimized">APPEND-OPTIMIZED таблица</h3>
 <p><strong>AO-таблицы</strong> предназначены для вставки больших порций данных.  У них более сложная внутренняя структура — транзакционность, модификация данных и индексы реализованы через <strong>вспомогательные heap-таблицы</strong>. Данные хранятся в сегментных файлах, состоящих из блоков произвольной длины, поддерживающих сжатие.</p>
 <p align="center">
@@ -1441,11 +1437,10 @@ DISTRIBUTED REPLICATED;
 </p>
 
 <p>Данная ориентация используется по умолчанию и является хорошим решением, когда требуется выполение  OLTP и OLAP требований одновременно. Синтаксис создания выглядит следующим образом:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">CREATE</span> <span class="n">TABLE</span> <span class="err">…</span>
-<span class="kr">WITH</span> <span class="p">(</span><span class="n">APPENDONLY</span><span class="o">=</span><span class="n">true</span><span class="p">)</span>
-<span class="n">DISTRIBUTED</span> <span class="kr">BY</span> <span class="err">…</span>
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>CREATE TABLE …
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>WITH (APPENDONLY=true)
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>DISTRIBUTED BY …
+</span></code></pre></div>
 <h4 id="_18">Колоночная ориентация</h4>
 <p>При колоночной ориентации, каждая колонка таблицы хранится в отдельном файле, а в сегментных файлах находятся ссылки на эти файлы. </p>
 <p align="center">
@@ -1453,14 +1448,13 @@ DISTRIBUTED REPLICATED;
 </p>
 
 <p>Это приводит к резкому увеличению количества файлов, в которых хранятся данные, но таблицы с колоночной ориентацией сокращают затраты на чтение, когда запрос обращается к определенным столбцам таблицы. Еще одним плюсом такого метода хранения данных, является то, что такие таблицы лучше сжимаются.</p>
-<div class="codehilite"><pre><span></span><code><span class="nx">CREATE</span><span class="w"> </span><span class="nx">TABLE</span><span class="w"> </span><span class="err">…</span>
-<span class="nx">WITH</span><span class="w"> </span><span class="p">(</span><span class="nx">APPENDONLY</span><span class="p">=</span><span class="kc">true</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">ORIENTATION</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">column</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">COMPRESSTYPE</span><span class="p">=[</span><span class="nx">quicklz</span><span class="o">|</span><span class="nx">zlib</span><span class="o">|</span><span class="nx">rle_type</span><span class="o">|</span><span class="nx">zstd</span><span class="p">],</span>
-<span class="w">      </span><span class="nx">COMPRESSLEVEL</span><span class="p">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="nx">DISTRIBUTED</span><span class="w"> </span><span class="nx">BY</span><span class="w"> </span><span class="err">…</span>
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>CREATE TABLE …
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>WITH (APPENDONLY=true,
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>      ORIENTATION = column,
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>      COMPRESSTYPE=[quicklz|zlib|rle_type|zstd],
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>      COMPRESSLEVEL=1)
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>DISTRIBUTED BY …
+</span></code></pre></div>
 <h2 id="_19">Партицирование</h2>
 <p>В GreenPlum, данные в таблицах можно разделять на самих сегментах за счёт партицирования.</p>
 <p align="center">
@@ -1477,44 +1471,41 @@ DISTRIBUTED REPLICATED;
 <p>Дополнительно к этим методам можно указать партицию <strong>по умолчанию</strong>, куда будут попадать данные которые не подошли в рамках ключа.</p>
 <h3 id="_20">Партицирование по диапазону</h3>
 <p>Для объяснения возьмём запрос создания таблицы с партицированием по "дате рождения", где создается 3 партиции, кто родился в 90х, 2000х и 2010х годах. </p>
-<div class="codehilite"><pre><span></span><code><span class="nx">CREATE</span><span class="w"> </span><span class="nx">TABLE</span><span class="w"> </span><span class="err">…</span>
-<span class="nx">WITH</span><span class="w"> </span><span class="err">…</span>
-<span class="nx">DISTRIBUTED</span><span class="w"> </span><span class="nx">BY</span><span class="w"> </span><span class="err">…</span>
-<span class="nx">PARTITION</span><span class="w"> </span><span class="nx">BY</span><span class="w"> </span><span class="nx">RANGE</span><span class="w"> </span><span class="p">(</span><span class="nx">date_birth</span><span class="p">)</span>
-<span class="p">(</span>
-<span class="nx">PARTITION</span><span class="w"> </span><span class="nx">year1990s</span><span class="w"> </span><span class="nx">START</span><span class="w"> </span><span class="p">(</span><span class="err">&#39;</span><span class="mi">1990</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="err">&#39;</span><span class="p">)</span>
-<span class="w">                    </span><span class="nx">END</span><span class="w"> </span><span class="p">(</span><span class="err">&#39;</span><span class="mi">2000</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="err">&#39;</span><span class="p">)</span>
-<span class="w">                    </span><span class="nx">WITH</span><span class="w"> </span><span class="p">(</span><span class="nx">appendoptimized</span><span class="p">=</span><span class="nx">TRUE</span><span class="p">,</span><span class="w"> </span>
-<span class="w">                 </span><span class="nx">compresstype</span><span class="p">=</span><span class="nx">zstd</span><span class="p">),</span>
-<span class="nx">PARTITION</span><span class="w"> </span><span class="nx">year2000s</span><span class="w"> </span><span class="nx">START</span><span class="w"> </span><span class="p">(</span><span class="err">&#39;</span><span class="mi">2000</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="err">&#39;</span><span class="p">)</span>
-<span class="w">                    </span><span class="nx">END</span><span class="w"> </span><span class="p">(</span><span class="err">&#39;</span><span class="mi">2010</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="err">&#39;</span><span class="p">),</span>
-<span class="nx">PARTITION</span><span class="w"> </span><span class="nx">year2010s</span><span class="w"> </span><span class="nx">START</span><span class="w"> </span><span class="p">(</span><span class="err">&#39;</span><span class="mi">2010</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="err">&#39;</span><span class="p">)</span>
-<span class="w">                    </span><span class="nx">END</span><span class="w"> </span><span class="p">(</span><span class="err">&#39;</span><span class="mi">2020</span><span class="o">-</span><span class="mi">00</span><span class="o">-</span><span class="mi">01</span><span class="err">&#39;</span><span class="p">));</span>
-</code></pre></div>
-
-<p>В конструкции партиции 90х годов можно заметить, конструкцию <strong>WITH</strong>, в которой можно указать все те же самые параметры, что и при создании таблиц, т.е. для партиций можно указывать свою ориентацию, методы сжатия и т.д. По умолчанию берутся параметры <strong><em>родительской таблицы</em></strong>. </p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>CREATE TABLE …
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>WITH …
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>DISTRIBUTED BY …
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>PARTITION BY RANGE (date_birth)
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>(
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>PARTITION year1990s START (&#39;1990-01-01&#39;)
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>                    END (&#39;2000-01-01&#39;)
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>                    WITH (appendoptimized=TRUE, 
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>                 compresstype=zstd),
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>PARTITION year2000s START (&#39;2000-01-01&#39;)
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>                    END (&#39;2010-01-01&#39;),
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>PARTITION year2010s START (&#39;2010-01-01&#39;)
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>                    END (&#39;2020-00-01&#39;));
+</span></code></pre></div>
+В конструкции партиции 90х годов можно заметить, конструкцию <strong>WITH</strong>, в которой можно указать все те же самые параметры, что и при создании таблиц, т.е. для партиций можно указывать свою ориентацию, методы сжатия и т.д. По умолчанию берутся параметры <strong><em>родительской таблицы</em></strong>. </p>
 <p>К каждой созданной партиции можно обратиться <code>SELECT</code> запросом, для этого в конструкции <code>FROM</code> прописывается имя партиции. Команды DDL и DML для партиций можно выполнить исключительно только через родительскую таблицу.</p>
 <p align="center">
     <img src="./../png/gp_partitions_range.png" alt="Партицирование по диапозону" width="480" height="400"/>
 </p>
 
 <p>Чтобы каждый раз не создавать партиции вручную, можно воспользоваться конструкцией представленной ниже. Она включает в себя <strong>границы создания партиции</strong> и <strong>промежуток</strong>, на который будут делиться партиции в рамках границ.</p>
-<div class="codehilite"><pre><span></span><code><span class="o">(</span><span class="nt">START</span><span class="w"> </span><span class="o">(</span><span class="s1">&#39;1990-01-01 00:00:00&#39;</span><span class="o">)</span>
-<span class="w">    </span><span class="nt">END</span><span class="w"> </span><span class="o">(</span><span class="s1">&#39;2020-01-01 00:00:00&#39;</span><span class="o">)</span>
-<span class="w">    </span><span class="nt">EVERY</span><span class="w"> </span><span class="o">(</span><span class="nt">INTERVAL</span><span class="w"> </span><span class="s1">&#39;10 YEAR&#39;</span><span class="o">));</span>
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>(START (&#39;1990-01-01 00:00:00&#39;)
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    END (&#39;2020-01-01 00:00:00&#39;)
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    EVERY (INTERVAL &#39;10 YEAR&#39;));
+</span></code></pre></div>
 <h3 id="_21">Партицирование по списку</h3>
 <p>Так же, возьмём пример создания партицированной таблицы по списку, а именно "полу человека".</p>
-<div class="codehilite"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">...</span>
-<span class="k">WITH</span><span class="n">…</span>
-<span class="n">DISTRIBUTED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="p">...</span>
-<span class="k">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">LIST</span><span class="w"> </span><span class="p">(</span><span class="n">sex</span><span class="p">)</span>
-<span class="p">(</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="n">girls</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">),</span>
-<span class="w">  </span><span class="k">PARTITION</span><span class="w"> </span><span class="n">boys</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">),</span>
-<span class="w">  </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="p">);</span>
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>CREATE TABLE ...
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>WITH…
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>DISTRIBUTED BY ...
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>PARTITION BY LIST (sex)
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>( PARTITION girls VALUES (&#39;F&#39;),
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>  PARTITION boys VALUES (&#39;M&#39;),
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>  DEFAULT PARTITION other );
+</span></code></pre></div>
 <p>Как вы можете заметить таблица разбивается на 3 сегмента, <strong><em>мужчин</em></strong>, <strong><em>женщин</em></strong> и <strong><em>другие</em></strong>. Партиция "другие" создается за счет конструкции партиции по умолчанию.  </p>
 <p align="center">
     <img src="./../png/gp_partitions_list.png" alt="Партицирование по списку" width="480" height="400"/>
@@ -1522,21 +1513,20 @@ DISTRIBUTED REPLICATED;
 
 <h3 id="_22">Комбинированное партицирование</h3>
 <p>GreenPlum поддерживает возможность создания <strong>многоуровневого партицирования</strong>, поэтому можно объединить 2 предыдующих случая, следующим образом:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">CREATE</span> <span class="n">TABLE</span> <span class="p">...</span>
-<span class="kr">WITH</span> <span class="p">...</span>
-<span class="n">DISTRIBUTED</span> <span class="kr">BY</span> <span class="p">...</span>
-<span class="n">PARTITION</span> <span class="kr">BY</span> <span class="n">RANGE</span> <span class="p">(</span><span class="n">date_birth</span><span class="p">)</span>
-<span class="n">SUBPARTITION</span> <span class="kr">BY</span> <span class="n">LIST</span> <span class="p">(</span><span class="n">sex</span><span class="p">)</span>
-   <span class="n">SUBPARTITION</span> <span class="n">TEMPLATE</span> <span class="p">(</span>
-     <span class="n">SUBPARTITION</span> <span class="n">girls</span> <span class="n">VALUES</span> <span class="p">(</span><span class="s">&#39;F&#39;</span><span class="p">),</span>
-     <span class="n">SUBPARTITION</span> <span class="n">boys</span> <span class="n">VALUES</span> <span class="p">(</span><span class="s">&#39;M&#39;</span><span class="p">)</span>
-        <span class="p">)</span>
-<span class="p">(</span><span class="n">START</span> <span class="p">(</span><span class="s">&#39;1990-01-01&#39;</span><span class="p">)</span> 
- <span class="kr">END</span> <span class="p">(</span><span class="s">&#39;2025-01-01&#39;</span><span class="p">)</span> 
- <span class="n">EVERY</span> <span class="p">(</span><span class="n">INTERVAL</span> <span class="s">&#39;10 YEAR&#39;</span><span class="p">));</span>
-</code></pre></div>
-
-<p>Но нужно помнить многоуровневое партицирование приводит к <strong>разрастанию количества файлов</strong>.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>CREATE TABLE ...
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>WITH ...
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>DISTRIBUTED BY ...
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>PARTITION BY RANGE (date_birth)
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>SUBPARTITION BY LIST (sex)
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>   SUBPARTITION TEMPLATE (
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>     SUBPARTITION girls VALUES (&#39;F&#39;),
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>     SUBPARTITION boys VALUES (&#39;M&#39;)
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>        )
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>(START (&#39;1990-01-01&#39;) 
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a> END (&#39;2025-01-01&#39;) 
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a> EVERY (INTERVAL &#39;10 YEAR&#39;));
+</span></code></pre></div>
+Но нужно помнить многоуровневое партицирование приводит к <strong>разрастанию количества файлов</strong>.</p>
 <p align="center">
     <img src="./../png/gp_partitions_comb.png" alt="Комбинированное партицирование" width="560" height="500"/>
 </p>

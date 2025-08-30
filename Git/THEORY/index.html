@@ -1055,12 +1055,9 @@
 <p>Ну что го прокидывать, тут тоже ниче сложного, смотри:</p>
 <ol>
 <li>Заходишь в свой терминал или git bash</li>
-<li>Прописиваешь команду </li>
-</ol>
-<div class="codehilite"><pre><span></span><code>ssh-keygen
-</code></pre></div>
-
-<ol>
+<li>Прописиваешь команду 
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh-keygen
+</span></code></pre></div></li>
 <li>тебе предложать изменить каталог где будет хранится ключ и ввести кодовую фразу для генерацию ключа, забей болтяру и жми как все специ 3 раз <strong>Enter</strong></li>
 </ol>
 <p align="center">
@@ -1094,9 +1091,8 @@
 <h2 id="_7">Джентельменский набор команд</h2>
 <p>Сейчас мы рассмотрим то, что необходимо знать каждому уважающему себя IT-шнику, который сталкивается с гитом.</p>
 <h3 id="git-clone">git clone</h3>
-<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>&lt;адрес<span class="w"> </span>репозитория&gt;<span class="w"> </span>
-</code></pre></div>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>&lt;адрес<span class="w"> </span>репозитория&gt;<span class="w"> </span>
+</span></code></pre></div>
 <p>По сути это самая первая команда, которая клонирует перозиторий в твой каталог.</p>
 <p>Адрес репозитория находится в ЗЕЛЕНОЙ кнопке <strong>Code</strong> во вкладке <strong>SSH</strong></p>
 <p align="center">
@@ -1112,45 +1108,40 @@
 </p>
 
 <h3 id="git-addrestore">git add/restore</h3>
-<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>&lt;файл/каталог&gt;
-</code></pre></div>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>add<span class="w"> </span>&lt;файл/каталог&gt;
+</span></code></pre></div>
 <p>Это прям пушка команда, перед тем как тебе отправить данные на изменения в общий репозиторий, тебе необходимо сказать гиту, какие именно файлы ты хочешь отправить в GITHUB.</p>
 <p align="center">
     <img src="./../../png/git_add.png" alt="GITHUB" width="540" height="320"/>
 </p>
 
 <p>А теперь представь ты добавил не тот каколог или файл, что делать, ну конечно нужно удалить твое добавление, делается это так:</p>
-<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>restore<span class="w"> </span>&lt;файл/каталог&gt;
-</code></pre></div>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>restore<span class="w"> </span>&lt;файл/каталог&gt;
+</span></code></pre></div>
 <p>Ну в целом вот что произойдет с твоим файлом.</p>
 <p align="center">
     <img src="./../../png/git_restore.png" alt="GITHUB" width="540" height="320"/>
 </p>
 
 <h3 id="git-commit">git commit</h3>
-<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>–m<span class="w"> </span>“&lt;комментарий<span class="w"> </span>к<span class="w"> </span>коммиту&gt;”
-</code></pre></div>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>commit<span class="w"> </span>–m<span class="w"> </span>“&lt;комментарий<span class="w"> </span>к<span class="w"> </span>коммиту&gt;”
+</span></code></pre></div>
 <p>Это самая важная команда и постоянно идет в ногу с командой добавления. Данная команда присваивает твоим изменениям индентификатор, по которому можно все твое добро отследить.</p>
 <p align="center">
     <img src="./../../png/git_commit.png" alt="GITHUB" width="640" height="320"/>
 </p>
 
 <h3 id="git-push">git push</h3>
-<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>&lt;имя<span class="w"> </span>ветки&gt;
-</code></pre></div>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>&lt;имя<span class="w"> </span>ветки&gt;
+</span></code></pre></div>
 <p>Ну всё, это, по сути, конечная команда в твоей работе, которая отправляет твои изменения в репозиторий.</p>
 <p align="center">
     <img src="./../../png/git_push.png" alt="GITHUB" width="540" height="420"/>
 </p>
 
 <h3 id="git-pull">git pull</h3>
-<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>&lt;имя<span class="w"> </span>ветки&gt;
-</code></pre></div>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>&lt;имя<span class="w"> </span>ветки&gt;
+</span></code></pre></div>
 <p>Куча народу запушила свои измения в репозиторий, теперь необходимо, скачать все эти измения. Просто выполни команду выше.</p>
 <p align="center">
     <img src="./../../png/git_pull.png" alt="GITHUB" width="540" height="420"/>
@@ -1162,27 +1153,21 @@
 <ul>
 <li>выдает список веток</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>branch
-</code></pre></div>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>branch
+</span></code></pre></div>
 <ul>
 <li>создает новую ветку</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>branch<span class="w"> </span>&lt;имя<span class="w"> </span>ветки&gt;
-</code></pre></div>
-
-<ul>
-<li>переключение на ветку</li>
-</ul>
-<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>&lt;имя<span class="w"> </span>ветки&gt;
-</code></pre></div>
-
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>git<span class="w"> </span>branch<span class="w"> </span>&lt;имя<span class="w"> </span>ветки&gt;
+</span></code></pre></div>
+- переключение на ветку</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>&lt;имя<span class="w"> </span>ветки&gt;
+</span></code></pre></div>
 <ul>
 <li>создает и переключаетcz на новую ветку</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>&lt;имя<span class="w"> </span>ветки&gt;
-</code></pre></div>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>&lt;имя<span class="w"> </span>ветки&gt;
+</span></code></pre></div>
 <p>Тут в целом рассписывать очень долго поэому я порекомендую посмотреть моё видео(➜ <a href="https://youtu.be/dflUnlOTUic">Видео по работе с github / git на примере Bootcamp'а</a>), где я объясняю принцип работы с ветками и возникающие коализии. Но если хочешь можешь попробовать разобраться сам, лови картинку:</p>
 <p align="center">
     <img src="./../../png/git_branch.png" alt="GITHUB" width="840" height="320"/>

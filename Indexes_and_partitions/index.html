@@ -983,15 +983,14 @@
 </p>
 
 <p>Есть один большой мешок, куда все номерки (данные) бросаются в случайном порядке.</p>
-<p>Пример:</p>
-<div class="codehilite"><pre><span></span><code>CREATE TABLE bags (
-
-  number_cube INT  -- цифра на кубике
-
-);
-</code></pre></div>
-
-<p><strong>Как работает:</strong></p>
+<p>Пример:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>CREATE TABLE bags (
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  number_cube INT  -- цифра на кубике
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>);
+</span></code></pre></div>
+<strong>Как работает:</strong></p>
 <p>Чтобы найти нужный номерок (number_cube=5) придётся перебрать весь мешок вручную - сканируем всю таблицу (Full Scan).</p>
 <p>Плюс: Быстрая запись (просто кидаем в мешок).</p>
 <p>Минус: Медленный поиск.</p>
@@ -1005,23 +1004,22 @@
 </p>
 
 <p>Пример:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">partitioned_bags</span><span class="w"> </span><span class="p">(</span>
-
-<span class="w">    </span><span class="n">number_cube</span><span class="w"> </span><span class="n">INT</span><span class="p">,</span>
-
-<span class="w">    </span><span class="n">color</span><span class="w"> </span><span class="n">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w">  </span><span class="c1">-- Цвет номерка (ключ партиции)</span>
-
-<span class="p">)</span><span class="w"> </span>
-<span class="k">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">LIST</span><span class="w"> </span><span class="p">(</span><span class="n">color</span><span class="p">);</span>
-
-<span class="c1">-- Создаём отдельные мешки для каждого цвета</span>
-
-<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">bags_red</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">partitioned_bags</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">);</span>
-
-<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">bags_blue</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">partitioned_bags</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">);</span>
-</code></pre></div>
-
-<p><strong>Как работает:</strong></p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>CREATE TABLE partitioned_bags (
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    number_cube INT,
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    color VARCHAR(20)  -- Цвет номерка (ключ партиции)
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>) 
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>PARTITION BY LIST (color);
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>-- Создаём отдельные мешки для каждого цвета
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>CREATE TABLE bags_red PARTITION OF partitioned_bags FOR VALUES IN (&#39;red&#39;);
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>CREATE TABLE bags_blue PARTITION OF partitioned_bags FOR VALUES IN (&#39;blue&#39;);
+</span></code></pre></div>
+<strong>Как работает:</strong></p>
 <p>Если ищем красный номерок (color='red'), СУБД полезет только в мешок bags_red.</p>
 <p>Плюс: Ускорение поиска по ключу партиции.</p>
 <p>Минус: Если ищем без указания цвета — проверяем все мешки. Чуть сложнее сопровождать, чем таблицу без партиций.</p>
@@ -1039,15 +1037,14 @@
 <p>У нас есть как раньше один мешок, но есть еще отдельный список (индекс), где записано:
 «Номерок 5 лежит на дне, номерок 12 — у горловины».</p>
 <p>Пример:</p>
-<div class="codehilite"><pre><span></span><code>CREATE TABLE indexed_bags (
-    number_cube INT
-);
-
--- Создаём &quot;каталог&quot; для быстрого поиска номерков
-
-CREATE INDEX idx_number ON indexed_bags (number_cube);
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>CREATE TABLE indexed_bags (
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    number_cube INT
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>);
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>-- Создаём &quot;каталог&quot; для быстрого поиска номерков
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>CREATE INDEX idx_number ON indexed_bags (number_cube);
+</span></code></pre></div>
 <p><strong>Как работает:</strong></p>
 <p>При поиске number_cube=5 СУБД сначала смотрит в индекс (каталог). Так как в каталоге все <strong>отсортировано</strong>, СУБД быстро находит нужный номер, где в соседней ячейке будут написаны координаты положения этого кубика в мешке (в таблице это ctid или rowid). Далее СУБД знает координаты местоположения кубика в мешке (всей строки, например с 30 полями) и быстро находит его, не просматривая все кубики из мешка. </p>
 <p>Плюс: Быстрый поиск по number_cube.</p>
@@ -1188,9 +1185,8 @@ CREATE INDEX idx_number ON indexed_bags (number_cube);
 </li>
 </ul>
 <p>Команда для создания обычного B-Tree индекса следующая: </p>
-<div class="codehilite"><pre><span></span><code>CREATE INDEX idx_user ON test.user (id);
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>CREATE INDEX idx_user ON test.user (id);
+</span></code></pre></div>
 <p><strong>B+Tree</strong> (используется в MySQL, PostgreSQL) - это улучшенная версия, где данные хранятся только в листьях, а внутренние узлы содержат ключи для быстрого поиска. Подходят для диапазонных запросов (WHERE age BETWEEN 18 AND 30).</p>
 <p>Подробнее можно почитать здесь: 
 - https://en.wikipedia.org/wiki/B-tree
@@ -1227,22 +1223,21 @@ CREATE INDEX idx_number ON indexed_bags (number_cube);
 <p>Хеш-индексы предназначены в первую очередь для нагрузки с большим количеством операций SELECT и UPDATE, которые выполняют сканирование с проверкой равенства для больших таблиц. В индексе-B-дереве поиск должен проходить по дереву до тех пор, пока не будет найдена листовая страница. В таблицах с миллионами строк такой «спуск» может увеличить время доступа к данным. Листовым страницам в хеш-индексе соответствуют страницы ячеек. В отличие от индекса-B-дерева хеш-индекс позволяет напрямую обращаться к страницам ячеек, тем самым потенциально сокращая время доступа к индексу в больших таблицах. Это сокращение «логического ввода-вывода» становится ещё более заметным для индексов/данных, которые не умещаются в общих буферах/ОЗУ.</p>
 <p><strong>Коллизии</strong></p>
 <p>Нетрудно догадаться, что разные данные на входе могут привести к одному и тому же хэш-коду и бакету на выходе. Это называется коллизией. Например, хэш-функция mod(3) возвращает один и тот же код 2 для значений 2, 5, 8.</p>
-<p>На деле система поступает хитрее. Сначала используем хэш-функцию для вычисления хэш-кода.</p>
-<div class="codehilite"><pre><span></span><code>db=# SELECT
-    hashtext(&#39;text&#39;),
-    hashchar(&#39;c&#39;),
-    hash_array(array[1,2,3]),
-    jsonb_hash(&#39;{&quot;me&quot;: &quot;haki&quot;}&#39;::jsonb),
-    timestamp_hash(now()::timestamp);
-─[ RECORD 1 ]──┬────────────
-hashtext       │ -451854347
-hashchar       │ 203891234
-hash_array     │ -325393530
-jsonb_hash     │ -1784498999
-timestamp_hash │ 1082344883
-</code></pre></div>
-
-<p>Затем используем mod(кол-во бакетов) для определения номера бакета. Это все равно может привести к тому, что несколько значений попадут в один и тот же бакет. Поэтому даже после того, как бакет идентифицирован, системе все еще необходимо просеять хэш-коды в корзине и перепроверить условие, чтобы отфильтровать только совпадающие кортежи.</p>
+<p>На деле система поступает хитрее. Сначала используем хэш-функцию для вычисления хэш-кода.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>db=# SELECT
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    hashtext(&#39;text&#39;),
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    hashchar(&#39;c&#39;),
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    hash_array(array[1,2,3]),
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    jsonb_hash(&#39;{&quot;me&quot;: &quot;haki&quot;}&#39;::jsonb),
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    timestamp_hash(now()::timestamp);
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>─[ RECORD 1 ]──┬────────────
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>hashtext       │ -451854347
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>hashchar       │ 203891234
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>hash_array     │ -325393530
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>jsonb_hash     │ -1784498999
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>timestamp_hash │ 1082344883
+</span></code></pre></div>
+Затем используем mod(кол-во бакетов) для определения номера бакета. Это все равно может привести к тому, что несколько значений попадут в один и тот же бакет. Поэтому даже после того, как бакет идентифицирован, системе все еще необходимо просеять хэш-коды в корзине и перепроверить условие, чтобы отфильтровать только совпадающие кортежи.</p>
 <p>По мере того, как новые ряды добавляются и индекс пересчитывается, первичная страница индекса заполняется. Далее новые ряды пишутся в дополнительные страницы.
 Подробнее </p>
 <p>B-Tree индекс дает скорость выборки порядка log(N), hash дает линейную. В реальной жизни hash и B-Tree применяются совместно, то есть для вычисления значений B-Tree индекса все равно применяются хэши.</p>
@@ -1355,31 +1350,30 @@ timestamp_hash │ 1082344883
 - Для временных данных (по датам, месяцам, годам)
 - Для числовых значений с естественными диапазонами (например, суммы, возраст)</p>
 <p>Пример:</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">-- Создаем основную партиционированную таблицу</span>
-<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">sales</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="n">SERIAL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">sale_date</span><span class="w"> </span><span class="kt">DATE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">product_id</span><span class="w"> </span><span class="n">INT</span><span class="p">,</span>
-<span class="w">    </span><span class="n">amount</span><span class="w"> </span><span class="k">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
-<span class="p">)</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="kt">RANGE</span><span class="w"> </span><span class="p">(</span><span class="n">sale_date</span><span class="p">);</span>
-
-<span class="c1">-- Создаем партиции для каждого квартала 2023 года</span>
-<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">sales_q1_2023</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">sales</span>
-<span class="w">    </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;2023-01-01&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;2023-04-01&#39;</span><span class="p">);</span>
-
-<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">sales_q2_2023</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">sales</span>
-<span class="w">    </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;2023-04-01&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;2023-07-01&#39;</span><span class="p">);</span>
-
-<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">sales_q3_2023</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">sales</span>
-<span class="w">    </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;2023-07-01&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;2023-10-01&#39;</span><span class="p">);</span>
-
-<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">sales_q4_2023</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">sales</span>
-<span class="w">    </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;2023-10-01&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;2024-01-01&#39;</span><span class="p">);</span>
-
-<span class="c1">-- Создаем дефолтную партицию для данных вне указанных диапазонов</span>
-<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">sales_default</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">sales</span><span class="w"> </span><span class="k">DEFAULT</span><span class="p">;</span>
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>-- Создаем основную партиционированную таблицу
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>CREATE TABLE sales (
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    id SERIAL,
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    sale_date DATE NOT NULL,
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    product_id INT,
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    amount DECIMAL(10, 2)
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>) PARTITION BY RANGE (sale_date);
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>-- Создаем партиции для каждого квартала 2023 года
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>CREATE TABLE sales_q1_2023 PARTITION OF sales
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    FOR VALUES FROM (&#39;2023-01-01&#39;) TO (&#39;2023-04-01&#39;);
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>CREATE TABLE sales_q2_2023 PARTITION OF sales
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    FOR VALUES FROM (&#39;2023-04-01&#39;) TO (&#39;2023-07-01&#39;);
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>CREATE TABLE sales_q3_2023 PARTITION OF sales
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>    FOR VALUES FROM (&#39;2023-07-01&#39;) TO (&#39;2023-10-01&#39;);
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>CREATE TABLE sales_q4_2023 PARTITION OF sales
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    FOR VALUES FROM (&#39;2023-10-01&#39;) TO (&#39;2024-01-01&#39;);
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>-- Создаем дефолтную партицию для данных вне указанных диапазонов
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>CREATE TABLE sales_default PARTITION OF sales DEFAULT;
+</span></code></pre></div>
 <p>Особенности:
 - Диапазоны не должны пересекаться
 - Можно создавать партиции заранее для будущих данных
@@ -1392,31 +1386,30 @@ timestamp_hash │ 1082344883
 <li>Для географических регионов, категорий продуктов и т.д.</li>
 </ul>
 <p>Пример:</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">-- Создаем основную партиционированную таблицу</span>
-<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="n">SERIAL</span><span class="p">,</span>
-<span class="w">    </span><span class="k">name</span><span class="w"> </span><span class="n">TEXT</span><span class="p">,</span>
-<span class="w">    </span><span class="n">department</span><span class="w"> </span><span class="n">TEXT</span><span class="p">,</span>
-<span class="w">    </span><span class="n">salary</span><span class="w"> </span><span class="k">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
-<span class="p">)</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">LIST</span><span class="w"> </span><span class="p">(</span><span class="n">department</span><span class="p">);</span>
-
-<span class="c1">-- Создаем партиции для каждого отдела</span>
-<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">employees_hr</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">employees</span>
-<span class="w">    </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;HR&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Human Resources&#39;</span><span class="p">);</span>
-
-<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">employees_it</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">employees</span>
-<span class="w">    </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;IT&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Information Technology&#39;</span><span class="p">);</span>
-
-<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">employees_sales</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">employees</span>
-<span class="w">    </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Sales&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Marketing&#39;</span><span class="p">);</span>
-
-<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">employees_finance</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">employees</span>
-<span class="w">    </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Finance&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Accounting&#39;</span><span class="p">);</span>
-
-<span class="c1">-- Партиция для всех остальных отделов</span>
-<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">employees_default</span><span class="w"> </span><span class="k">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">DEFAULT</span><span class="p">;</span>
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>-- Создаем основную партиционированную таблицу
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>CREATE TABLE employees (
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    id SERIAL,
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    name TEXT,
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    department TEXT,
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    salary DECIMAL(10, 2)
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>) PARTITION BY LIST (department);
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>-- Создаем партиции для каждого отдела
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>CREATE TABLE employees_hr PARTITION OF employees
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    FOR VALUES IN (&#39;HR&#39;, &#39;Human Resources&#39;);
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>CREATE TABLE employees_it PARTITION OF employees
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>    FOR VALUES IN (&#39;IT&#39;, &#39;Information Technology&#39;);
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>CREATE TABLE employees_sales PARTITION OF employees
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    FOR VALUES IN (&#39;Sales&#39;, &#39;Marketing&#39;);
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>CREATE TABLE employees_finance PARTITION OF employees
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>    FOR VALUES IN (&#39;Finance&#39;, &#39;Accounting&#39;);
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>-- Партиция для всех остальных отделов
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>CREATE TABLE employees_default PARTITION OF employees DEFAULT;
+</span></code></pre></div>
 <p>Особенности:</p>
 <ul>
 <li>Значения в списке не должны пересекаться между партициями</li>
