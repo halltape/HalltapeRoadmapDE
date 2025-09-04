@@ -37,3 +37,4 @@ INSERT INTO competitors_prices VALUES
 (15, 200, 147.0, 174.0, DATE '2025-08-30'),
 (16, 200, NULL, 222.0, DATE '2025-08-27'),
 (15, 200, NULL , 174.0, DATE '2025-08-30');
+```
