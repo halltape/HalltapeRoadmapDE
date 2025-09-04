@@ -42,14 +42,27 @@ INSERT INTO competitors_prices VALUES
 <details>
 <summary>Показать результат</summary>
 
-<div markdown="1">
+<table>
+  <tr>
+    <th>sku_id_competitor</th>
+    <th>competitor_id</th>
+    <th>price</th>
+    <th>parsing_date</th>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>200</td>
+    <td>147</td>
+    <td>2025-08-30</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>200</td>
+    <td>222</td>
+    <td>2025-08-27</td>
+  </tr>
+</table>
 
-| sku_id_competitor | competitor_id | price | parsing_date |
-|-------------------|---------------|-------|---------------|
-| 15                | 200           | 147   | 2025-08-30    |
-| 16                | 200           | 222   | 2025-08-27    |
-
-</div>
 </details>
 
 <details>
