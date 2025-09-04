@@ -38,3 +38,30 @@ INSERT INTO competitors_prices VALUES
 (16, 200, NULL, 222.0, DATE '2025-08-27'),
 (15, 200, NULL , 174.0, DATE '2025-08-30');
 ```
+
+<details>
+<summary>Показать решение</summary>
+
+```sql
+WITH ranked AS (
+    SELECT
+        sku_id_competitor,
+        competitor_id,
+        promo_price_competitor,
+        regular_price_competitor,
+        parsing_date,
+        COALESCE(promo_price_competitor, regular_price_competitor) AS price,
+        ROW_NUMBER() OVER (
+            PARTITION BY sku_id_competitor, competitor_id, parsing_date
+            ORDER BY CASE WHEN promo_price_competitor IS NOT NULL THEN 1 ELSE 0 END DESC
+        ) AS rn
+    FROM public.competitors_prices
+)
+SELECT
+    sku_id_competitor,
+    competitor_id,
+    price,
+    parsing_date
+FROM ranked
+WHERE rn = 1;
+```
