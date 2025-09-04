@@ -40,6 +40,16 @@ INSERT INTO competitors_prices VALUES
 ```
 
 <details>
+<summary>Показать результат</summary>
+
+| sku_id_competitor | competitor_id | price | parsing_date |
+|-------------------|---------------|-------|---------------|
+| 15                | 200           | 147   | 2025-08-30    |
+| 16                | 200           | 222   | 2025-08-27    |
+
+</details>
+
+<details>
 <summary>Показать решение</summary>
 
 ```sql
