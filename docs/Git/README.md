@@ -166,29 +166,35 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 **Добавить в список на загрузку файлы, которые нам показали при git status**
-> git add .
->
-> git add HALLTAPE.txt
+```bash
+git add .
+git add HALLTAPE.txt
+```
 
 - **git add .** - Точка здесь обязательна! Добавь все, что появилось новенького и удали то, что было удалено. Грубо говоря, мы соглашаемся со **ВСЕМИ** изминениями в репозитории.
 - **git add HALLTAPE.txt** - Добавь только файл HALLTAPE.txt (можно написать название файлов через пробел. Тогда добавятся несколько)
 
 **Команда добавляет комментарий к загрузке.**
-> git commit -m 'homework_01'
+```bash
+git commit -m 'homework_01'
+```
 
 - Комментарий будет отображаться на **github**, когда мы все загрузим. Можно писать что угодно 'yo_iam_rapper'. Это удобно для вас, чтобы вы понимали, что вы там меняли например. 
 
 **НЕ ГРУЗИ НА ВЕТКУ **MASTER**!**
-> git checkout -b develop
->
-> git switch develop
+```bash
+git checkout -b develop
+git switch develop
+```
 - Создай ветку develop. И далее переключись на нее. На ветке master должен храниться исходник. Сейчас это не так важно, но лучше привыкнуть к этому сразу
 ```bash
 (base) halltape@Evgeniis-MacBook-Pro DATA % git checkout -b develop
 ```
 
 **Проверь на какой ты ветке**
-> git branch
+```bash
+git branch
+```
 - Команда покажет, на какой ветке ты сейчас находишься
 ```bash
 (base) halltape@Evgeniis-MacBook-Pro DATA % git branch
@@ -196,7 +202,9 @@ no changes added to commit (use "git add" and/or "git commit -a")
 master
 ```
 **Загрузить!**
-> git push origin develop
+```bash
+git push origin develop
+```
 - Эта команда загружает все выбранные вами файлы на ветку develop. Все!
 
 
