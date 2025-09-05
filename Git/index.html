@@ -993,42 +993,39 @@
 </span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="o">(</span>base<span class="o">)</span><span class="w"> </span>halltape@Evgeniis-MacBook-Pro<span class="w"> </span>data-engineering<span class="w"> </span>%<span class="w"> </span>
 </span></code></pre></div></p>
 </blockquote>
-<p><strong>Добавить в список на загрузку файлы, которые нам показали при git status</strong></p>
-<blockquote>
-<p>git add .</p>
-<p>git add HALLTAPE.txt</p>
-</blockquote>
+<p><strong>Добавить в список на загрузку файлы, которые нам показали при git status</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>add<span class="w"> </span>.
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>git<span class="w"> </span>add<span class="w"> </span>HALLTAPE.txt
+</span></code></pre></div></p>
 <ul>
 <li><strong>git add .</strong> - Точка здесь обязательна! Добавь все, что появилось новенького и удали то, что было удалено. Грубо говоря, мы соглашаемся со <strong>ВСЕМИ</strong> изминениями в репозитории.</li>
 <li><strong>git add HALLTAPE.txt</strong> - Добавь только файл HALLTAPE.txt (можно написать название файлов через пробел. Тогда добавятся несколько)</li>
 </ul>
-<p><strong>Команда добавляет комментарий к загрузке.</strong></p>
-<blockquote>
-<p>git commit -m 'homework_01'</p>
-</blockquote>
+<p><strong>Команда добавляет комментарий к загрузке.</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;homework_01&#39;</span>
+</span></code></pre></div></p>
 <ul>
 <li>Комментарий будет отображаться на <strong>github</strong>, когда мы все загрузим. Можно писать что угодно 'yo_iam_rapper'. Это удобно для вас, чтобы вы понимали, что вы там меняли например. </li>
 </ul>
-<p><strong>НЕ ГРУЗИ НА ВЕТКУ </strong>MASTER<strong>!</strong></p>
-<blockquote>
-<p>git checkout -b develop</p>
-<p>git switch develop
+<p><strong>НЕ ГРУЗИ НА ВЕТКУ </strong>MASTER<strong>!</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>develop
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>git<span class="w"> </span>switch<span class="w"> </span>develop
+</span></code></pre></div>
 - Создай ветку develop. И далее переключись на нее. На ветке master должен храниться исходник. Сейчас это не так важно, но лучше привыкнуть к этому сразу
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">(</span>base<span class="o">)</span><span class="w"> </span>halltape@Evgeniis-MacBook-Pro<span class="w"> </span>DATA<span class="w"> </span>%<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>develop
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">(</span>base<span class="o">)</span><span class="w"> </span>halltape@Evgeniis-MacBook-Pro<span class="w"> </span>DATA<span class="w"> </span>%<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>develop
 </span></code></pre></div></p>
-</blockquote>
-<p><strong>Проверь на какой ты ветке</strong></p>
-<blockquote>
-<p>git branch
+<p><strong>Проверь на какой ты ветке</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>git<span class="w"> </span>branch
+</span></code></pre></div>
 - Команда покажет, на какой ветке ты сейчас находишься
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">(</span>base<span class="o">)</span><span class="w"> </span>halltape@Evgeniis-MacBook-Pro<span class="w"> </span>DATA<span class="w"> </span>%<span class="w"> </span>git<span class="w"> </span>branch
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>*develop
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>master
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">(</span>base<span class="o">)</span><span class="w"> </span>halltape@Evgeniis-MacBook-Pro<span class="w"> </span>DATA<span class="w"> </span>%<span class="w"> </span>git<span class="w"> </span>branch
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>*develop
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>master
 </span></code></pre></div>
 <strong>Загрузить!</strong>
-git push origin develop
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>develop
+</span></code></pre></div>
 - Эта команда загружает все выбранные вами файлы на ветку develop. Все!</p>
-</blockquote>
 <hr />
 <p><strong>Полезные ссылки</strong></p>
 <p>➜ <a href="https://www.youtube.com/watch?v=XuFaQSW79rM">9 Git Команд на 99% Случаев Жизни</a></p>
