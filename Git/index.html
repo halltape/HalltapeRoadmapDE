@@ -915,7 +915,9 @@
 <img alt="ssh3" src="../png/git_ssh3.png" /></p>
 <p>Супер! Теперь мы можем скачивать все, что угодно с GitHub!</p>
 <hr />
-<p>Но прежде, чем скачать репозиторий к себе на ПК, следует сделать его копию у себя на Github. Это будет лично ваша копия, с которой вы можете делать все что угодно (изменять, удалять, добавлять и т.д.)</p>
+<p>Но прежде, чем скачать репозиторий к себе на ПК, следует сделать его копию у себя на Github.
+Это будет лично ваша копия, с которой вы можете делать все что угодно (изменять, удалять, добавлять и т.д.)
+Но если создаете свой собственный репозиторий, то конечно <code>Fork</code> делать не нужно</p>
 <p><img alt="fork" src="../png/git_fork.png" /></p>
 <hr />
 <h3 id="terminal">В terminal (командная строка) заходим в папку, куда мы хотим скачать наш репозиторий</h3>
@@ -924,69 +926,71 @@
 <p>pwd
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">(</span>base<span class="o">)</span><span class="w"> </span>halltape@Evgeniis-MacBook-Pro<span class="w"> </span>Desktop<span class="w"> </span>%<span class="w"> </span><span class="nb">pwd</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>/Users/halltape/Desktop
-</span></code></pre></div>
-<strong>Посмотреть содержимое папки</strong>
-ls
-```bash(base)
-halltape@Evgeniis-MacBook-Pro ~ % ls
-Applications Downloads
-Public Creative Cloud
-Files Library PycharmProjects
-DataGripProjects Movies miniconda3 Desktop
-Music mysql Documents Pictures
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>**Зайдите в место, куда вам будет удобно скачать репозиторий
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Команда *cd* переместит вас в папку**
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>*Допустим мы здесь Users/halltape/Desktop*
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>&gt; cd ..
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>&gt;
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>&gt; cd Downloads
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>- В первом случае мы перемещаемся на папку выше, в папку **halltape**
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>- Во втором случае мы перемещаемся в папку **Downloads** (можно писать любую папку в рамках тех папок, которые есть)
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>**Установка Git**
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>Чтобы работать с Git, нужно его установить [вот так на Mac](https://git-scm.com/downloads/mac) или [вот так на Win](https://git-scm.com/downloads/win)
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>&gt;git нужен, чтобы вы могли скачивать и загружать свой код со своего компьютера на GitHub и обратно, а также отслеживать версии кода, но об этом чуть позже.
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>&gt;
-</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>***
-</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>**А теперь зайдите [сюда](https://github.com/halltape/HalltapeRoadmapDE).**
-</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
-</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>Этот репозиторий вы должны будете скачать к себе на ПК по инструкции ниже.
-</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
-</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>**Копируем ссылку на репозиторий**
-</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
-</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>![fork2](../png/git_fork2.png)
-</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>
-</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>**Команда ниже начнет скачивание репозитория с github в то место,
-</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>где вы находитесь, согласно terminal.**
-</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>**Скачать репозиторий к себе на ПК**
-</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>&gt; git clone ```git@github.com:halltape/data-engineering.git```
-</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
-</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>- Мы скачали репозиторий к себе на ПК. Теперь у нас есть копия этой папки на компьютере. Мы можем вносить любые изменения (удалять, добавлять или править файлы в этом репозитории). Например, мы сделали домашнее задание и хотим загрузить его обратно в свой **github**. Но нам **НЕ НУЖНО** снова грузить **ЦЕЛЫЙ РЕПОЗИТОРИЙ** обратно. Нам достаточно обновить одну или несколько папок (файлов). 
-</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>- Для этого есть 4 команды: **git status, git add, git commit, git push**
-</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>
-</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>**Посмотреть список новых или обновленных файлов на нашем ПК**
-</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>&gt; git status
-</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>
-</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>- Нам покажут все новые или обновленные файлы и папки, которые появились на нашем компьютере в скачанном репозитории. Он как бы отслеживает изменения.
-</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>
-</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>**Например я внес изменения и добавил файл HALLTAPE.txt**
-</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>&gt; git status
-</span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>- Как видно, terminal сразу показал, что есть **modified:   HALLTAPE.txt**
-</span><span id="__span-3-42"><a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>```bash
-</span><span id="__span-3-43"><a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>(base) halltape@Evgeniis-MacBook-Pro data-engineering % git status
-</span><span id="__span-3-44"><a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>On branch develop
-</span><span id="__span-3-45"><a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>Your branch is up to date with &#39;origin/develop&#39;.
-</span><span id="__span-3-46"><a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>
-</span><span id="__span-3-47"><a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>Changes not staged for commit:
-</span><span id="__span-3-48"><a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-</span><span id="__span-3-49"><a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
-</span><span id="__span-3-50"><a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>        &#39;modified:   HALLTAPE.txt&#39;
-</span><span id="__span-3-51"><a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>
-</span><span id="__span-3-52"><a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-</span><span id="__span-3-53"><a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>(base) halltape@Evgeniis-MacBook-Pro data-engineering % 
+</span></code></pre></div></p>
+</blockquote>
+<p><strong>Посмотреть содержимое папки</strong></p>
+<blockquote>
+<p>ls
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>halltape@Evgeniis-MacBook-Pro<span class="w"> </span>~<span class="w"> </span>%<span class="w"> </span>ls
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Applications<span class="w"> </span>Downloads
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Public<span class="w"> </span>Creative<span class="w"> </span>Cloud
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Files<span class="w"> </span>Library<span class="w"> </span>PycharmProjects
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>DataGripProjects<span class="w"> </span>Movies<span class="w"> </span>miniconda3<span class="w"> </span>Desktop
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Music<span class="w"> </span>mysql<span class="w"> </span>Documents<span class="w"> </span>Pictures
+</span></code></pre></div></p>
+</blockquote>
+<p><strong>Зайдите в место, куда вам будет удобно скачать репозиторий
+Команда <em>cd</em> переместит вас в папку</strong></p>
+<p><em>Допустим мы здесь Users/halltape/Desktop</em></p>
+<blockquote>
+<p>cd ..</p>
+<p>cd Downloads
+- В первом случае мы перемещаемся на папку выше, в папку <strong>halltape</strong>
+- Во втором случае мы перемещаемся в папку <strong>Downloads</strong> (можно писать любую папку в рамках тех папок, которые есть)</p>
+</blockquote>
+<p><strong>Установка Git</strong></p>
+<p>Чтобы работать с Git, нужно его установить <a href="https://git-scm.com/downloads/mac">вот так на Mac</a> или <a href="https://git-scm.com/downloads/win">вот так на Win</a></p>
+<blockquote>
+<p>git нужен, чтобы вы могли скачивать и загружать свой код со своего компьютера на GitHub и обратно, а также отслеживать версии кода, но об этом чуть позже.
+</p>
+</blockquote>
+<hr />
+<p><strong>А теперь зайдите <a href="https://github.com/halltape/HalltapeRoadmapDE">сюда</a>.</strong></p>
+<p>Этот репозиторий вы должны будете скачать к себе на ПК по инструкции ниже.</p>
+<p><strong>Копируем ссылку на репозиторий</strong></p>
+<p><img alt="fork2" src="../png/git_fork2.png" /></p>
+<p><strong>Команда ниже начнет скачивание репозитория с github в то место,
+где вы находитесь, согласно terminal.</strong>
+<strong>Скачать репозиторий к себе на ПК</strong></p>
+<blockquote>
+<p>git clone <code>git@github.com:halltape/data-engineering.git</code></p>
+</blockquote>
+<ul>
+<li>Мы скачали репозиторий к себе на ПК. Теперь у нас есть копия этой папки на компьютере. Мы можем вносить любые изменения (удалять, добавлять или править файлы в этом репозитории). Например, мы сделали домашнее задание и хотим загрузить его обратно в свой <strong>github</strong>. Но нам <strong>НЕ НУЖНО</strong> снова грузить <strong>ЦЕЛЫЙ РЕПОЗИТОРИЙ</strong> обратно. Нам достаточно обновить одну или несколько папок (файлов). </li>
+<li>Для этого есть 4 команды: <strong>git status, git add, git commit, git push</strong></li>
+</ul>
+<p><strong>Посмотреть список новых или обновленных файлов на нашем ПК</strong></p>
+<blockquote>
+<p>git status</p>
+</blockquote>
+<ul>
+<li>Нам покажут все новые или обновленные файлы и папки, которые появились на нашем компьютере в скачанном репозитории. Он как бы отслеживает изменения.</li>
+</ul>
+<p><strong>Например я внес изменения и добавил файл HALLTAPE.txt</strong></p>
+<blockquote>
+<p>git status
+- Как видно, terminal сразу показал, что есть <strong>modified:   HALLTAPE.txt</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">(</span>base<span class="o">)</span><span class="w"> </span>halltape@Evgeniis-MacBook-Pro<span class="w"> </span>data-engineering<span class="w"> </span>%<span class="w"> </span>git<span class="w"> </span>status
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>On<span class="w"> </span>branch<span class="w"> </span>develop
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Your<span class="w"> </span>branch<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span>to<span class="w"> </span>date<span class="w"> </span>with<span class="w"> </span><span class="s1">&#39;origin/develop&#39;</span>.
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Changes<span class="w"> </span>not<span class="w"> </span>staged<span class="w"> </span><span class="k">for</span><span class="w"> </span>commit:
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git add &lt;file&gt;...&quot;</span><span class="w"> </span>to<span class="w"> </span>update<span class="w"> </span>what<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>committed<span class="o">)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git restore &lt;file&gt;...&quot;</span><span class="w"> </span>to<span class="w"> </span>discard<span class="w"> </span>changes<span class="w"> </span><span class="k">in</span><span class="w"> </span>working<span class="w"> </span>directory<span class="o">)</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">        </span><span class="s1">&#39;modified:   HALLTAPE.txt&#39;</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>no<span class="w"> </span>changes<span class="w"> </span>added<span class="w"> </span>to<span class="w"> </span>commit<span class="w"> </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git add&quot;</span><span class="w"> </span>and/or<span class="w"> </span><span class="s2">&quot;git commit -a&quot;</span><span class="o">)</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="o">(</span>base<span class="o">)</span><span class="w"> </span>halltape@Evgeniis-MacBook-Pro<span class="w"> </span>data-engineering<span class="w"> </span>%<span class="w"> </span>
 </span></code></pre></div></p>
 </blockquote>
 <p><strong>Добавить в список на загрузку файлы, которые нам показали при git status</strong></p>
@@ -1010,16 +1014,16 @@ Music mysql Documents Pictures
 <p>git checkout -b develop</p>
 <p>git switch develop
 - Создай ветку develop. И далее переключись на нее. На ветке master должен храниться исходник. Сейчас это не так важно, но лучше привыкнуть к этому сразу
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">(</span>base<span class="o">)</span><span class="w"> </span>halltape@Evgeniis-MacBook-Pro<span class="w"> </span>DATA<span class="w"> </span>%<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>develop
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">(</span>base<span class="o">)</span><span class="w"> </span>halltape@Evgeniis-MacBook-Pro<span class="w"> </span>DATA<span class="w"> </span>%<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>develop
 </span></code></pre></div></p>
 </blockquote>
 <p><strong>Проверь на какой ты ветке</strong></p>
 <blockquote>
 <p>git branch
 - Команда покажет, на какой ветке ты сейчас находишься
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">(</span>base<span class="o">)</span><span class="w"> </span>halltape@Evgeniis-MacBook-Pro<span class="w"> </span>DATA<span class="w"> </span>%<span class="w"> </span>git<span class="w"> </span>branch
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>*develop
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>master
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">(</span>base<span class="o">)</span><span class="w"> </span>halltape@Evgeniis-MacBook-Pro<span class="w"> </span>DATA<span class="w"> </span>%<span class="w"> </span>git<span class="w"> </span>branch
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>*develop
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>master
 </span></code></pre></div>
 <strong>Загрузить!</strong>
 git push origin develop
