@@ -177,8 +177,6 @@
 
 Регистрируешься на Github и подключаешь его к своему ПК
 
-➜ [Работа с github / git](Git/README.md)
-
 ➜ [Теоритические аспекты на картинках при работе с github / git](Git/THEORY/README.md)
 
 ➜ [Видео по работе с github / git на примере Bootcamp'а](https://youtu.be/dflUnlOTUic)

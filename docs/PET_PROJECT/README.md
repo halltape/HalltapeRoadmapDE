@@ -51,7 +51,7 @@
 - dbt модель для витрины данных в Clickhouse
 - dbt модель для качества данных в Clickhouse
 
-Для сборки проекта тебе понадобятся знания [Git](../Git/README.md), Docker
+Для сборки проекта тебе понадобятся знания [Git](../Git/THEORY/README.md), Docker
 
 **Собери его у себя** ➜ [Pet Project HalltapeETLPipeline](https://github.com/halltape/HalltapeETL)
 
@@ -76,7 +76,7 @@
 - Работа с внешними источниками в Clickhouse на основе движка PostgreSQL
 - Построение моделей, тестов и макросов в DBT
 
-Для сборки проекта тебе понадобятся знания [Git](../Git/README.md), Docker
+Для сборки проекта тебе понадобятся знания [Git](../Git/THEORY/README.md), Docker
 
 **Собери его у себя** ➜ [Обработка данных SpaceX AP](https://github.com/ShustGF/spacex-api-analize)
 
