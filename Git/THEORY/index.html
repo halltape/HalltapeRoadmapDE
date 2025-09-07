@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
     
     
       
@@ -964,7 +964,7 @@
 <p>GIT - это фреймворк или просто система контроля версий.
 Ты мне не поверишь, но она нужна исключительно для того,
 чтобы контролировать, как изменяется твой проект(каталог с текстовыми файликами).
-Чтобы в случае проблем ты мог быстро откатитсья на шаг или несколько назад, не более того.</p>
+Чтобы в случае проблем ты мог быстро откатиться на шаг или несколько назад, не более того.</p>
 <p><strong>Установка Git</strong></p>
 <p>Чтобы работать с Git, нужно его установить <a href="https://git-scm.com/downloads/mac">вот так на Mac</a> или <a href="https://git-scm.com/downloads/win">вот так на Win</a></p>
 <blockquote>
@@ -993,14 +993,14 @@
 
 <p>Не так уж тяжело, ну если вдруг тяжело, то может ну это IT ты задумайтся!</p>
 <h3 id="ssh-">Прокидываем SSH-ключ.</h3>
-<p>Чтобы скачать и загрузить изменнения в свой репозиторий в первую очередь необходимо добавить, так называемый SSH-ключ. Грубо говоря с помощью него твое пространство в GITHUB будет понимать, что твоему компьютеру можно доверять и применять изменения, в противном случае <strong>access denied</strong>, ёпт...</p>
+<p>Чтобы скачать и загрузить изменения в свой репозиторий в первую очередь необходимо добавить, так называемый SSH-ключ. Грубо говоря с помощью него твое пространство в GITHUB будет понимать, что твоему компьютеру можно доверять и применять изменения, в противном случае <strong>access denied</strong>, ёпт...</p>
 <p>Ну что го прокидывать, тут тоже ниче сложного, смотри:</p>
 <ol>
 <li>Заходишь в свой терминал или git bash</li>
 <li>Прописиваешь команду 
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh-keygen
 </span></code></pre></div></li>
-<li>тебе предложать изменить каталог где будет хранится ключ и ввести кодовую фразу для генерацию ключа, забей болтяру и жми как все специ 3 раз <strong>Enter</strong></li>
+<li>тебе предложат изменить каталог где будет хранится ключ и ввести кодовую фразу для генерации ключа, забей болтяру и жми как все специ 3 раз <strong>Enter</strong></li>
 </ol>
 <p align="center">
     <img src="./../../png/git_ssh_keygen.png" alt="GITHUB" width="840" height="320"/>
@@ -1035,7 +1035,7 @@
 <h3 id="git-clone">git clone</h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>&lt;адрес<span class="w"> </span>репозитория&gt;<span class="w"> </span>
 </span></code></pre></div>
-<p>По сути это самая первая команда, которая клонирует перозиторий в твой каталог.</p>
+<p>По сути это самая первая команда, которая клонирует репозиторий в твой каталог.</p>
 <p>Адрес репозитория находится в ЗЕЛЕНОЙ кнопке <strong>Code</strong> во вкладке <strong>SSH</strong></p>
 <p align="center">
     <img src="./../../png/git_clone.png" alt="GITHUB" width="440" height="320"/>
@@ -1057,7 +1057,7 @@
     <img src="./../../png/git_add.png" alt="GITHUB" width="540" height="320"/>
 </p>
 
-<p>А теперь представь ты добавил не тот каколог или файл, что делать, ну конечно нужно удалить твое добавление, делается это так:</p>
+<p>А теперь представь ты добавил не тот каталог или файл, что делать, ну конечно нужно удалить твое добавление, делается это так:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>restore<span class="w"> </span>&lt;файл/каталог&gt;
 </span></code></pre></div>
 <p>Ну в целом вот что произойдет с твоим файлом.</p>
@@ -1106,11 +1106,11 @@
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>&lt;имя<span class="w"> </span>ветки&gt;
 </span></code></pre></div>
 <ul>
-<li>создает и переключаетcz на новую ветку</li>
+<li>создает и переключаетcя на новую ветку</li>
 </ul>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>&lt;имя<span class="w"> </span>ветки&gt;
 </span></code></pre></div>
-<p>Тут в целом рассписывать очень долго поэому я порекомендую посмотреть моё видео(➜ <a href="https://youtu.be/dflUnlOTUic">Видео по работе с github / git на примере Bootcamp'а</a>), где я объясняю принцип работы с ветками и возникающие коализии. Но если хочешь можешь попробовать разобраться сам, лови картинку:</p>
+<p>Тут в целом расписывать очень долго поэому я порекомендую посмотреть моё видео(➜ <a href="https://youtu.be/dflUnlOTUic">Видео по работе с github / git на примере Bootcamp'а</a>), где я объясняю принцип работы с ветками и возникающие коализии. Но если хочешь можешь попробовать разобраться сам, лови картинку:</p>
 <p align="center">
     <img src="./../../png/git_branch.png" alt="GITHUB" width="840" height="320"/>
 </p>
