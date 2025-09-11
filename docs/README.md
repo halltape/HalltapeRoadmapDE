@@ -435,6 +435,8 @@ Spark изучайте только **после** **того**, как науч
 
 ➜ [Задачи по SQL](QUESTION/SQL/LIVECODING.md)
 
+➜ [Задачи по Python](QUESTION/Python/LIVECODING.md)
+
 ➜ [Типичные вопросы с собесов на все темы](QUESTION/README.md)
 
 ➜ [Telegram Bot для подготовки к собесам](https://t.me/DataismPrepBot)
