@@ -1,11 +1,1 @@
-<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <!-- Белое кольцо -->
-  <circle cx="50" cy="50" r="45" fill="none" stroke="white" stroke-width="7" />
-
-  <!-- Белая буква R -->
-<text x="50%" y="50%" text-anchor="middle" dominant-baseline="central"
-        font-family="SF Pro Display, Arial, Helvetica, sans-serif"
-        font-size="60" font-weight="bold" fill="white" style="letter-spacing:0.02em;">
-    R
-  </text>
-</svg>
+<svg height="200px" width="200px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#EFBE44;" d="M380.386,473.043H131.614c-35.989,0-67.816-22.94-79.195-57.076l-18.168-54.516 c-1.701-5.087-0.848-10.685,2.294-15.038c3.134-4.354,8.179-6.935,13.542-6.935h411.826c5.369,0,10.402,2.581,13.544,6.934 c3.141,4.353,3.989,9.951,2.294,15.038l-18.163,54.511C448.201,450.104,416.375,473.043,380.386,473.043z"></path> <path style="fill:#E4A738;" d="M461.913,339.478H256v133.565h124.386c35.989,0,67.816-22.94,79.201-57.081l18.163-54.511 c1.695-5.087,0.848-10.685-2.294-15.038S467.282,339.478,461.913,339.478z"></path> <path style="fill:#EFBE44;" d="M315.815,79.185h-119.63C102.146,103.393,36.093,187.091,33.626,283.826h444.749 C475.907,187.091,409.854,103.393,315.815,79.185z"></path> <path style="fill:#E4A738;" d="M256,79.185v204.641h222.374c-2.468-96.735-68.521-180.433-162.559-204.641 C315.815,79.185,256,79.185,256,79.185z"></path> <path style="fill:#F6DF5A;" d="M461.913,272.696H328.348V89.043c0-27.619-22.468-50.087-50.087-50.087h-44.522 c-27.619,0-50.087,22.468-50.087,50.087v183.652H50.087C22.468,272.696,0,295.164,0,322.783s22.468,50.087,50.087,50.087h411.826 c27.619,0,50.087-22.468,50.087-50.087S489.532,272.696,461.913,272.696z"></path> <path style="fill:#F0CA45;" d="M461.913,272.696H328.348V89.043c0-27.619-22.468-50.087-50.087-50.087H256v233.739v33.391v66.783 h205.913c27.619,0,50.087-22.468,50.087-50.087S489.532,272.696,461.913,272.696z"></path> </g></svg>
