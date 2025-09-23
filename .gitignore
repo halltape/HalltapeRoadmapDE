@@ -3,3 +3,4 @@
 **/venv/
 **/.venv/
 **/jaffle_shop_duckdb/
+.obsidian
