@@ -11,8 +11,8 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/103580753" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
- 
 # Data Warehouse
+
 <img src="../png/olap_oltp.png" width="800"/>
 
 ## OLTP-системы
