@@ -204,7 +204,7 @@
 
 ➜ [Data Warehouse](DWH/README.md#data-warehouse)
 
-➜ [Data Lake](DWH/README.md#озеро-данных)
+➜ [Data Lake](DWH/README.md/#data-lake)
 
 ➜ [Data LakeHouse](DWH/DataLakeHouse/LAKEHOUSE.md)
 
