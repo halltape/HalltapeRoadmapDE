@@ -206,7 +206,7 @@
 
 ➜ [Data Lake](DWH/README.md#озеро-данных)
 
-➜ [Data LakeHouse](DWH/DataLakeHouse/README.md)
+➜ [Data LakeHouse](DWH/DataLakeHouse/LAKEHOUSE.md)
 
 ***
 ## 6.📐 Нормальные формы
