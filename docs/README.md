@@ -193,7 +193,7 @@
 ➜ [Работа с Linux / Terminal](Linux/README.md)
 
 ***
-## 5.🏛️ Data Warehouse
+## 5.🏛️ Data Warehouse | Data Lake | Data LakeHouse
 
 <p align="center">
     <img src="png/data_warehouse.png" alt="dwh" width="600"/>
@@ -202,8 +202,11 @@
 
 Нужно понимать, что такое хранилище данных, какие они бывают, чем отличаются и, как в целом можно грузить данные. Обязательно читай теорию!
 
-➜ [Теория по Data Warehouse](DWH/README.md)
+➜ [Data Warehouse](DWH/README.md#data-warehouse)
 
+➜ [Data Lake](DWH/README.md#озеро-данных)
+
+➜ [Data LakeHouse](DWH/DataLakeHouse/README.md)
 
 ***
 ## 6.📐 Нормальные формы

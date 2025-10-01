@@ -11,17 +11,7 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/103580753" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-# HalltapeRoadmapDE
-**Теория по DWH:**
-- [Data Warehouse](#data-warehouse)
-- [OLTP-системы](#oltp-системы)
-- [OLAP-системы](#olap-системы)
-- [Архитектура DWH](#архитектура-dwh)
-- [Подходы к проектированию DWH](#подходы-к-проектированию-dwh)
-- [Озеро данных](#озеро-данных)
-- [Batch-обработки и Lambda-архитектуры](#batch-обработки-и-lambda-архитектуры)
-- [Kappa-архитектура](#kappa-архитектура)
-  
+ 
 # Data Warehouse
 <img src="../png/olap_oltp.png" width="800"/>
 
