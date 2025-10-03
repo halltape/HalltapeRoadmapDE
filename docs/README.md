@@ -72,6 +72,10 @@
     <a href="https://t.me/data_penguin" target="_blank">it пингвин - data engineer</a>
     <a href="https://t.me/it_pengwin" target="_blank">@it_pengwin</a>
   </div>
+  <div class="tg-pair">
+    <a href="https://t.me/data_engineerette" target="_blank">дата инженеретта</a>
+    <a href="https://t.me/aigul_sea" target="_blank">@aigul_sea</a>
+  </div>
 </div>
 
 **Хочешь стать автором?** [Кликай сюда!](CONTRIBUTING.md)
