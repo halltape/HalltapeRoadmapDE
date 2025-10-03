@@ -901,6 +901,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Как мониторить подвисшие сенсоры?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#with-sensored-as-select-substr-task_id-strpostask_id-awaiting_-lengthawaiting_-as-sensor-dag_id-from-airflowpublictask_instance-where-state-deferred-select-sensor-count1-overpartition-by-sensor-as-sensor_cnt-count1-over-as-total_cnt-dag_id-from-sensored-order-by-2-desc-sensor-dag_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      with sensored as ( SELECT substr( task_id, strpos(task_id, &#39;awaiting_&#39;) + length(&#39;awaiting_&#39;) ) as sensor, dag_id FROM airflow.public.task_instance WHERE state = &#39;deferred&#39; ) select sensor, count(1) over(partition by sensor) as sensor_cnt, count(1) over() as total_cnt, dag_id from sensored order by 2 desc, sensor, dag_id;
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1315,6 +1333,112 @@
 </span></code></pre></div></p>
 </li>
 </ul>
+<hr />
+<h3 id="_8">Как мониторить подвисшие сенсоры?</h3>
+<p><strong>Кейс взят у <a href="https://t.me/data_engineerette">Айгуль (Канал дата инженеретта)</a></strong></p>
+<p>Начнем с того, что в Airflow есть несколько состояний для таски:</p>
+<table>
+<thead>
+<tr>
+<th>Эмодзи</th>
+<th>Статус</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔵</td>
+<td>none</td>
+<td>пока отдыхает</td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>scheduled</td>
+<td>должна быть запущена, все зависимости выполнены</td>
+</tr>
+<tr>
+<td>⚪</td>
+<td>queued</td>
+<td>ждет свободный воркер</td>
+</tr>
+<tr>
+<td>🟢</td>
+<td>running</td>
+<td>работает</td>
+</tr>
+<tr>
+<td>✅</td>
+<td>success</td>
+<td>успешно завершилась</td>
+</tr>
+<tr>
+<td>🌸</td>
+<td>restarting</td>
+<td>перезапустили</td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>failed</td>
+<td>упала</td>
+</tr>
+<tr>
+<td>🚫</td>
+<td>skipped</td>
+<td>пропущена</td>
+</tr>
+<tr>
+<td>🔻</td>
+<td>upstream_failed</td>
+<td>упала предыдущая таска, которая нам нужна</td>
+</tr>
+<tr>
+<td>🔄</td>
+<td>up_for_retry</td>
+<td>упала, но будет перезапущена</td>
+</tr>
+<tr>
+<td>🔂</td>
+<td>up_for_reschedule</td>
+<td>сенсор будет перезапущен</td>
+</tr>
+<tr>
+<td>⏸</td>
+<td>deferred</td>
+<td>отложена и ждет триггер</td>
+</tr>
+<tr>
+<td>❌</td>
+<td>removed</td>
+<td>удалена из дага после запуска</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>Подвисшие сенсоры уходят в статус deferred.
+У нас они имеют такой нейминг - mytask_awaiting_somedag.
+Я написала себе запрос, который выводит:</p>
+<p>⭕️ название дага, на который смотрит сенсор</p>
+<p>⭕️ количество сенсоров, которые ждут этот даг</p>
+<p>⭕️ общее количество подвисших сенсоров</p>
+<p>И так можно сразу понять, на какой даг смотрит наибольшее количество сенсоров, и посмотреть причину</p>
+<h2 id="with-sensored-as-select-substr-task_id-strpostask_id-awaiting_-lengthawaiting_-as-sensor-dag_id-from-airflowpublictask_instance-where-state-deferred-select-sensor-count1-overpartition-by-sensor-as-sensor_cnt-count1-over-as-total_cnt-dag_id-from-sensored-order-by-2-desc-sensor-dag_id"><div class="language-sql highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">with</span><span class="w"> </span><span class="n">sensored</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="k">SELECT</span><span class="w"> </span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="n">substr</span><span class="p">(</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">      </span><span class="n">task_id</span><span class="p">,</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">      </span><span class="n">strpos</span><span class="p">(</span><span class="n">task_id</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;awaiting_&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">length</span><span class="p">(</span><span class="s1">&#39;awaiting_&#39;</span><span class="p">)</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">sensor</span><span class="p">,</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">    </span><span class="n">dag_id</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">airflow</span><span class="p">.</span><span class="k">public</span><span class="p">.</span><span class="n">task_instance</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">  </span><span class="k">WHERE</span><span class="w"> </span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;deferred&#39;</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="p">)</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="k">select</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">  </span><span class="n">sensor</span><span class="p">,</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">  </span><span class="k">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">over</span><span class="p">(</span><span class="n">partition</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">sensor</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">sensor_cnt</span><span class="p">,</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">  </span><span class="k">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">over</span><span class="p">()</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">total_cnt</span><span class="p">,</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">  </span><span class="n">dag_id</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="k">from</span><span class="w"> </span><span class="n">sensored</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">desc</span><span class="p">,</span><span class="w"> </span><span class="n">sensor</span><span class="p">,</span><span class="w"> </span><span class="n">dag_id</span><span class="p">;</span>
+</span></code></pre></div></h2>
 
 
 
