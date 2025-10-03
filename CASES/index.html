@@ -910,15 +910,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#with-sensored-as-select-substr-task_id-strpostask_id-awaiting_-lengthawaiting_-as-sensor-dag_id-from-airflowpublictask_instance-where-state-deferred-select-sensor-count1-overpartition-by-sensor-as-sensor_cnt-count1-over-as-total_cnt-dag_id-from-sensored-order-by-2-desc-sensor-dag_id" class="md-nav__link">
-    <span class="md-ellipsis">
-      with sensored as ( SELECT substr( task_id, strpos(task_id, &#39;awaiting_&#39;) + length(&#39;awaiting_&#39;) ) as sensor, dag_id FROM airflow.public.task_instance WHERE state = &#39;deferred&#39; ) select sensor, count(1) over(partition by sensor) as sensor_cnt, count(1) over() as total_cnt, dag_id from sensored order by 2 desc, sensor, dag_id;
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1421,7 +1412,7 @@
 <p>⭕️ количество сенсоров, которые ждут этот даг</p>
 <p>⭕️ общее количество подвисших сенсоров</p>
 <p>И так можно сразу понять, на какой даг смотрит наибольшее количество сенсоров, и посмотреть причину</p>
-<h2 id="with-sensored-as-select-substr-task_id-strpostask_id-awaiting_-lengthawaiting_-as-sensor-dag_id-from-airflowpublictask_instance-where-state-deferred-select-sensor-count1-overpartition-by-sensor-as-sensor_cnt-count1-over-as-total_cnt-dag_id-from-sensored-order-by-2-desc-sensor-dag_id"><div class="language-sql highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">with</span><span class="w"> </span><span class="n">sensored</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">with</span><span class="w"> </span><span class="n">sensored</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="k">SELECT</span><span class="w"> </span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="n">substr</span><span class="p">(</span>
 </span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">      </span><span class="n">task_id</span><span class="p">,</span>
@@ -1438,7 +1429,7 @@
 </span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">  </span><span class="n">dag_id</span>
 </span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="k">from</span><span class="w"> </span><span class="n">sensored</span>
 </span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">desc</span><span class="p">,</span><span class="w"> </span><span class="n">sensor</span><span class="p">,</span><span class="w"> </span><span class="n">dag_id</span><span class="p">;</span>
-</span></code></pre></div></h2>
+</span></code></pre></div>
 
 
 
