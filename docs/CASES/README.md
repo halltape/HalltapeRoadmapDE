@@ -412,6 +412,7 @@ Execution time: 338458.499 ms
 
 И так можно сразу понять, на какой даг смотрит наибольшее количество сенсоров, и посмотреть причину
 
+
 ```sql
 with sensored as (
   SELECT 
@@ -431,4 +432,3 @@ select
 from sensored
 order by 2 desc, sensor, dag_id;
 ```
----
