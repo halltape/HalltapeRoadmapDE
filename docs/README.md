@@ -210,7 +210,7 @@
 
 ➜ [Data Lake](DWH/DataLake/DATALAKE.md)
 
-➜ [Data LakeHouse](DWH/DataLakeHouse/README.md)
+➜ [Data LakeHouse](DWH/DataLakeHouse/)
 
 ***
 ## 6.📐 Нормальные формы
