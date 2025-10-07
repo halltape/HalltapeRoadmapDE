@@ -210,7 +210,9 @@
 
 ➜ [Data Lake](DWH/DataLake/DATALAKE.md)
 
-➜ [Data LakeHouse](DWH/DataLakeHouse/LAKEHOUSE.md)
+➜ [Data LakeHouse](DWH/DataLakeHouse/)
+➜ [Формат данных Iceberg](DWH/DataLakeHouse/ICEBERG)
+
 
 ***
 ## 6.📐 Нормальные формы
