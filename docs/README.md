@@ -132,10 +132,10 @@
 Чтобы понять, кто такой дата инженер и как им стать, посмотри видео!
 
 <p align="center">
-    <img src="png/de1.jpg" alt="de" width="600"/>
+    <img src="png/car.jpg" alt="de" width="600"/>
 </p>
 
-➜ [Кто такой Data Engineer?](https://youtu.be/75Vu8NqH_cU?si=zYT6U7deVYEPkbmA)
+➜ [Кто такой Data Engineer?](https://youtu.be/YDpNhiGkt4o?si=t6aEVQgZfPvX3i_H)
 
 ➜ [Как я попал в DE?](https://www.youtube.com/watch?v=tltPPLTemzE&t=1s)
 
