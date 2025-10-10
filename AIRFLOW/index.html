@@ -933,6 +933,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Пример тестового задания">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dag_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Запуск DAG'а
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Поясняю за код
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1151,183 +1175,197 @@ XCom можно использовать для передачи небольш�
 </ul>
 <h2 id="_7">Пример тестового задания</h2>
 <p>Необходимо написать DAG, который будет выполнять следующие задачи:</p>
-<p>``` 
-1. С помощью PythonOperator необходимо сгенерировать тестовые данные и записать их в файл в каталог /tmp/data.csv ( для простоты можно взять 2 колонки - id, value )
-2. С помощью BashOperator переместить файл в каталог /tmp/processed_data
-3. C помощью PythonOperator нужно загрузить данные из файла в таблицу в Postgres ( таблицу можно предварительно создать )
-4. После записи данных в таблицу последним таском выведите в логах сообщение о количестве загруженных данных.
- 
-С помощью XCom необходимо:
- 
-Передать путь до файла из п.1 в оператор в п.2.
-Передать количество записей из п.3 в п.4
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>### Запуск DAG&#39;а
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Для начала развернём с помощью Docker Compose, **AirFlow**. 
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Жми и копируй [docker-compose.yaml](./task/docker-compose.yaml) в свой каталог.
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>С помощью WSL или любой командной строки, где ты работаешь с Docker, переходишь в каталог со скаченным или скопированным файлом и выполняешь команду:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>1. С помощью PythonOperator необходимо сгенерировать тестовые данные и записать их в файл в каталог /tmp/data.csv ( для простоты можно взять 2 колонки - id, value )
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>2. С помощью BashOperator переместить файл в каталог /tmp/processed_data
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>3. C помощью PythonOperator нужно загрузить данные из файла в таблицу в Postgres ( таблицу можно предварительно создать )
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>4. После записи данных в таблицу последним таском выведите в логах сообщение о количестве загруженных данных.
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>С помощью XCom необходимо:
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>Передать путь до файла из п.1 в оператор в п.2.
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>Передать количество записей из п.3 в п.4
 </span></code></pre></div>
-docker compose up -d
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Пока у тебя качаются и поднимаются контейнеры, скачай следующий файл [test_task.py](./task/test_task.py)
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>После того, как контейнеры поднимутся, в каталоге с **docker-compose.yaml** появятся 4 каталога config, dags, logs, plugins.
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>Необходимо скаченный файл **test_task.py** переместить в каталог **dags**.
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>Теперь заходим в браузер и в URL-строке прописываем:
+<h3 id="dag_3">Запуск DAG'а</h3>
+<p>Для начала развернём с помощью Docker Compose, <strong>AirFlow</strong>. </p>
+<p>Жми и копируй <a href="task/docker-compose.yaml">docker-compose.yaml</a> в свой каталог.</p>
+<p>С помощью WSL или любой командной строки, где ты работаешь с Docker, переходишь в каталог со скаченным или скопированным файлом и выполняешь команду:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker compose up -d
 </span></code></pre></div>
-localhost:8080
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Тем самым переходим на стартовую страницу.
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>&lt;p align=&quot;center&quot;&gt;
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    &lt;img src=&quot;./../png/af_start_page.png&quot; alt=&quot;AirFlow&quot; /&gt;
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>&lt;/p&gt;
+<p>Пока у тебя качаются и поднимаются контейнеры, скачай следующий файл <a href="task/test_task.py">test_task.py</a></p>
+<p>После того, как контейнеры поднимутся, в каталоге с <strong>docker-compose.yaml</strong> появятся 4 каталога config, dags, logs, plugins.</p>
+<p>Необходимо скаченный файл <strong>test_task.py</strong> переместить в каталог <strong>dags</strong>.</p>
+<p>Теперь заходим в браузер и в URL-строке прописываем:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>localhost:8080
 </span></code></pre></div>
-Логин: airflow
-Пароль: airflow
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>После входа нас перебрасывает на главную страницу, где мы увидим DAG, который мы скинули в каталог(если его там нет, подождите минут 5 и обновите страницу, в крайнем случае рестартаните Docker Compose)
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Перед тем, как запустить DAG, необходимо прописать коннект к БД PostgreSQL, которая присутствует в Docker Compose файле. 
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>Для это в верхней строке меню наводим курсор на **Admin** и выбираетм пункт **Connections**. Нажимаем синий плюсик в открывшимся окне подключения, прописываем следующие параметры:
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>|Параметр| Значение|
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>|---|---|
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>|Connection Id|psql_connection|
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>|Connection Type|Postgres|
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>|Host|host.docker.internal|
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>|Database|user|
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>|Login|user|
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>|Password|user|
-</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>|Port|5431|
-</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>|Extra|могут быть кавычки, необходимо оставить пустое поле, иначе будет ошибка подключения.|
-</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>
-</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
-</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>&lt;p align=&quot;center&quot;&gt;
-</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>    &lt;img src=&quot;./../png/af_connection.png&quot; alt=&quot;AirFlow&quot; /&gt;
-</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>&lt;/p&gt;
-</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>
-</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>Нажимаем Save
-</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>
-</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>Возвращаемся на главную страницу и заходим в наш DAG, жамкув по его имени. 
-</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>
-</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>Далее запускаем DAG, нажав на **Trigger DAG**(треугольник) в правом верхнем углу страницы.
-</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>
-</span><span id="__span-9-29"><a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>Всё поздавляю, вы запустили свой первый DAG, теперь разберёмся с кодом, написанным в DAG&#39;е.
-</span><span id="__span-9-30"><a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>
-</span><span id="__span-9-31"><a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>### Поясняю за код
-</span><span id="__span-9-32"><a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>
-</span><span id="__span-9-33"><a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>Для начала необходимо инициализировать DAG с помощью класса DAG, для этого импортируем класс из библиотеки airflow.
+<p>Тем самым переходим на стартовую страницу.</p>
+<p align="center">
+    <img src="./../png/af_start_page.png" alt="AirFlow" />
+</p>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Логин: airflow
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Пароль: airflow
 </span></code></pre></div>
-from airflow import DAG
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Инициализация DAG происходит следующим образом:
+<p>После входа нас перебрасывает на главную страницу, где мы увидим DAG, который мы скинули в каталог(если его там нет, подождите минут 5 и обновите страницу, в крайнем случае рестартаните Docker Compose)</p>
+<p>Перед тем, как запустить DAG, необходимо прописать коннект к БД PostgreSQL, которая присутствует в Docker Compose файле. </p>
+<p>Для это в верхней строке меню наводим курсор на <strong>Admin</strong> и выбираетм пункт <strong>Connections</strong>. Нажимаем синий плюсик в открывшимся окне подключения, прописываем следующие параметры:</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Connection Id</td>
+<td>psql_connection</td>
+</tr>
+<tr>
+<td>Connection Type</td>
+<td>Postgres</td>
+</tr>
+<tr>
+<td>Host</td>
+<td>host.docker.internal</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>user</td>
+</tr>
+<tr>
+<td>Login</td>
+<td>user</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>user</td>
+</tr>
+<tr>
+<td>Port</td>
+<td>5431</td>
+</tr>
+<tr>
+<td>Extra</td>
+<td>могут быть кавычки, необходимо оставить пустое поле, иначе будет ошибка подключения.</td>
+</tr>
+</tbody>
+</table>
+<p align="center">
+    <img src="./../png/af_connection.png" alt="AirFlow" />
+</p>
+
+<p>Нажимаем Save</p>
+<p>Возвращаемся на главную страницу и заходим в наш DAG, жамкув по его имени. </p>
+<p>Далее запускаем DAG, нажав на <strong>Trigger DAG</strong>(треугольник) в правом верхнем углу страницы.</p>
+<p>Всё поздавляю, вы запустили свой первый DAG, теперь разберёмся с кодом, написанным в DAG'е.</p>
+<h3 id="_8">Поясняю за код</h3>
+<p>Для начала необходимо инициализировать DAG с помощью класса DAG, для этого импортируем класс из библиотеки airflow.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>from airflow import DAG
 </span></code></pre></div>
-dag = DAG(
-    dag_id="load_file_to_psql",
-    default_args=default_args
-)
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Чтобы не захламлять сам класс DAG, аргументы можно передать через параметр **default_args** и объявить словарь с параметрами отдельно.
+Инициализация DAG происходит следующим образом:</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>dag = DAG(
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    dag_id=&quot;load_file_to_psql&quot;,
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    default_args=default_args
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>)
 </span></code></pre></div>
-default_args = {
-  'owner': '@Shust_DE',
-  'depends_on_past': False,
-  'start_date': datetime.now(),
-  'email': ['https://t.me/Shust_DE'],
-  'schedule_interval': "@hourly",
-}
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Далее берём первый пунт задания. Для генерации файла я использую библиотеку **pandas**. Следующий код генерирует данные и сохраняет их в файл.
+Чтобы не захламлять сам класс DAG, аргументы можно передать через параметр <strong>default_args</strong> и объявить словарь с параметрами отдельно.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>default_args = {
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  &#39;owner&#39;: &#39;@Shust_DE&#39;,
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>  &#39;depends_on_past&#39;: False,
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>  &#39;start_date&#39;: datetime.now(),
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>  &#39;email&#39;: [&#39;https://t.me/Shust_DE&#39;],
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>  &#39;schedule_interval&#39;: &quot;@hourly&quot;,
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>}
 </span></code></pre></div>
-import pandas as pd</p>
-<p>path_filename = '/tmp/data.csv'
-table = [(i, md5(int(i).to_bytes(8, 'big', signed=True)).hexdigest()) for i in range(1, 100)]
-table = pd.DataFrame(table, columns=['id', 'md5_id'])
-table.to_csv(path_filename, index=False)
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Помещаем данный фрагмент в функцию **_generate_file**. Но не забываем, что путь к файлу нам необходимо передать через XCom. Поэтому необходимо в функцию передать все аргументы DAG&#39;а, т.е. переменную **kwargs**. Из данного словаря нам нужен ключ **ti** (или task_instans, это одно и тоже, ссылка на один и тот же объект). Поэтому приравниваем его к переменной **ti**, чтобы не запутаться.
+<p>Далее берём первый пунт задания. Для генерации файла я использую библиотеку <strong>pandas</strong>. Следующий код генерирует данные и сохраняет их в файл.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>import pandas as pd
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>path_filename = &#39;/tmp/data.csv&#39;
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>table = [(i, md5(int(i).to_bytes(8, &#39;big&#39;, signed=True)).hexdigest()) for i in range(1, 100)]
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>table = pd.DataFrame(table, columns=[&#39;id&#39;, &#39;md5_id&#39;])
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>table.to_csv(path_filename, index=False)
 </span></code></pre></div>
-ti = kwargs['ti']
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Далее необходимо у объекта вызвать метод **xcom_push** и передать ключ и значение XCom переменной.
+<p>Помещаем данный фрагмент в функцию <strong>_generate_file</strong>. Но не забываем, что путь к файлу нам необходимо передать через XCom. Поэтому необходимо в функцию передать все аргументы DAG'а, т.е. переменную <strong>kwargs</strong>. Из данного словаря нам нужен ключ <strong>ti</strong> (или task_instans, это одно и тоже, ссылка на один и тот же объект). Поэтому приравниваем его к переменной <strong>ti</strong>, чтобы не запутаться.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>ti = kwargs[&#39;ti&#39;]
 </span></code></pre></div>
-ti.xcom_push(key='path_file', value=path_filename)
-<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Объединяем и получаем полноценную функцию **_generate_file**:
+<p>Далее необходимо у объекта вызвать метод <strong>xcom_push</strong> и передать ключ и значение XCom переменной.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>ti.xcom_push(key=&#39;path_file&#39;, value=path_filename)
 </span></code></pre></div>
-def _generate_file(<strong>kwargs):
-  ti = kwargs['ti']
-  path_filename = '/tmp/data.csv'
-  table = [(i, md5(int(i).to_bytes(8, 'big', signed=True)).hexdigest()) for i in range(1, 100)]
-  table = pd.DataFrame(table, columns=['id', 'md5_id'])
-  table.to_csv(path_filename, index=False)
-  ti.xcom_push(key='path_file', value=path_filename)
-<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>В PythonOperator нам просто нужно передать данную функцию следующим образом:
+<p>Объединяем и получаем полноценную функцию <strong>_generate_file</strong>:</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>def _generate_file(**kwargs):
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>  ti = kwargs[&#39;ti&#39;]
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>  path_filename = &#39;/tmp/data.csv&#39;
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>  table = [(i, md5(int(i).to_bytes(8, &#39;big&#39;, signed=True)).hexdigest()) for i in range(1, 100)]
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>  table = pd.DataFrame(table, columns=[&#39;id&#39;, &#39;md5_id&#39;])
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>  table.to_csv(path_filename, index=False)
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>  ti.xcom_push(key=&#39;path_file&#39;, value=path_filename)
 </span></code></pre></div>
-generate_file = PythonOperator(
-    task_id='generate_file',
-    python_callable=_generate_file,
-    dag=dag,
-)
-<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>За второй пункт отвечает следующая конструкция:
+В PythonOperator нам просто нужно передать данную функцию следующим образом:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>generate_file = PythonOperator(
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    task_id=&#39;generate_file&#39;,
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    python_callable=_generate_file,
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    dag=dag,
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>)
 </span></code></pre></div>
-move_data_file = BashOperator(
-  task_id="move_data_file",
-  bash_command=("mkdir -p /tmp/processed_data/ &amp;&amp; "
-          "mv {{ ti.xcom_pull(task_ids='generate_file', key='path_file') }} /tmp/processed_data/"),
-  dag=dag,
-)
-<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>Здесь применяется команда создания каталога и проверки его на существование
+<p>За второй пункт отвечает следующая конструкция:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>move_data_file = BashOperator(
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>  task_id=&quot;move_data_file&quot;,
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>  bash_command=(&quot;mkdir -p /tmp/processed_data/ &amp;&amp; &quot;
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>          &quot;mv {{ ti.xcom_pull(task_ids=&#39;generate_file&#39;, key=&#39;path_file&#39;) }} /tmp/processed_data/&quot;),
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>  dag=dag,
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>)
 </span></code></pre></div>
-mkdir -p /tmp/processed_data/
-<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>И, соотвественно, перемещение самого файла
+<p>Здесь применяется команда создания каталога и проверки его на существование</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>mkdir -p /tmp/processed_data/
 </span></code></pre></div>
-mv {{ ti.xcom_pull(task_ids='generate_file', key='path_file') }} /tmp/processed_data/
-<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Как можно заметить, так как нам нужно достать путь к файлу из XCom в Bash-конструкцию, мы воспользовались Jinja-шаблонизатором для языка Python.
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>Для пункта 3 изначально создается таблица с помощью оператора PostgresOperator в конструкции:
+<p>И, соотвественно, перемещение самого файла</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>mv {{ ti.xcom_pull(task_ids=&#39;generate_file&#39;, key=&#39;path_file&#39;) }} /tmp/processed_data/
 </span></code></pre></div>
-create_table_psql = PostgresOperator(
-    task_id='create_table',
-    postgres_conn_id='psql_connection',
-    sql=""" DROP TABLE IF EXISTS table_name;
-            CREATE TABLE table_name ( id int,
-                                      md5_id text);
-        """
-)
-<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Думаю, тут и так все понятно и комментарии излишни. А если ты не знаешь, что делает SQL код, то какого лешего ты тут забыл, иди учи SQL!
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>Для загрузки данных используется следующий код:
+<p>Как можно заметить, так как нам нужно достать путь к файлу из XCom в Bash-конструкцию, мы воспользовались Jinja-шаблонизатором для языка Python.</p>
+<p>Для пункта 3 изначально создается таблица с помощью оператора PostgresOperator в конструкции:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>create_table_psql = PostgresOperator(
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>    task_id=&#39;create_table&#39;,
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>    postgres_conn_id=&#39;psql_connection&#39;,
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    sql=&quot;&quot;&quot; DROP TABLE IF EXISTS table_name;
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>            CREATE TABLE table_name ( id int,
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>                                      md5_id text);
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>        &quot;&quot;&quot;
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>)
 </span></code></pre></div>
-df = pd.read_csv("/tmp/processed_data/data.csv")
-engine = create_engine('postgresql://user:user@host.docker.internal:5431/user')
-df.to_sql('table_name', engine, if_exists='append', schema='public', index=False)
-<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>Но так как у нас есть дополнительное условие, а именно в XCom переменную положить количество строк в файл, то опять обращаемся к **ti**.
+<p>Думаю, тут и так все понятно и комментарии излишни. А если ты не знаешь, что делает SQL код, то какого лешего ты тут забыл, иди учи SQL!</p>
+<p>Для загрузки данных используется следующий код:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>df = pd.read_csv(&quot;/tmp/processed_data/data.csv&quot;)
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>engine = create_engine(&#39;postgresql://user:user@host.docker.internal:5431/user&#39;)
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>df.to_sql(&#39;table_name&#39;, engine, if_exists=&#39;append&#39;, schema=&#39;public&#39;, index=False)
 </span></code></pre></div>
-ti = kwargs['ti']
-ti.xcom_push(key='count_string', value=len(df))
-<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>Объединяем, и получается следующая функция **_data_in_postgres**:
+<p>Но так как у нас есть дополнительное условие, а именно в XCom переменную положить количество строк в файл, то опять обращаемся к <strong>ti</strong>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>ti = kwargs[&#39;ti&#39;]
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>ti.xcom_push(key=&#39;count_string&#39;, value=len(df))
 </span></code></pre></div>
-def _data_in_postgres(</strong>kwargs):
-  ti = kwargs['ti']
-  df = pd.read_csv("/tmp/processed_data/data.csv")
-  engine = create_engine('postgresql://user:user@host.docker.internal:5431/user')
-  df.to_sql('table_name', engine, if_exists='append', schema='public', index=False)
-  ti.xcom_push(key='count_string', value=len(df))
-<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>Теперь необходимо вывести просто количество строк, делаем все тоже самое, как и при переносе файла. За это отвечается конструкция:
+<p>Объединяем, и получается следующая функция <strong>_data_in_postgres</strong>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>def _data_in_postgres(**kwargs):
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>  ti = kwargs[&#39;ti&#39;]
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>  df = pd.read_csv(&quot;/tmp/processed_data/data.csv&quot;)
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>  engine = create_engine(&#39;postgresql://user:user@host.docker.internal:5431/user&#39;)
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>  df.to_sql(&#39;table_name&#39;, engine, if_exists=&#39;append&#39;, schema=&#39;public&#39;, index=False)
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>  ti.xcom_push(key=&#39;count_string&#39;, value=len(df))
 </span></code></pre></div>
-print_count_string_in_df = BashOperator(
-  task_id="print_count_string_in_df",
-  bash_command=('''echo "В таблице {{ ti.xcom_pull(task_ids='data_in_postgres', key='count_string') }} строк" '''),
-  dag=dag,
-)
-<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>Ну и наконец, нужно построить граф, для этого последовательно выстраиваем операторы:
+<p>Теперь необходимо вывести просто количество строк, делаем все тоже самое, как и при переносе файла. За это отвечается конструкция:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>print_count_string_in_df = BashOperator(
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>  task_id=&quot;print_count_string_in_df&quot;,
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>  bash_command=(&#39;&#39;&#39;echo &quot;В таблице {{ ti.xcom_pull(task_ids=&#39;data_in_postgres&#39;, key=&#39;count_string&#39;) }} строк&quot; &#39;&#39;&#39;),
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>  dag=dag,
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>)
 </span></code></pre></div>
-(
-    generate_file &gt;&gt; 
-    move_data_file &gt;&gt; 
-    create_table_psql &gt;&gt; 
-    data_in_postgres &gt;&gt; 
-    print_count_string_in_df
-)
-```</p>
+<p>Ну и наконец, нужно построить граф, для этого последовательно выстраиваем операторы:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>(
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>    generate_file &gt;&gt; 
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>    move_data_file &gt;&gt; 
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>    create_table_psql &gt;&gt; 
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>    data_in_postgres &gt;&gt; 
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>    print_count_string_in_df
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>)
+</span></code></pre></div>
 <p>Чтобы посмотреть результат последнего пункта, во вкладке <strong>graph</strong> выдели последнюю зелёную таску (print_count_string_in_df), и появятся дополнительные вкладки. Перейдите во вкладку <strong>Logs</strong>, и вы увидите запись, представленную на скриншоте.</p>
 <p align="center">
     <img src="./../png/af_final_task.png" alt="AirFlow" />
