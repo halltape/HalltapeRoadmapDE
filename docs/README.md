@@ -12,7 +12,7 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/103580753" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 # Roadmap | Как стать Дата Инженером
-<i>Курс, Roadmap, агрегатор информации для Data Engineer | Актуально на 2025г. | Версия 2.1</i>
+<i>Курс, Roadmap, агрегатор информации для Data Engineer | Актуально на 2025г. | Версия 3.0</i>
 
 ## 🚀 BootCamp для Data Engineer  
 Всего **2 месяца** — и ты выходишь на работу!
@@ -440,16 +440,9 @@ Spark изучайте только **после** **того**, как науч
     <img src="png/que.jpg" alt="nf" width="600"/>
 </p>
 
-➜ [Вопросы по SQL](QUESTION/SQL/README.md)
-
-➜ [Задачи по SQL](QUESTION/SQL/LIVECODING.md)
-
-➜ [Задачи по Python](QUESTION/Python/LIVECODING.md)
-
 ➜ [Типичные вопросы с собесов на все темы](QUESTION/README.md)
 
 ➜ [Telegram Bot для подготовки к собесам](https://t.me/DataismPrepBot)
-
 
 
 ***
@@ -486,12 +479,14 @@ Spark изучайте только **после** **того**, как науч
 </p>
 
 **Почитать про Data Engineer**
+
 - [Канал Я – Дата Инженер](https://t.me/halltape_data)
 - [Все, о чем не говорят вслух про Data Engineer](https://boosty.to/halltape_data)
 - [Канал Инженерообязанный | Из военки в IT](https://t.me/Shust_DE)
 - [Канал rzv Data Engineering](https://t.me/rzv_de)
 
 **Найти работу**
+
 - [Сайт агрегатор для Data Engineer](https://www.dataengineers.pro)
 - [Найти работу для DE Канал 1](https://t.me/data_engineer_jobs)
 - [Найти работу для DE Канал 2](https://t.me/dataeng_jobs)
