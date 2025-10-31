@@ -1,0 +1,12 @@
+Задача 14.(Простая)
+
+Чем отличаются результаты запросов
+
+SELECT col1, COUNT(*) 
+FROM t1 
+GROUP BY col1
+ORDER BY col1;
+
+SELECT DISTINCT col1, COUNT(*) OVER(PARTITION BY col1)
+FROM t1
+ORDER BY col1;

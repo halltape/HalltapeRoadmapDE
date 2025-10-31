@@ -1,0 +1,22 @@
+Задача 26.(Средняя)
+
+create table transactions (
+client_id integer,
+report_date date,
+txn_amount integer
+);
+
+INSERT INTO public.transactions (client_id, report_date, txn_amount) VALUES(123, '2017-01-01', 50000);
+INSERT INTO public.transactions (client_id, report_date, txn_amount) VALUES(124, '2018-01-01', 10000);
+INSERT INTO public.transactions (client_id, report_date, txn_amount) VALUES(124, '2018-01-02', 10000);
+INSERT INTO public.transactions (client_id, report_date, txn_amount) VALUES(124, '2018-01-03', 10000);
+INSERT INTO public.transactions (client_id, report_date, txn_amount) VALUES(124, '2018-01-04', 10000);
+INSERT INTO public.transactions (client_id, report_date, txn_amount) VALUES(124, '2018-01-05', 10000);
+INSERT INTO public.transactions (client_id, report_date, txn_amount) VALUES(124, '2018-01-06', 10000);
+INSERT INTO public.transactions (client_id, report_date, txn_amount) VALUES(124, '2018-01-07', 10000);
+INSERT INTO public.transactions (client_id, report_date, txn_amount) VALUES(124, '2018-01-08', 10000);
+INSERT INTO public.transactions (client_id, report_date, txn_amount) VALUES(124, '2018-01-09', 10000);
+INSERT INTO public.transactions (client_id, report_date, txn_amount) VALUES(124, '2018-01-14', 10000);
+
+Даны данные цепочки покупок:
+Необходимо выбрать клиента, который совершил 5 покупок последовательно в каждый из дней.

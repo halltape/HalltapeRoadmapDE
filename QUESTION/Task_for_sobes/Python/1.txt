@@ -1,0 +1,17 @@
+Задача 1.
+
+# Компания получила результат оценки знания ЯП у сотрудников.
+# Получите общую среднюю оценку по каждому языку программирования
+arr = [
+    {'name': 'Petr', 'subject': 'Python', 'score': 97},
+    {'name': 'Max', 'subject': 'C++', 'score': 70},
+    {'name': 'Petr', 'subject': 'C++', 'score': 45},
+    {'name': 'Max', 'subject': 'Python', 'score': 60},
+    {'name': 'Petr', 'subject': 'SQL', 'score': 65},
+    {'name': 'Max', 'subject': 'SQL', 'score': 100}
+]
+
+# Пример вывода:
+# Python - 78.5
+# C++ - 57.5
+# SQL - 82.5

@@ -1,0 +1,25 @@
+Задача 19.(Простая)
+
+Таблица test_tbl
+
+filial  num
+------  ---
+A       2
+A       5
+A       3
+B       1
+B       4
+
+
+select
+  filial,
+  num,
+  sum(num) over()                             as sm1,
+  sum(num) over(partition by filial)          as sm2,
+  sum(num) over(partition by filial order by num) as sm3
+from test_tbl;
+
+Вопросы:
+
+1. Будет ли разница в полях sm1, sm2, sm3?
+2. Как будут заполнены поля sm1, sm2, sm3?
