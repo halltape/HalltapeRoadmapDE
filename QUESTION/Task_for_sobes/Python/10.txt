@@ -1,0 +1,24 @@
+Задача 10.
+
+Что будет выведено на экран?
+
+class Foo:
+    def __init__(self, value):
+        self.value = value
+    def who(self):
+        print(self.value)
+
+    def __enter__(self):
+        return Foo(f'NOT {self.value}')
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.who()
+        return True
+
+try:
+    with (a := Foo('me')) as b:
+        a.who()
+        b.who()
+        raise Exception( 'whatever')
+except Exception as e:
+    print(e)

@@ -1,0 +1,54 @@
+Задача 40.(Сложная)
+
+Пусть заданы таблица с действиями сотрудника в некоторой информационной системе и график работы сотрудников.
+
+Таблица activities
+
+create table public.activities (
+  action_id   text,
+  action      text,
+  user_id     text,
+  eventtime   timestamp
+)
+WITH (
+  appendonly=true,
+  orientation=column,
+  compresstype=zstd,
+  compresslevel=2
+)
+DISTRIBUTED BY (user_id);
+
+action_id  action            user_id  eventtime
+--------   ----------------  ------   -------------------
+1          Создать объект    1        2024-03-02 12:41:00
+2          Изменить объект   1        2024-03-02 12:41:00
+3          Изменить объект   1        2024-03-02 12:41:00
+4          Удалить объект    2        2024-03-06 08:07:00
+5          Создать объект    2        2024-03-06 08:07:00
+6          Удалить объект    3        2024-03-06 12:01:00
+7          Изменить объект   3        2024-03-06 12:01:00
+8          Изменить объект   3        2024-03-06 23:59:00
+
+
+create table public.timesheets (
+  user_id     text,
+  start_time  timestamp,
+  end_time    timestamp
+)
+WITH (
+  appendonly=true,
+  orientation=column,
+  compresstype=zstd,
+  compresslevel=2
+)
+DISTRIBUTED BY (user_id);
+
+user_id  start_time           end_time
+-------  -------------------  -------------------
+1        2024-03-04 12:00:00  2024-03-04 17:00:00
+1        2024-03-05 12:00:00  2024-03-05 17:00:00
+2        2024-03-05 12:00:00  2024-03-05 17:00:00
+3        2024-03-05 12:00:00  2024-03-05 17:00:00
+4        2024-03-05 12:00:00  2024-03-05 17:00:00
+
+Требуется вычислить долю действий, совершенных за рамками рабочего графика.
