@@ -1,0 +1,7 @@
+Задача 1.
+
+Посчитать количество слов в текстовом файле
+
+from pyspark.sal import SparkSession
+spark = SparkSession.builder.appName ("WordCount") •getOrCreate()
+# файл лежит по пути path/to/textfile.txt

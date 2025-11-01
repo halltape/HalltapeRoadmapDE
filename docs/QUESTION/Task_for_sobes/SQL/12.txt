@@ -1,0 +1,16 @@
+Задача 12.(Простая)
+
+1. Даны 2 таблицы a и b:
+таблица a:  таблица b:
+id             id
+1              2
+2              2
+null           3
+null          null
+
+Какие будут результаты при JOIN:
+INNER 
+LEFT  
+RIGHT  
+FULL
+CROSS
