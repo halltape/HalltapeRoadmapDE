@@ -1,8 +1,0 @@
-Задача 31.(Простая)
-
-SELECT Year(Date) as date_year
-FROM Balance 
-GROUP BY date_year
-WHERE date_year >=  2024
-
-В чем ошибка?
