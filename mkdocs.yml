@@ -1,0 +1,29 @@
+site_name: "Я – Дата Инженер"
+repo_name: Roadmappers.ru
+repo_url: https://github.com/halltape/HalltapeRoadmapDE
+site_url: https://roadmappers.ru
+copyright: MIT
+
+nav:
+  - В начало: README.md
+
+theme:
+  name: material
+  logo: _frontend/images/logo_v2.svg
+
+extra_css:
+  - _frontend/css/custom.css
+
+extra_javascript:
+  - _frontend/js/scroll-to-top.js
+
+markdown_extensions:
+  - admonition
+  - tables
+  - footnotes
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
